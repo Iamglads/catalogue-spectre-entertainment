@@ -18,8 +18,9 @@ export default function ListCounter() {
       try { setCount(loadList().length); } catch {}
     }
     window.addEventListener('storage', onStorage);
-    window.addEventListener('catalogue:list:changed', onCustom as any);
-    return () => { window.removeEventListener('storage', onStorage); window.removeEventListener('catalogue:list:changed', onCustom as any); };
+    const customHandler = () => onCustom();
+    window.addEventListener('catalogue:list:changed', customHandler as EventListener);
+    return () => { window.removeEventListener('storage', onStorage); window.removeEventListener('catalogue:list:changed', customHandler as EventListener); };
   }, []);
 
   return (

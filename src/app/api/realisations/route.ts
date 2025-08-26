@@ -4,7 +4,15 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   try {
     const url = 'https://spectre-entertainment.com/catalogue-decors/';
-    const res = await fetch(url, { cache: 'no-store' });
+    const res = await fetch(url, {
+      cache: 'no-store',
+      headers: {
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',
+        'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      },
+      // In case remote blocks HEAD/other methods
+      method: 'GET',
+    });
     if (!res.ok) return NextResponse.json({ error: 'Upstream fetch failed' }, { status: 502 });
     const html = await res.text();
 
@@ -37,7 +45,10 @@ export async function GET() {
       if (urls.size > 120) break; // cap
     }
 
-    return NextResponse.json({ items: Array.from(urls) });
+    const items = Array.from(urls).slice(0, 30);
+    const resBody = NextResponse.json({ items });
+    resBody.headers.set('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
+    return resBody;
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || 'Unknown error' }, { status: 500 });
   }

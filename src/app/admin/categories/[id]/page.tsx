@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 type Category = { _id: string; name: string; fullPath: string; depth: number; parentId: string | null };
 
@@ -29,7 +30,7 @@ export default function AdminCategoryEditPage() {
   useEffect(() => { load(); }, [params.id]);
 
   const parentOptions = useMemo(() => {
-    return [{ _id: '', name: '(aucun parent)', depth: 0 } as any].concat(all);
+    return ([{ _id: '', name: '(aucun parent)', depth: 0 }] as Array<{ _id: string; name: string; depth: number }>).concat(all);
   }, [all]);
 
   async function save() {
@@ -47,7 +48,7 @@ export default function AdminCategoryEditPage() {
 
   return (
     <div className="min-h-screen py-6 space-y-3">
-      <div><a href="/admin/categories" className="text-sm underline">← Retour</a></div>
+      <div><Link href="/admin/categories" className="text-sm underline">← Retour</Link></div>
       <div className="flex items-center gap-2">
         <button className="ml-auto rounded border px-3 py-1.5 text-sm" onClick={save}>{isNew ? 'Créer' : 'Enregistrer'}</button>
         {!isNew && <button className="rounded border px-3 py-1.5 text-sm text-red-600" onClick={remove}>Supprimer</button>}
