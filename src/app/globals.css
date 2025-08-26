@@ -12,15 +12,86 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Theme via data-theme attribute; default light */
+:root,
+html[data-theme='light'] {
+  --background: #ffffff;
+  --foreground: #171717;
+  --brand: #0c71c3; /* Spectre brand */
+  --brand-700: #095a9a;
+}
+
+html[data-theme='dark'] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --border-color: #262626; /* subtle dark border */
+  --brand: #1e88e5;
+  --brand-700: #1565c0;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Headings use Montserrat for stronger presence */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading), Arial, Helvetica, sans-serif; }
+
+/* Brand theming (map common utilities to brand) */
+a { color: var(--brand); }
+a:hover { text-decoration: underline; }
+
+.text-blue-600 { color: var(--brand) !important; }
+.bg-blue-600 { background-color: var(--brand) !important; }
+.hover\:bg-blue-700:hover { background-color: var(--brand-700) !important; }
+.border-blue-600 { border-color: var(--brand) !important; }
+.ring-blue-500 { --tw-ring-color: var(--brand) !important; }
+
+/* Global, refined borders */
+:root,
+html[data-theme='light'] {
+  --border-color: #e5e7eb; /* gray-200 */
+}
+
+/* Ensure all Tailwind border utilities use our refined color */
+.border { border-color: var(--border-color) !important; }
+.border-b { border-bottom-color: var(--border-color) !important; }
+.border-t { border-top-color: var(--border-color) !important; }
+.border-l { border-left-color: var(--border-color) !important; }
+.border-r { border-right-color: var(--border-color) !important; }
+
+/* Dark theme overrides for Tailwind bg/text utilities used in app */
+html[data-theme='dark'] .bg-white { background-color: #111111 !important; }
+html[data-theme='dark'] .bg-white\/90 { background-color: rgba(17,17,17,0.9) !important; }
+html[data-theme='dark'] .bg-white\/80 { background-color: rgba(17,17,17,0.8) !important; }
+html[data-theme='dark'] .bg-white\/60 { background-color: rgba(17,17,17,0.6) !important; }
+html[data-theme='dark'] .bg-gray-50 { background-color: #111111 !important; }
+html[data-theme='dark'] .bg-gray-100 { background-color: #1a1a1a !important; }
+html[data-theme='dark'] .text-gray-900 { color: var(--foreground) !important; }
+html[data-theme='dark'] .text-gray-700,
+html[data-theme='dark'] .text-gray-600,
+html[data-theme='dark'] .text-gray-500 { color: #e5e7eb !important; }
+
+/* Placeholder visibility in dark mode */
+html[data-theme='dark'] input::placeholder,
+html[data-theme='dark'] textarea::placeholder { color: #9ca3af !important; opacity: 1; }
+
+/* Marquee animations */
+@keyframes marquee-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation-name: marquee-x;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.animate-marquee-reverse {
+  animation-name: marquee-x;
+  animation-direction: reverse;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
