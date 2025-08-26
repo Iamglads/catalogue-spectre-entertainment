@@ -178,7 +178,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen p-4 sm:p-10">
+    <div className="min-h-screen p-4">
       <header className="mb-6 flex items-center gap-3 flex-wrap">
         <h1 className="text-2xl font-semibold text-gray-900">Catalogue</h1>
         <input

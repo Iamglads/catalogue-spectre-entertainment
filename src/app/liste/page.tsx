@@ -73,7 +73,7 @@ export default function ListePage() {
   }
 
   return (
-    <div className="min-h-screen p-4 sm:p-10">
+    <div className="min-h-screen p-4">
       <div className="mb-6 flex items-center justify-between gap-3">
         <h1 className="text-xl font-semibold">Ma liste</h1>
         <div className="flex items-center gap-2">
