@@ -42,7 +42,7 @@ export default function RootLayout({
         <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
           <div className="w-full px-4 sm:px-6 h-14 flex items-center gap-3">
             <Link href="/" className="inline-flex items-center gap-2" aria-label="Accueil catalogue">
-              <Image src="/logo.png" alt="Spectre Entertainment" width={160} height={40} />
+              <Image src="/Logo.png" alt="Spectre Entertainment" width={160} height={40} />
             </Link>
             <div className="ml-auto flex items-center gap-3">
               <a
