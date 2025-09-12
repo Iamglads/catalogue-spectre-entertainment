@@ -7,8 +7,8 @@ import { slugify } from '@/lib/slug';
 
 // List + create
 export async function GET(req: NextRequest) {
-  const session = await getServerSession(authOptions as any);
-  if (!session?.user || (session.user as any).role !== 'admin') {
+  const session = await getServerSession(authOptions);
+  if (!session?.user || (session.user as { role?: string }).role !== 'admin') {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
   const client = await clientPromise;
@@ -19,8 +19,8 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  const session = await getServerSession(authOptions as any);
-  if (!session?.user || (session.user as any).role !== 'admin') {
+  const session = await getServerSession(authOptions);
+  if (!session?.user || (session.user as { role?: string }).role !== 'admin') {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
   const { name, parentId } = (await req.json()) as { name?: string; parentId?: string | null };
@@ -35,5 +35,3 @@ export async function POST(req: NextRequest) {
   const res = await categories.insertOne({ name, slug, fullPath, depth, parentId: parent?._id ?? null, createdAt: new Date(), updatedAt: new Date() });
   return NextResponse.json({ _id: String(res.insertedId) });
 }
-
-

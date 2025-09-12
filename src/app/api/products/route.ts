@@ -24,7 +24,6 @@ export async function GET(req: NextRequest) {
   try {
     // Basic diagnostics in production (no secrets)
     if (process.env.NODE_ENV === 'production') {
-      // eslint-disable-next-line no-console
       console.log('[api/products] request', { url: req.url, hasMongoUri: Boolean(process.env.MONGODB_URI), mongoSrv: (process.env.MONGODB_URI || '').startsWith('mongodb+srv://') });
     }
     const client = await clientPromise;
@@ -132,7 +131,6 @@ export async function GET(req: NextRequest) {
       items: itemsOut,
     }, { headers: { 'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=3600' } });
   } catch (error) {
-    // eslint-disable-next-line no-console
     console.error('[api/products] error', error);
     return NextResponse.json({ error: (error as Error).message }, { status: 500 });
   }

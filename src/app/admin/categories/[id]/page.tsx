@@ -27,7 +27,7 @@ export default function AdminCategoryEditPage() {
     }
   }
 
-  useEffect(() => { load(); }, [params.id]);
+  useEffect(() => { load(); }, [params.id, isNew, load]);
 
   const parentOptions = useMemo(() => {
     return ([{ _id: '', name: '(aucun parent)', depth: 0 }] as Array<{ _id: string; name: string; depth: number }>).concat(all);

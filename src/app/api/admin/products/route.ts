@@ -6,8 +6,8 @@ import { authOptions } from '@/lib/auth';
 
 // List + create
 export async function GET(req: NextRequest) {
-  const session = await getServerSession(authOptions as any);
-  if (!session?.user || (session.user as any).role !== 'admin') {
+  const session = await getServerSession(authOptions);
+  if (!session?.user || (session.user as { role?: string }).role !== 'admin') {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
   const client = await clientPromise;
@@ -45,17 +45,17 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  const session = await getServerSession(authOptions as any);
-  if (!session?.user || (session.user as any).role !== 'admin') {
+  const session = await getServerSession(authOptions);
+  if (!session?.user || (session.user as { role?: string }).role !== 'admin') {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
-  const body = (await req.json()) as Document;
+  const body = await req.json() as Document;
   const client = await clientPromise;
   const db = client.db();
   const products = db.collection<Document>('products');
   // handle categories
   const categoriesCol = db.collection<Document>('categories');
-  const inputCategoryIds: string[] = Array.isArray((body as any).categoryIds) ? (body as any).categoryIds : [];
+  const inputCategoryIds: string[] = Array.isArray((body as Record<string, unknown>).categoryIds) ? (body as Record<string, unknown>).categoryIds as string[] : [];
   const categoryIds: ObjectId[] = [];
   for (const id of inputCategoryIds) {
     try { categoryIds.push(new ObjectId(id)); } catch {}

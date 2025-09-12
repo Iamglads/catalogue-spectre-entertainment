@@ -11,7 +11,7 @@ export default withAuth({
       }
       const isAdmin = pathname.startsWith('/admin') || pathname.startsWith('/api/admin');
       if (!isAdmin) return true;
-      return Boolean(token) && (token as any).role === 'admin';
+      return Boolean(token) && (token as { role?: string }).role === 'admin';
     },
   },
 });

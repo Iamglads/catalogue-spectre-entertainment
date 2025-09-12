@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
         visibility: 'visible',
         $or: [ { 'raw.Publié': 1 }, { 'raw.Publié': '1' } ],
       },
-      { projection: { name: 1, images: 1, shortDescription: 1, lengthInches: 1, widthInches: 1, heightInches: 1 } }
+      { projection: { name: 1, images: 1, shortDescription: 1, lengthInches: 1, widthInches: 1, heightInches: 1, regularPrice: 1, salePrice: 1 } }
     ).toArray();
 
     const qtyMap = new Map(body.items.map((i) => [i.id, Math.max(1, Number(i.quantity) || 1)]));
@@ -54,18 +54,19 @@ export async function POST(req: NextRequest) {
     const rows = docs.map((d) => {
       const id = String(d._id);
       const q = qtyMap.get(id) ?? 1;
-      const dims = [d.lengthInches, d.widthInches, d.heightInches].some(Boolean)
-        ? `Dim.: ${d.lengthInches ?? '—'} × ${d.widthInches ?? '—'} × ${d.heightInches ?? '—'} po`
+      const doc = d as Record<string, unknown>;
+      const dims = [doc.lengthInches, doc.widthInches, doc.heightInches].some(Boolean)
+        ? `Dim.: ${doc.lengthInches ?? '—'} × ${doc.widthInches ?? '—'} × ${doc.heightInches ?? '—'} po`
         : '';
-      const firstImage = Array.isArray((d as any).images) ? (d as any).images[0] : undefined;
+      const firstImage = Array.isArray(doc.images) ? (doc.images as string[])[0] : undefined;
       return `
         <tr>
           <td style="padding:8px;border-bottom:1px solid #eee;vertical-align:top;">
             ${firstImage ? `<img src="${firstImage}" alt="" style="width:96px;height:72px;object-fit:cover;border-radius:4px;"/>` : ''}
           </td>
           <td style="padding:8px;border-bottom:1px solid #eee;">
-            <div style="font-weight:600;color:#111;">${(d as any).name ?? ''}</div>
-            ${(d as any).shortDescription ? `<div style=\"color:#666;font-size:12px\">${(d as any).shortDescription}</div>` : ''}
+            <div style="font-weight:600;color:#111;">${doc.name ?? ''}</div>
+            ${doc.shortDescription ? `<div style=\"color:#666;font-size:12px\">${doc.shortDescription}</div>` : ''}
             ${dims ? `<div style=\"color:#444;font-size:12px;margin-top:2px\">${dims}</div>` : ''}
           </td>
           <td style="padding:8px;border-bottom:1px solid #eee;text-align:right;white-space:nowrap;">x ${q}</td>
@@ -77,13 +78,14 @@ export async function POST(req: NextRequest) {
     const TPS_RATE = 0.05;
     const TVQ_RATE = 0.09975;
     // Si on n'a pas de prix sur les produits, on affiche juste les quantités sans totaux
-    const priced = docs.every((d) => typeof (d as any).regularPrice === 'number' || typeof (d as any).salePrice === 'number');
+    const priced = docs.every((d) => typeof (d as Record<string, unknown>).regularPrice === 'number' || typeof (d as Record<string, unknown>).salePrice === 'number');
     let subtotal = 0;
     if (priced) {
       for (const d of docs) {
         const id = String(d._id);
         const q = qtyMap.get(id) ?? 1;
-        const price = typeof (d as any).salePrice === 'number' ? (d as any).salePrice : (typeof (d as any).regularPrice === 'number' ? (d as any).regularPrice : 0);
+        const doc = d as Record<string, unknown>;
+        const price = typeof doc.salePrice === 'number' ? doc.salePrice as number : (typeof doc.regularPrice === 'number' ? doc.regularPrice as number : 0);
         subtotal += price * q;
       }
     }

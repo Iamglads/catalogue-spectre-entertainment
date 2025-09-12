@@ -21,34 +21,34 @@ export const authOptions: NextAuthOptions = {
         const users = db.collection<Document>('users');
         const user = await users.findOne({ email: credentials.email.toLowerCase().trim() });
         if (!user) return null;
-        const ok = await bcrypt.compare(credentials.password, (user as any).passwordHash || '');
+        const ok = await bcrypt.compare(credentials.password, (user as Record<string, unknown>).passwordHash as string || '');
         if (!ok) return null;
         return {
           id: String(user._id),
           email: user.email as string,
-          role: (user as any).role || 'user',
-          name: (user as any).name || undefined,
-        } as any;
+          role: (user as Record<string, unknown>).role as string || 'user',
+          name: (user as Record<string, unknown>).name as string || undefined,
+        };
       },
     }),
   ],
   callbacks: {
-    authorized({ auth, request: { nextUrl } }: any) {
+    authorized({ auth, request: { nextUrl } }: { auth: unknown; request: { nextUrl: { pathname: string } } }) {
       const pathname = nextUrl?.pathname || '';
       const isAdminArea = pathname.startsWith('/admin') || pathname.startsWith('/api/admin');
       if (!isAdminArea) return true;
-      return Boolean(auth?.user) && ((auth.user as any).role === 'admin');
+      return Boolean((auth as { user?: { role?: string } })?.user) && (((auth as { user: { role: string } }).user.role) === 'admin');
     },
     async jwt({ token, user }) {
       if (user) {
-        token.role = (user as any).role || 'user';
-        token.uid = (user as any).id;
+        token.role = (user as { role?: string }).role || 'user';
+        token.uid = (user as { id?: string }).id;
       }
-      return token as any;
+      return token;
     },
     async session({ session, token }) {
-      (session.user as any).role = (token as any).role;
-      (session.user as any).id = (token as any).uid;
+      (session.user as { role?: string }).role = (token as { role?: string }).role;
+      (session.user as { id?: string }).id = (token as { uid?: string }).uid;
       return session;
     },
   },

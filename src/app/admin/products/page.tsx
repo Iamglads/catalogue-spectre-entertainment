@@ -61,7 +61,18 @@ export default function AdminProductsPage() {
   useEffect(() => {
     try { localStorage.setItem('admin:products:status', status); } catch {}
   }, [status]);
-  useEffect(() => { (async () => { try { const r = await fetch('/api/categories'); if (r.ok) { const j = await r.json(); setCategories(j.items || []); } } catch {} })(); }, []);
+  
+  useEffect(() => { 
+    (async () => { 
+      try { 
+        const r = await fetch('/api/categories'); 
+        if (r.ok) { 
+          const j = await r.json(); 
+          setCategories(j.items || []); 
+        } 
+      } catch {} 
+    })(); 
+  }, []);
 
   async function removeItem(id: string) {
     const found = items.find((p) => p._id === id);
@@ -142,7 +153,7 @@ export default function AdminProductsPage() {
                     onClick={() => {
                       const field: 'regularPrice' | 'salePrice' = typeof p.salePrice === 'number' ? 'salePrice' : 'regularPrice';
                       setEditingField(field);
-                      setEditingValue(String((p as any)[field] ?? ''));
+                      setEditingValue(String((p as Record<string, unknown>)[field] ?? ''));
                       setEditingId(p._id);
                     }}
                     title="Cliquer pour modifier le prix"

@@ -49,7 +49,7 @@ export async function GET() {
     const resBody = NextResponse.json({ items });
     resBody.headers.set('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
     return resBody;
-  } catch (e: any) {
+  } catch (e: unknown) {
     return NextResponse.json({ error: e?.message || 'Unknown error' }, { status: 500 });
   }
 }

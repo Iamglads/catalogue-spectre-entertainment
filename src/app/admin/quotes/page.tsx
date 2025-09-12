@@ -23,7 +23,7 @@ export default function AdminQuotesPage() {
     setLoading(false);
   }
 
-  useEffect(() => { load(1); }, []);
+  useEffect(() => { load(1); }, [load]);
 
   return (
     <div className="min-h-screen py-6">

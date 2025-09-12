@@ -6,8 +6,8 @@ import { authOptions } from '@/lib/auth';
 import { finalQuoteEmail, renderItemsTableWithPrices } from '@/lib/emailTemplates';
 
 export async function POST(req: NextRequest, { params }: { params: { id: string } }) {
-  const session = await getServerSession(authOptions as any);
-  if (!session?.user || (session.user as any).role !== 'admin') {
+  const session = await getServerSession(authOptions);
+  if (!session?.user || (session.user as { role?: string }).role !== 'admin') {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
   const { subject, intro, footerNote } = (await req.json()) as { subject?: string; intro?: string; footerNote?: string };
@@ -22,7 +22,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
   const q = await quotes.findOne({ _id: new ObjectId(params.id) });
   if (!q) return NextResponse.json({ error: 'Not found' }, { status: 404 });
 
-  const itemsRaw = (q.items as any[]).map((it) => ({ name: it.name, quantity: it.quantity || 1, unitPrice: it.unitPrice, image: it.image }));
+  const itemsRaw = ((q.items as Record<string, unknown>[]) || []).map((it) => ({ name: it.name as string, quantity: (it.quantity as number) || 1, unitPrice: it.unitPrice as number, image: it.image as string }));
   if (!Array.isArray(itemsRaw) || itemsRaw.length === 0) {
     return NextResponse.json({ error: 'No items to send' }, { status: 400 });
   }
@@ -30,7 +30,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
   if (hasMissing) {
     return NextResponse.json({ error: 'All items must have a unitPrice before sending' }, { status: 400 });
   }
-  const itemsTableHtml = renderItemsTableWithPrices(itemsRaw as any);
+  const itemsTableHtml = renderItemsTableWithPrices(itemsRaw);
   const subtotal = itemsRaw.reduce((acc, it) => acc + ((Number(it.unitPrice) || 0) * (Number(it.quantity) || 1)), 0);
   const tps = subtotal * 0.05;
   const tvq = subtotal * 0.09975;
@@ -43,13 +43,13 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
       <div style="display:flex;justify-content:space-between;margin-top:6px"><span>Total</span><strong>${total.toFixed(2)} $</strong></div>
     </div>`;
 
-  const html = finalQuoteEmail({ toName: (q.customer as any)?.name || 'client', intro, itemsTableHtml, totalsHtml, footerNote });
-  const toEmail = (q.customer as any)?.email;
+  const html = finalQuoteEmail({ toName: ((q.customer as Record<string, unknown>)?.name as string) || 'client', intro, itemsTableHtml, totalsHtml, footerNote });
+  const toEmail = ((q.customer as Record<string, unknown>)?.email as string);
   if (!toEmail) return NextResponse.json({ error: 'Missing client email' }, { status: 400 });
 
   const payload = {
     sender: { email: senderEmail, name: senderName },
-    to: [{ email: toEmail, name: (q.customer as any)?.name }],
+    to: [{ email: toEmail, name: ((q.customer as Record<string, unknown>)?.name as string) }],
     subject: subject || 'Votre soumission',
     htmlContent: html,
   };

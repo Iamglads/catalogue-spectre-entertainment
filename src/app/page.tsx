@@ -63,7 +63,6 @@ export default function Home() {
         setSelectedIds(new Set(list.map((it) => it.id)));
       }
     } catch {}
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

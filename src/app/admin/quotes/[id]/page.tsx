@@ -1,15 +1,13 @@
 "use client";
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import Link from "next/link";
 
 export default function AdminQuoteDetailPage() {
   const params = useParams<{ id: string }>();
   const router = useRouter();
-  const [q, setQ] = useState<any>(null);
+  const [q, setQ] = useState<Record<string, unknown> | null>(null);
   const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState('');
-  const [searchResults, setSearchResults] = useState<any[]>([]);
-  const [searchLoading, setSearchLoading] = useState(false);
 
   async function load() {
     setLoading(true);
@@ -18,16 +16,16 @@ export default function AdminQuoteDetailPage() {
       const data = await res.json();
       // enrich missing images from products/by-ids
       try {
-        const missing: string[] = (data.items || [])
-          .filter((it: any) => !it.image && it.id)
-          .map((it: any) => it.id);
+        const missing: string[] = ((data.items as Record<string, unknown>[]) || [])
+          .filter((it) => !it.image && it.id)
+          .map((it) => it.id as string);
         if (missing.length) {
           const r = await fetch(`/api/products/by-ids?ids=${encodeURIComponent(missing.join(','))}`);
           if (r.ok) {
             const byIds = await r.json();
             const imgMap: Record<string, string | undefined> = {};
-            for (const it of (byIds.items || [])) imgMap[it._id] = (it.images || [])[0];
-            data.items = (data.items || []).map((it: any) => ({ ...it, image: it.image || imgMap[it.id] }));
+            for (const it of (byIds.items || [])) imgMap[it._id] = ((it.images as string[]) || [])[0];
+            data.items = ((data.items as Record<string, unknown>[]) || []).map((it) => ({ ...it, image: it.image || imgMap[it.id as string] }));
           }
         }
       } catch {}
@@ -36,7 +34,7 @@ export default function AdminQuoteDetailPage() {
     setLoading(false);
   }
 
-  useEffect(() => { load(); }, [params.id]);
+  useEffect(() => { load(); }, [params.id, load]);
 
   async function save() {
     const res = await fetch(`/api/admin/quotes/${params.id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(q) });
@@ -44,7 +42,7 @@ export default function AdminQuoteDetailPage() {
   }
 
   async function sendQuote() {
-    const subject = `Soumission - ${q.customer?.name || ''}`.trim();
+    const subject = `Soumission - ${((q?.customer as Record<string, unknown>)?.name as string) || ''}`.trim();
     const intro = 'Veuillez trouver ci-dessous le détail de votre soumission. N’hésitez pas à nous écrire pour toute modification.';
     const footerNote = 'Merci pour votre confiance — Spectre Entertainment';
     const res = await fetch(`/api/admin/quotes/${params.id}/send`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ subject, intro, footerNote }) });
@@ -55,12 +53,12 @@ export default function AdminQuoteDetailPage() {
   if (!q) return <div className="p-6 text-sm text-gray-600">Introuvable</div>;
 
   // Colour hints for missing prices
-  const hasMissingPrice = Array.isArray(q.items) && q.items.some((it: any) => typeof it.unitPrice !== 'number');
+  const hasMissingPrice = Array.isArray(q.items) && (q.items as Record<string, unknown>[]).some((it) => typeof it.unitPrice !== 'number');
 
   return (
     <div className="min-h-screen py-6 space-y-3 mx-auto w-full max-w-5xl">
       <div className="flex items-center gap-2">
-        <a href="/admin/quotes" className="text-sm underline">← Retour</a>
+        <Link href="/admin/quotes" className="text-sm underline">← Retour</Link>
         {hasMissingPrice && <div className="text-xs text-red-600">Des articles n’ont pas de prix — veuillez compléter avant l’envoi.</div>}
         <button className="ml-auto rounded border px-3 py-1.5 text-sm" onClick={save}>Enregistrer</button>
         <button className="rounded border px-3 py-1.5 text-sm bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50" onClick={sendQuote} disabled={hasMissingPrice}>Envoyer la soumission</button>
@@ -69,26 +67,26 @@ export default function AdminQuoteDetailPage() {
         <div className="rounded border bg-white p-3 text-sm">
           <div className="font-medium mb-2">Client</div>
           <div className="grid grid-cols-2 gap-2">
-            <label>Nom<input className="w-full rounded border px-2 py-1" value={q.customer?.name || ''} onChange={(e) => setQ((x: any) => ({ ...x, customer: { ...x.customer, name: e.target.value } }))} /></label>
-            <label>Email<input className="w-full rounded border px-2 py-1" value={q.customer?.email || ''} onChange={(e) => setQ((x: any) => ({ ...x, customer: { ...x.customer, email: e.target.value } }))} /></label>
-            <label>Téléphone<input className="w-full rounded border px-2 py-1" value={q.customer?.phone || ''} onChange={(e) => setQ((x: any) => ({ ...x, customer: { ...x.customer, phone: e.target.value } }))} /></label>
-            <label>Entreprise<input className="w-full rounded border px-2 py-1" value={q.customer?.company || ''} onChange={(e) => setQ((x: any) => ({ ...x, customer: { ...x.customer, company: e.target.value } }))} /></label>
+            <label>Nom<input className="w-full rounded border px-2 py-1" value={((q.customer as Record<string, unknown>)?.name as string) || ''} onChange={(e) => setQ((x) => ({ ...x, customer: { ...(x?.customer as Record<string, unknown>), name: e.target.value } }))} /></label>
+            <label>Email<input className="w-full rounded border px-2 py-1" value={((q.customer as Record<string, unknown>)?.email as string) || ''} onChange={(e) => setQ((x) => ({ ...x, customer: { ...(x?.customer as Record<string, unknown>), email: e.target.value } }))} /></label>
+            <label>Téléphone<input className="w-full rounded border px-2 py-1" value={((q.customer as Record<string, unknown>)?.phone as string) || ''} onChange={(e) => setQ((x) => ({ ...x, customer: { ...(x?.customer as Record<string, unknown>), phone: e.target.value } }))} /></label>
+            <label>Entreprise<input className="w-full rounded border px-2 py-1" value={((q.customer as Record<string, unknown>)?.company as string) || ''} onChange={(e) => setQ((x) => ({ ...x, customer: { ...(x?.customer as Record<string, unknown>), company: e.target.value } }))} /></label>
           </div>
         </div>
         <div className="rounded border bg-white p-3 text-sm">
           <div className="font-medium mb-2">Livraison</div>
           <label className="block mb-2">Méthode
-            <select className="w-full rounded border px-2 py-1" value={q.delivery?.method || 'pickup'} onChange={(e) => setQ((x: any) => ({ ...x, delivery: { ...(x.delivery || {}), method: e.target.value } }))}>
+            <select className="w-full rounded border px-2 py-1" value={((q.delivery as Record<string, unknown>)?.method as string) || 'pickup'} onChange={(e) => setQ((x) => ({ ...x, delivery: { ...(x?.delivery as Record<string, unknown> || {}), method: e.target.value } }))}>
               <option value="pickup">Ramassage</option>
               <option value="delivery">Livraison</option>
             </select>
           </label>
           <div className="grid grid-cols-2 gap-2">
-            <label>Ligne 1<input className="w-full rounded border px-2 py-1" value={q.delivery?.address?.line1 || ''} onChange={(e) => setQ((x: any) => ({ ...x, delivery: { ...(x.delivery || {}), address: { ...(x.delivery?.address || {}), line1: e.target.value } } }))} /></label>
-            <label>Ligne 2<input className="w-full rounded border px-2 py-1" value={q.delivery?.address?.line2 || ''} onChange={(e) => setQ((x: any) => ({ ...x, delivery: { ...(x.delivery || {}), address: { ...(x.delivery?.address || {}), line2: e.target.value } } }))} /></label>
-            <label>Ville<input className="w-full rounded border px-2 py-1" value={q.delivery?.address?.city || ''} onChange={(e) => setQ((x: any) => ({ ...x, delivery: { ...(x.delivery || {}), address: { ...(x.delivery?.address || {}), city: e.target.value } } }))} /></label>
-            <label>Province<input className="w-full rounded border px-2 py-1" value={q.delivery?.address?.province || ''} onChange={(e) => setQ((x: any) => ({ ...x, delivery: { ...(x.delivery || {}), address: { ...(x.delivery?.address || {}), province: e.target.value } } }))} /></label>
-            <label>Code postal<input className="w-full rounded border px-2 py-1" value={q.delivery?.address?.postalCode || ''} onChange={(e) => setQ((x: any) => ({ ...x, delivery: { ...(x.delivery || {}), address: { ...(x.delivery?.address || {}), postalCode: e.target.value } } }))} /></label>
+            <label>Ligne 1<input className="w-full rounded border px-2 py-1" value={(((q.delivery as Record<string, unknown>)?.address as Record<string, unknown>)?.line1 as string) || ''} onChange={(e) => setQ((x) => ({ ...x, delivery: { ...(x?.delivery as Record<string, unknown> || {}), address: { ...((x?.delivery as Record<string, unknown>)?.address as Record<string, unknown> || {}), line1: e.target.value } } }))} /></label>
+            <label>Ligne 2<input className="w-full rounded border px-2 py-1" value={(((q.delivery as Record<string, unknown>)?.address as Record<string, unknown>)?.line2 as string) || ''} onChange={(e) => setQ((x) => ({ ...x, delivery: { ...(x?.delivery as Record<string, unknown> || {}), address: { ...((x?.delivery as Record<string, unknown>)?.address as Record<string, unknown> || {}), line2: e.target.value } } }))} /></label>
+            <label>Ville<input className="w-full rounded border px-2 py-1" value={(((q.delivery as Record<string, unknown>)?.address as Record<string, unknown>)?.city as string) || ''} onChange={(e) => setQ((x) => ({ ...x, delivery: { ...(x?.delivery as Record<string, unknown> || {}), address: { ...((x?.delivery as Record<string, unknown>)?.address as Record<string, unknown> || {}), city: e.target.value } } }))} /></label>
+            <label>Province<input className="w-full rounded border px-2 py-1" value={(((q.delivery as Record<string, unknown>)?.address as Record<string, unknown>)?.province as string) || ''} onChange={(e) => setQ((x) => ({ ...x, delivery: { ...(x?.delivery as Record<string, unknown> || {}), address: { ...((x?.delivery as Record<string, unknown>)?.address as Record<string, unknown> || {}), province: e.target.value } } }))} /></label>
+            <label>Code postal<input className="w-full rounded border px-2 py-1" value={(((q.delivery as Record<string, unknown>)?.address as Record<string, unknown>)?.postalCode as string) || ''} onChange={(e) => setQ((x) => ({ ...x, delivery: { ...(x?.delivery as Record<string, unknown> || {}), address: { ...((x?.delivery as Record<string, unknown>)?.address as Record<string, unknown> || {}), postalCode: e.target.value } } }))} /></label>
           </div>
         </div>
       </div>
@@ -130,34 +128,33 @@ export default function AdminQuoteDetailPage() {
           </div>
         )}
 
-        {Array.isArray(q.items) && q.items.map((it: any, idx: number) => (
+        {Array.isArray(q.items) && (q.items as Record<string, unknown>[]).map((it, idx: number) => (
           <div key={`${it.id}-${idx}`} className={`grid grid-cols-12 gap-2 items-center border-b py-2 ${!(Number.isFinite(Number(it.unitPrice))) ? 'bg-red-50' : ''}`}>
             <div className="col-span-6 min-w-0 flex items-center gap-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              {it.image ? (
-                <img src={it.image} alt="" className="h-10 w-14 rounded object-cover border" />
+              {(it.image as string) ? (
+                <img src={it.image as string} alt="" className="h-10 w-14 rounded object-cover border" />
               ) : (
                 <div className="h-10 w-14 rounded border bg-gray-100" />
               )}
-              <div className="text-sm font-medium truncate">{it.name}</div>
+              <div className="text-sm font-medium truncate">{it.name as string}</div>
             </div>
             <div className="col-span-2">
-              <input type="number" step="0.01" className="w-24 rounded border px-2 py-1 text-sm" value={it.unitPrice ?? ''} onChange={(e) => setQ((x: any) => {
-                const items = [...(x.items || [])];
+              <input type="number" step="0.01" className="w-24 rounded border px-2 py-1 text-sm" value={(it.unitPrice as number) ?? ''} onChange={(e) => setQ((x) => {
+                const items = [...((x?.items as Record<string, unknown>[]) || [])];
                 const val = e.target.value === '' ? undefined : Number(e.target.value);
                 items[idx] = { ...items[idx], unitPrice: val };
                 return { ...x, items };
               })} />
             </div>
             <div className="col-span-2">
-              <input type="number" min={1} className="w-20 rounded border px-2 py-1 text-sm" value={it.quantity || 1} onChange={(e) => setQ((x: any) => {
-                const items = [...(x.items || [])];
+              <input type="number" min={1} className="w-20 rounded border px-2 py-1 text-sm" value={(it.quantity as number) || 1} onChange={(e) => setQ((x) => {
+                const items = [...((x?.items as Record<string, unknown>[]) || [])];
                 items[idx] = { ...items[idx], quantity: Math.max(1, Number(e.target.value) || 1) };
                 return { ...x, items };
               })} />
             </div>
             <div className="col-span-2 text-right text-sm text-gray-800">
-              {Number.isFinite(Number(it.unitPrice)) ? ((Number(it.unitPrice) * (Number(it.quantity) || 1)).toFixed(2) + ' $') : '—'}
+              {Number.isFinite(Number(it.unitPrice)) ? ((Number(it.unitPrice as number) * (Number(it.quantity as number) || 1)).toFixed(2) + ' $') : '—'}
             </div>
           </div>
         ))}
@@ -165,7 +162,7 @@ export default function AdminQuoteDetailPage() {
         {/* Totaux */}
         <div className="mt-3 max-w-sm ml-auto text-sm">
           {(() => {
-            const subtotal = (q.items || []).reduce((acc: number, it: any) => acc + ((Number(it.unitPrice) || 0) * (Number(it.quantity) || 1)), 0);
+            const subtotal = ((q.items as Record<string, unknown>[]) || []).reduce((acc: number, it) => acc + ((Number(it.unitPrice as number) || 0) * (Number(it.quantity as number) || 1)), 0);
             const tps = subtotal * 0.05;
             const tvq = subtotal * 0.09975;
             const total = subtotal + tps + tvq;
