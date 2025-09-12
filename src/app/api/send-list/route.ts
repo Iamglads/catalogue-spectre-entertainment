@@ -147,7 +147,7 @@ export async function POST(req: NextRequest) {
       customer: { name: body.name, email: body.email, phone: body.phone, company: body.company },
       delivery: { method: body.deliveryMethod || 'pickup', address: body.address || null },
       message: body.message || '',
-      items: docs.map((d) => ({ id: String(d._id), name: (d as any).name, quantity: qtyMap.get(String(d._id)) ?? 1 })),
+      items: docs.map((d) => ({ id: String(d._id), name: (d as Record<string, unknown>).name, quantity: qtyMap.get(String(d._id)) ?? 1 })),
       priced: Boolean(priced),
       totals: priced ? { subtotal, tps, tvq, total } : null,
     };

@@ -2,14 +2,18 @@
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from "next/link";
+import { useCallback } from 'react';
 
 export default function AdminQuoteDetailPage() {
   const params = useParams<{ id: string }>();
   const router = useRouter();
   const [q, setQ] = useState<Record<string, unknown> | null>(null);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState('');
+  const [searchResults, setSearchResults] = useState<Array<{ _id: string; name: string; images?: string[]; salePrice?: number; regularPrice?: number }>>([]);
+  const [searchLoading, setSearchLoading] = useState(false);
 
-  async function load() {
+  const load = useCallback(async () => {
     setLoading(true);
     const res = await fetch(`/api/admin/quotes/${params.id}`);
     if (res.ok) {
@@ -32,9 +36,9 @@ export default function AdminQuoteDetailPage() {
       setQ(data);
     }
     setLoading(false);
-  }
+  }, [params.id]);
 
-  useEffect(() => { load(); }, [params.id, load]);
+  useEffect(() => { load(); }, [load]);
 
   async function save() {
     const res = await fetch(`/api/admin/quotes/${params.id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(q) });
@@ -43,7 +47,7 @@ export default function AdminQuoteDetailPage() {
 
   async function sendQuote() {
     const subject = `Soumission - ${((q?.customer as Record<string, unknown>)?.name as string) || ''}`.trim();
-    const intro = 'Veuillez trouver ci-dessous le détail de votre soumission. N’hésitez pas à nous écrire pour toute modification.';
+    const intro = 'Veuillez trouver ci-dessous le détail de votre soumission. N'hésitez pas à nous écrire pour toute modification.';
     const footerNote = 'Merci pour votre confiance — Spectre Entertainment';
     const res = await fetch(`/api/admin/quotes/${params.id}/send`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ subject, intro, footerNote }) });
     if (res.ok) router.push('/admin/quotes');
@@ -59,7 +63,7 @@ export default function AdminQuoteDetailPage() {
     <div className="min-h-screen py-6 space-y-3 mx-auto w-full max-w-5xl">
       <div className="flex items-center gap-2">
         <Link href="/admin/quotes" className="text-sm underline">← Retour</Link>
-        {hasMissingPrice && <div className="text-xs text-red-600">Des articles n’ont pas de prix — veuillez compléter avant l’envoi.</div>}
+        {hasMissingPrice && <div className="text-xs text-red-600">Des articles n'ont pas de prix — veuillez compléter avant l'envoi.</div>}
         <button className="ml-auto rounded border px-3 py-1.5 text-sm" onClick={save}>Enregistrer</button>
         <button className="rounded border px-3 py-1.5 text-sm bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50" onClick={sendQuote} disabled={hasMissingPrice}>Envoyer la soumission</button>
       </div>
@@ -103,25 +107,41 @@ export default function AdminQuoteDetailPage() {
         {search && (
           <div className="mb-3 rounded border">
             {searchResults.length === 0 && !searchLoading && <div className="px-3 py-2 text-xs text-gray-500">Aucun résultat</div>}
-            {searchResults.map((p) => {
-              const exists = Array.isArray(q.items) && q.items.some((it: any) => it.id === p._id);
+            {searchResults.map((p: { _id: string; name: string; images?: string[]; salePrice?: number; regularPrice?: number }) => {
+              const exists = Array.isArray(q.items) && (q.items as Array<{ id: string }>).some((it) => it.id === p._id);
               return (
                 <button
                   key={p._id}
-                  className={`w-full flex items-center justify-between px-3 py-2 border-b text-left ${exists ? 'bg-green-50 cursor-not-allowed' : 'hover:bg-gray-50'}`}
+                  className={`w-full flex items-center justify-between px-3 py-2 border-b text-left ${
+                    exists ? 'bg-green-50 cursor-not-allowed' : 'hover:bg-gray-50'
+                  }`}
                   onClick={() => {
                     if (exists) return;
-                    setQ((x: any) => ({ ...x, items: [...(x.items || []), { id: p._id, name: p.name, quantity: 1, unitPrice: p.salePrice ?? p.regularPrice, image: (p.images||[])[0] }] }));
+                    setQ((x) => ({ 
+                      ...x, 
+                      items: [
+                        ...((x?.items as Array<Record<string, unknown>>) || []), 
+                        { 
+                          id: p._id, 
+                          name: p.name, 
+                          quantity: 1, 
+                          unitPrice: p.salePrice ?? p.regularPrice, 
+                          image: (p.images || [])[0] 
+                        }
+                      ] 
+                    }));
                   }}
                   disabled={exists}
                   aria-disabled={exists}
                 >
                   <div className="flex items-center gap-3 min-w-0">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={(p.images||[])[0] || ''} alt="" className="h-10 w-14 rounded object-cover border" />
+                    <img src={(p.images || [])[0] || ''} alt="" className="h-10 w-14 rounded object-cover border" />
                     <div className="text-sm font-medium truncate">{p.name}</div>
                   </div>
-                  <div className="text-sm text-gray-700">{p.salePrice ?? p.regularPrice ? `${(p.salePrice ?? p.regularPrice).toFixed(2)} $` : '—'} {exists && <span className="ml-2 text-green-700 text-xs font-semibold">Ajouté</span>}</div>
+                  <div className="text-sm text-gray-700">
+                    {p.salePrice ?? p.regularPrice ? `${(p.salePrice ?? p.regularPrice)?.toFixed(2)} $` : '—'} 
+                    {exists && <span className="ml-2 text-green-700 text-xs font-semibold">Ajouté</span>}
+                  </div>
                 </button>
               );
             })}
@@ -140,7 +160,7 @@ export default function AdminQuoteDetailPage() {
             </div>
             <div className="col-span-2">
               <input type="number" step="0.01" className="w-24 rounded border px-2 py-1 text-sm" value={(it.unitPrice as number) ?? ''} onChange={(e) => setQ((x) => {
-                const items = [...((x?.items as Record<string, unknown>[]) || [])];
+                const items = [...((x?.items as Array<Record<string, unknown>>) || [])];
                 const val = e.target.value === '' ? undefined : Number(e.target.value);
                 items[idx] = { ...items[idx], unitPrice: val };
                 return { ...x, items };
@@ -148,7 +168,7 @@ export default function AdminQuoteDetailPage() {
             </div>
             <div className="col-span-2">
               <input type="number" min={1} className="w-20 rounded border px-2 py-1 text-sm" value={(it.quantity as number) || 1} onChange={(e) => setQ((x) => {
-                const items = [...((x?.items as Record<string, unknown>[]) || [])];
+                const items = [...((x?.items as Array<Record<string, unknown>>) || [])];
                 items[idx] = { ...items[idx], quantity: Math.max(1, Number(e.target.value) || 1) };
                 return { ...x, items };
               })} />
@@ -162,7 +182,7 @@ export default function AdminQuoteDetailPage() {
         {/* Totaux */}
         <div className="mt-3 max-w-sm ml-auto text-sm">
           {(() => {
-            const subtotal = ((q.items as Record<string, unknown>[]) || []).reduce((acc: number, it) => acc + ((Number(it.unitPrice as number) || 0) * (Number(it.quantity as number) || 1)), 0);
+            const subtotal = ((q.items as Array<Record<string, unknown>>) || []).reduce((acc: number, it) => acc + ((Number(it.unitPrice as number) || 0) * (Number(it.quantity as number) || 1)), 0);
             const tps = subtotal * 0.05;
             const tvq = subtotal * 0.09975;
             const total = subtotal + tps + tvq;
@@ -180,5 +200,3 @@ export default function AdminQuoteDetailPage() {
     </div>
   );
 }
-
-

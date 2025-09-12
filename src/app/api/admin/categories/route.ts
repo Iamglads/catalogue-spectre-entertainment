@@ -6,7 +6,7 @@ import { authOptions } from '@/lib/auth';
 import { slugify } from '@/lib/slug';
 
 // List + create
-export async function GET(req: NextRequest) {
+export async function GET() {
   const session = await getServerSession(authOptions);
   if (!session?.user || (session.user as { role?: string }).role !== 'admin') {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });

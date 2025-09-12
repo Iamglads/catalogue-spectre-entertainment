@@ -15,6 +15,10 @@ const getCategoriesCached = unstable_cache(
       .sort({ fullPath: 1 })
       .toArray();
     const items = docs.map((d: any) => ({
+    }
+    )
+    )
+    const items = docs.map((d: Document) => ({
       _id: String(d._id),
       name: d.name as string,
       slug: d.slug as string,

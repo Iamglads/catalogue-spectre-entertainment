@@ -1,6 +1,5 @@
 "use client";
-import Link from "next/link";
-import { Eye, X, ChevronLeft, ChevronRight, List, Heart } from "lucide-react";
+import { Eye, X, ChevronLeft, ChevronRight, Heart } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { addOrUpdateItem, removeItem, loadList } from '@/lib/listStorage';
 import Breadcrumbs from './_components/Breadcrumbs';

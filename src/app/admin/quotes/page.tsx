@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useCallback } from 'react';
 
 type Quote = { _id: string; createdAt: string; status: string; customer: { name: string; email: string }; totals?: { total: number } | null };
 
@@ -11,7 +12,7 @@ export default function AdminQuotesPage() {
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
 
-  async function load(p = page) {
+  const load = useCallback(async (p = page) => {
     setLoading(true);
     const res = await fetch(`/api/admin/quotes?page=${p}&pageSize=20`);
     if (res.ok) {
@@ -21,9 +22,8 @@ export default function AdminQuotesPage() {
       setTotalPages(j.totalPages || 1);
     }
     setLoading(false);
-  }
+  }, [page]);
 
-  useEffect(() => { load(1); }, [load]);
 
   return (
     <div className="min-h-screen py-6">
