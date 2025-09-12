@@ -3,9 +3,10 @@ import Link from "next/link";
 import { Eye, X, ChevronLeft, ChevronRight, List, Heart } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { addOrUpdateItem, removeItem, loadList } from '@/lib/listStorage';
-import CategorySelect from './_components/CategorySelect';
+import Breadcrumbs from './_components/Breadcrumbs';
+import QuickActions from './_components/QuickActions';
 import RealisationsSlider from './_components/RealisationsSlider';
-import { useSession } from 'next-auth/react';
+import { useSearchParams } from 'next/navigation';
 
 type Product = {
   _id: string;
@@ -30,7 +31,7 @@ type ApiResponse = {
 };
 
 export default function Home() {
-  const { data: session } = useSession();
+  const searchParams = useSearchParams();
   const [q, setQ] = useState("");
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -41,6 +42,14 @@ export default function Home() {
   const [viewer, setViewer] = useState<Product | null>(null);
   const [viewerIndex, setViewerIndex] = useState(0);
   const [quantities, setQuantities] = useState<Record<string, number>>({});
+
+  // Initialize from URL params
+  useEffect(() => {
+    const urlQ = searchParams.get('q');
+    const urlCategoryId = searchParams.get('categoryId');
+    if (urlQ) setQ(urlQ);
+    if (urlCategoryId) setCategoryId(urlCategoryId);
+  }, [searchParams]);
 
   // Persist selection + quantities in localStorage (legacy) and initialize from new list storage
   useEffect(() => {
@@ -179,6 +188,8 @@ export default function Home() {
 
   return (
     <div className="container-max section-padding py-8">
+      <Breadcrumbs />
+      
       <header className="mb-8 space-y-6">
         <div className="text-center space-y-2">
           <h1 className="text-display text-gray-900">Catalogue Spectre</h1>
@@ -186,30 +197,7 @@ export default function Home() {
             Découvrez notre collection complète de décors et équipements pour vos événements
           </p>
         </div>
-        <div className="flex items-center gap-4 flex-wrap justify-center">
-        <input
-          value={q}
-          onChange={(e) => {
-            setPage(1);
-            setQ(e.target.value);
-          }}
-          placeholder="Rechercher dans le catalogue..."
-          className="input w-full max-w-lg"
-        />
-        <div className="flex items-center gap-3 flex-wrap justify-center">
-          <CategorySelect categories={categories} value={categoryId} onChange={(id) => { setPage(1); setCategoryId(id); }} />
-          <Link href="/liste" className="btn btn-secondary">
-            <List className="h-4 w-4"/>
-            Ma liste
-          </Link>
-          {session?.user && (session.user as any).role === 'admin' && (
-            <>
-              <Link href="/admin/products" className="hidden sm:inline-flex btn btn-ghost">Admin produits</Link>
-              <Link href="/admin/categories" className="hidden sm:inline-flex btn btn-ghost">Admin catégories</Link>
-            </>
-          )}
-        </div>
-        </div>
+        <QuickActions />
       </header>
 
       {loading ? (

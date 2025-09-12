@@ -1,11 +1,10 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { Heart } from "lucide-react";
 import ListItemRow, { ProductLite } from "./_components/ListItemRow";
 import { loadList, getIds, getQuantitiesMap, removeItem, setQuantity, clearList } from '@/lib/listStorage';
 import SendListForm from "./_components/SendListForm";
-
-// moved ProductLite to component file for reuse
 
 export default function ListePage() {
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
