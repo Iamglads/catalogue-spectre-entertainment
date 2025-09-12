@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Pencil, Trash2, Plus } from "lucide-react";
+import { useCallback } from "react";
 
 type Product = { _id: string; name: string; images?: string[]; regularPrice?: number; salePrice?: number; categoryIds?: string[] };
 type Category = { _id: string; label: string };
@@ -24,7 +25,7 @@ export default function AdminProductsPage() {
   const abortRef = useRef<AbortController | null>(null);
   const lastKeyRef = useRef<string>('');
 
-  async function load() {
+  const load = useCallback(async () => {
     const key = JSON.stringify({ q, status, page, pageSize });
     if (key === lastKeyRef.current) return; // avoid duplicate fetch
     lastKeyRef.current = key;
@@ -43,7 +44,7 @@ export default function AdminProductsPage() {
       setItems([]);
       setError('Non autorisé - veuillez vous connecter');
     }
-  }
+  }, [q, status, page, pageSize]);
 
   // Restore preferences on mount
   useEffect(() => {
@@ -55,7 +56,7 @@ export default function AdminProductsPage() {
     } catch {}
   }, []);
 
-  useEffect(() => { load(); }, [page, pageSize, status]);
+  useEffect(() => { load(); }, [load]);
 
   // Persist preferences
   useEffect(() => {
@@ -85,7 +86,7 @@ export default function AdminProductsPage() {
       <div className="mb-4 flex items-center gap-2">
         <input className="rounded border px-2 py-1 text-sm" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Recherche…" />
         <button className="rounded border px-3 py-1.5 text-sm" onClick={() => { setPage(1); try { localStorage.setItem('admin:products:q', q); } catch {}; load(); }}>Rechercher</button>
-        <select className="rounded border px-2 py-1 text-sm" value={status} onChange={(e) => { setStatus(e.target.value as any); setPage(1); }}>
+        <select className="rounded border px-2 py-1 text-sm" value={status} onChange={(e) => { setStatus(e.target.value as 'all' | 'published' | 'draft'); setPage(1); }}>
           <option value="all">Tous</option>
           <option value="published">Publiés</option>
           <option value="draft">Brouillons</option>

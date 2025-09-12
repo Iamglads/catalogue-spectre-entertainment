@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Search, Phone, ExternalLink, ChevronDown, Home, Grid3X3, Heart, User, Settings } from 'lucide-react';
+import { Menu, X, Search, Phone, ExternalLink, ChevronDown, Grid3X3, Heart, Settings } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 import ListCounter from './ListCounter';
 import ThemeToggle from '../theme-toggle';
@@ -24,7 +24,7 @@ export default function Navigation() {
   const [searchQuery, setSearchQuery] = useState('');
   const pathname = usePathname();
   const { data: session } = useSession();
-  const isAdmin = (session?.user as any)?.role === 'admin';
+  const isAdmin = (session?.user as { role?: string })?.role === 'admin';
 
   // Load categories
   useEffect(() => {

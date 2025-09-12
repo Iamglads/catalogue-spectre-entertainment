@@ -1,6 +1,6 @@
 "use client";
 import Link from 'next/link';
-import { Heart, Grid3X3, Phone, Mail, MapPin } from 'lucide-react';
+import { Heart, Grid3X3, Phone, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { loadList } from '@/lib/listStorage';
 

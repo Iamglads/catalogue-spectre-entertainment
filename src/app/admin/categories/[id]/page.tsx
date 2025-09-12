@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useCallback } from 'react';
 
 type Category = { _id: string; name: string; fullPath: string; depth: number; parentId: string | null };
 
@@ -12,7 +13,7 @@ export default function AdminCategoryEditPage() {
   const [form, setForm] = useState<{ name: string; parentId: string | null }>({ name: '', parentId: null });
   const [all, setAll] = useState<Category[]>([]);
 
-  async function load() {
+  const load = useCallback(async () => {
     const listRes = await fetch('/api/admin/categories');
     if (listRes.ok) {
       const j = await listRes.json();
@@ -25,9 +26,8 @@ export default function AdminCategoryEditPage() {
         setForm({ name: j.name || '', parentId: j.parentId ?? null });
       }
     }
-  }
+  }, [params.id, isNew]);
 
-  useEffect(() => { load(); }, [params.id, isNew, load]);
 
   const parentOptions = useMemo(() => {
     return ([{ _id: '', name: '(aucun parent)', depth: 0 }] as Array<{ _id: string; name: string; depth: number }>).concat(all);
