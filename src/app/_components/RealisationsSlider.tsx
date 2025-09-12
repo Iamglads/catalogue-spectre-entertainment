@@ -44,9 +44,12 @@ export default function RealisationsSlider() {
   const r3 = items.slice(third * 2);
 
   return (
-    <section className="my-10">
-      <h2 className="mb-3 text-lg font-semibold">Réalisations</h2>
-      <div className="space-y-3">
+    <section className="my-16">
+      <div className="text-center mb-8">
+        <h2 className="text-headline mb-2">Nos réalisations</h2>
+        <p className="text-body text-gray-600">Découvrez quelques-uns de nos projets récents</p>
+      </div>
+      <div className="space-y-4">
         <Row items={r1} reverse={false} duration={40} />
         <Row items={r2} reverse duration={55} />
         <Row items={r3} reverse={false} duration={48} />

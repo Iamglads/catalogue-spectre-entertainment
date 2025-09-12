@@ -20,7 +20,7 @@ export default function ThemeToggle() {
 
   return (
     <button
-      className="inline-flex items-center justify-center rounded border p-2 hover:bg-gray-50"
+      className="inline-flex items-center justify-center rounded-lg p-2 hover:bg-gray-100 transition-colors text-gray-600"
       onClick={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}
       aria-label={theme === 'light' ? 'Activer le thème sombre' : 'Activer le thème clair'}
       title={theme === 'light' ? 'Activer le thème sombre' : 'Activer le thème clair'}

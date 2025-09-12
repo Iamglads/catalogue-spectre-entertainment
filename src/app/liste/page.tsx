@@ -73,13 +73,16 @@ export default function ListePage() {
   }
 
   return (
-    <div className="min-h-screen p-4">
-      <div className="mb-6 flex items-center justify-between gap-3">
-        <h1 className="text-xl font-semibold">Ma liste</h1>
+    <div className="container-max section-padding py-8">
+      <div className="mb-8 flex items-center justify-between gap-4">
+        <div>
+          <h1 className="text-headline">Ma liste</h1>
+          <p className="text-caption mt-1">Gérez votre sélection d'équipements</p>
+        </div>
         <div className="flex items-center gap-2">
-          <Link href="/" className="text-sm underline">← Retour au catalogue</Link>
+          <Link href="/" className="btn btn-ghost">← Retour au catalogue</Link>
           <button
-            className="rounded border px-3 py-1.5 text-sm hover:bg-gray-50"
+            className="btn btn-secondary"
             onClick={() => { setSelectedIds([]); setQuantities({}); }}
           >
             Vider
@@ -88,12 +91,18 @@ export default function ListePage() {
       </div>
 
       {loading ? (
-        <div className="text-sm text-gray-500">Chargement…</div>
+        <div className="text-center py-12">
+          <div className="text-body text-gray-500">Chargement de votre liste…</div>
+        </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-3">
             {totalItems === 0 ? (
-              <div className="text-sm text-gray-600">Votre liste est vide. <Link className="underline" href="/">Parcourir le catalogue</Link></div>
+              <div className="text-center py-12 card">
+                <Heart className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+                <div className="text-body text-gray-600 mb-4">Votre liste est vide</div>
+                <Link className="btn btn-primary" href="/">Parcourir le catalogue</Link>
+              </div>
             ) : (
               items.map((p) => (
                 <ListItemRow

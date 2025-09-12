@@ -39,15 +39,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${heading.variable} antialiased`}>
         <Providers>
-        <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
-          <div className="w-full px-4 sm:px-6 h-14 flex items-center gap-3">
+        <header className="sticky top-0 z-40 glass border-b border-gray-200/50">
+          <div className="container-max section-padding h-16 flex items-center gap-4">
             <Link href="/" className="inline-flex items-center gap-2" aria-label="Accueil catalogue">
-              <Image src="/Logo.png" alt="Spectre Entertainment" width={160} height={40} />
+              <Image src="/Logo.png" alt="Spectre Entertainment" width={160} height={40} className="h-8 w-auto" />
             </Link>
-            <div className="ml-auto flex items-center gap-3">
+            <div className="ml-auto flex items-center gap-2">
               <a
                 href="tel:4503320894"
-                className="hidden sm:inline-flex items-center gap-2 rounded border px-3 py-1.5 text-sm hover:bg-gray-50"
+                className="hidden sm:inline-flex items-center gap-2 btn btn-ghost text-sm"
                 title="Besoin d'aide ? Contactez-nous"
               >
                 <Phone className="h-4 w-4" />
@@ -57,7 +57,7 @@ export default function RootLayout({
                 href="https://spectre-entertainment.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden sm:inline-flex items-center gap-2 rounded border px-3 py-1.5 text-sm hover:bg-gray-50"
+                className="hidden sm:inline-flex items-center gap-2 btn btn-ghost text-sm"
               >
                 Site principal
               </a>
@@ -67,23 +67,23 @@ export default function RootLayout({
             </div>
           </div>
         </header>
-        <main className="w-full px-2 sm:px-6">
+        <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
           {children}
         </main>
-        <footer className="mt-8 w-full border-t bg-white/60">
-          <div className="w-full px-4 sm:px-6 py-6 text-center text-xs text-gray-600 space-y-1">
+        <footer className="border-t bg-white/80 backdrop-blur-sm">
+          <div className="container-max section-padding py-8 text-center text-sm text-gray-600 space-y-2">
             <div>
               Spectre Entertainment — Tous droits réservés ·{' '}
               <a
                 href="https://spectre-entertainment.com/politique-de-confidentialite/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline hover:text-gray-800"
+                className="text-brand hover:underline transition-colors"
               >
                 Politique de confidentialité
               </a>
             </div>
-            <div>940 Jean‑Neveu, Longueuil (Québec) J4G 2M1</div>
+            <div className="text-gray-500">940 Jean‑Neveu, Longueuil (Québec) J4G 2M1</div>
           </div>
         </footer>
         </Providers>

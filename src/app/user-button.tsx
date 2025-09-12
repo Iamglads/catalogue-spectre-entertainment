@@ -7,7 +7,7 @@ export default function UserButton() {
   if (!isAuthed) return null;
   return (
     <button
-      className="rounded border px-3 py-1.5 text-sm hover:bg-gray-50"
+      className="btn btn-ghost text-sm"
       onClick={() => signOut({ callbackUrl: '/' })}
     >
       Se déconnecter
