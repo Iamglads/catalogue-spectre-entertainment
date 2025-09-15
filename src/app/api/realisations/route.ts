@@ -1,8 +1,10 @@
 import { NextResponse } from 'next/server';
+import { unstable_cache } from 'next/cache';
+import { v2 as cloudinary } from 'cloudinary';
 
 // Fetch images from the external "RÉALISATIONS" section and return a list of URLs
-export async function GET() {
-  try {
+const getRealisationsCached = unstable_cache(
+  async () => {
     const url = 'https://spectre-entertainment.com/catalogue-decors/';
     const res = await fetch(url, {
       cache: 'no-store',
@@ -46,11 +48,40 @@ export async function GET() {
     }
 
     const items = Array.from(urls).slice(0, 30);
-    const resBody = NextResponse.json({ items });
+
+    // Optional Cloudinary migration
+    const apiKey = process.env.CLOUDINARY_API_KEY;
+    const cloud = process.env.CLOUDINARY_CLOUD_NAME;
+    const secret = process.env.CLOUDINARY_API_SECRET;
+    const folder = process.env.CLOUDINARY_FOLDER || 'spectre/realisations';
+    let finalItems = items;
+    if (apiKey && cloud && secret) {
+      cloudinary.config({ cloud_name: cloud, api_key: apiKey, api_secret: secret });
+      const uploaded: string[] = [];
+      for (const src of items) {
+        try {
+          const r = await cloudinary.uploader.upload(src, { folder, overwrite: false, unique_filename: true, resource_type: 'image' });
+          uploaded.push(r.secure_url);
+        } catch {
+          uploaded.push(src);
+        }
+      }
+      finalItems = uploaded;
+    }
+    return { items: finalItems };
+  },
+  ['realisations-feed'],
+  { revalidate: 3600, tags: ['realisations'] }
+);
+
+export async function GET() {
+  try {
+    const data = await getRealisationsCached();
+    const resBody = NextResponse.json(data);
     resBody.headers.set('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
     return resBody;
-  } catch (e: unknown) {
-    return NextResponse.json({ error: e?.message || 'Unknown error' }, { status: 500 });
+  } catch (e) {
+    return NextResponse.json({ error: (e as Error).message || 'Unknown error' }, { status: 500 });
   }
 }
 

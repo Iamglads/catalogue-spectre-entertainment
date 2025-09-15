@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
-import { type Document } from 'mongodb';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/auth';
+import { ObjectId, type Document } from 'mongodb';
+import { getSession } from '@/lib/auth';
 
 export async function GET(req: NextRequest) {
-  const session = await getServerSession(authOptions);
-  if (!session?.user || (session.user as { role?: string }).role !== 'admin') {
+  const session = await getSession();
+  const user = session?.user as { role?: 'admin' | 'user' } | undefined;
+  if (!user || user.role !== 'admin') {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
   const { searchParams } = new URL(req.url);
@@ -27,8 +27,9 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  const session = await getServerSession(authOptions);
-  if (!session?.user || (session.user as { role?: string }).role !== 'admin') {
+  const session = await getSession();
+  const user = session?.user as { role?: 'admin' | 'user' } | undefined;
+  if (!user || user.role !== 'admin') {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
   const body = (await req.json()) as Document;

@@ -47,7 +47,6 @@ export default function RealisationsSlider() {
     <section className="my-16">
       <div className="text-center mb-8">
         <h2 className="text-headline mb-2">Nos réalisations</h2>
-        <p className="text-body text-gray-600">Découvrez quelques-uns de nos projets récents</p>
       </div>
       <div className="space-y-4">
         <Row items={r1} reverse={false} duration={40} />

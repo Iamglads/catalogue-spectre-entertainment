@@ -190,12 +190,8 @@ export default function Home() {
       
       <header className="mb-8 space-y-6">
         <div className="text-center space-y-2">
-          <h1 className="text-display text-gray-900">Catalogue Spectre</h1>
-          <p className="text-body max-w-2xl mx-auto">
-            Découvrez notre collection complète de décors et équipements pour vos événements
-          </p>
+          <h1 className="text-display text-gray-900">Catalogue des décors</h1>
         </div>
-        <QuickActions />
       </header>
 
       {loading ? (
@@ -361,6 +357,18 @@ export default function Home() {
                         <img src={src} alt="" className="h-full w-full object-cover" />
                       </button>
                     ))}
+                  </div>
+                )}
+
+                {/* Descriptions placed below thumbnails */}
+                {(viewer.shortDescription || viewer.description) && (
+                  <div className="mt-6 space-y-2">
+                    {viewer.shortDescription && (
+                      <div className="text-body text-gray-800">{viewer.shortDescription}</div>
+                    )}
+                    {viewer.description && (
+                      <div className="prose prose-sm max-w-none text-gray-700" dangerouslySetInnerHTML={{ __html: viewer.description }} />
+                    )}
                   </div>
                 )}
               </div>

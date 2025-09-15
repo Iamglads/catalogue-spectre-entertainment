@@ -39,10 +39,10 @@ export async function GET(req: NextRequest) {
 
     const items = docs.map((d) => ({
       _id: String(d._id),
-      name: (d as Record<string, unknown>).name as string,
-      shortDescription: (d as Record<string, unknown>).shortDescription as string | undefined,
-      images: (d as Record<string, unknown>).images as string[] | undefined,
-      isInStock: (d as Record<string, unknown>).isInStock as boolean | undefined,
+      name: (d as Document & { name?: string }).name || '',
+      shortDescription: (d as Document & { shortDescription?: string }).shortDescription,
+      images: (d as Document & { images?: string[] }).images,
+      isInStock: (d as Document & { isInStock?: boolean }).isInStock,
     }));
 
     return NextResponse.json({ items });

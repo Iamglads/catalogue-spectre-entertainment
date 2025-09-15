@@ -1,8 +1,18 @@
-import type { NextAuthOptions } from 'next-auth';
+import type { AuthOptions as NextAuthOptions, Session } from 'next-auth';
+import { getServerSession } from 'next-auth/next';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import clientPromise from '@/lib/mongodb';
 import bcrypt from 'bcryptjs';
-import type { Document } from 'mongodb';
+import type { Document, ObjectId } from 'mongodb';
+import type { JWT } from 'next-auth/jwt';
+
+type DbUser = Document & {
+  _id: ObjectId;
+  email: string;
+  passwordHash: string;
+  role?: 'admin' | 'user';
+  name?: string | null;
+};
 
 export const authOptions: NextAuthOptions = {
   session: { strategy: 'jwt' },
@@ -18,38 +28,36 @@ export const authOptions: NextAuthOptions = {
         if (!credentials?.email || !credentials?.password) return null;
         const client = await clientPromise;
         const db = client.db();
-        const users = db.collection<Document>('users');
-        const user = await users.findOne({ email: credentials.email.toLowerCase().trim() });
+        const users = db.collection<DbUser>('users');
+        const user = await users.findOne({ email: credentials.email.toLowerCase().trim() } as Partial<DbUser>);
         if (!user) return null;
-        const ok = await bcrypt.compare(credentials.password, (user as Record<string, unknown>).passwordHash as string || '');
+        const ok = await bcrypt.compare(credentials.password, user.passwordHash || '');
         if (!ok) return null;
         return {
           id: String(user._id),
-          email: user.email as string,
-          role: (user as Record<string, unknown>).role as string || 'user',
-          name: (user as Record<string, unknown>).name as string || undefined,
-        };
+          email: user.email,
+          role: user.role ?? 'user',
+          name: user.name ?? undefined,
+        } as { id: string; email: string; name?: string; role: 'admin' | 'user' };
       },
     }),
   ],
   callbacks: {
-    authorized({ auth, request: { nextUrl } }: { auth: unknown; request: { nextUrl: { pathname: string } } }) {
-      const pathname = nextUrl?.pathname || '';
-      const isAdminArea = pathname.startsWith('/admin') || pathname.startsWith('/api/admin');
-      if (!isAdminArea) return true;
-      return Boolean((auth as { user?: { role?: string } })?.user) && (((auth as { user: { role: string } }).user.role) === 'admin');
-    },
-    async jwt({ token, user }) {
+    async jwt({ token, user }: { token: JWT; user?: { id: string; role?: 'admin' | 'user' } | null }) {
       if (user) {
-        token.role = (user as { role?: string }).role || 'user';
-        token.uid = (user as { id?: string }).id;
+        (token as JWT & { role?: 'admin' | 'user'; uid?: string }).role = user.role ?? 'user';
+        (token as JWT & { role?: 'admin' | 'user'; uid?: string }).uid = user.id;
       }
       return token;
     },
-    async session({ session, token }) {
-      (session.user as { role?: string }).role = (token as { role?: string }).role;
-      (session.user as { id?: string }).id = (token as { uid?: string }).uid;
-      return session;
+    async session({ session, token }: { session: Session; token: JWT }) {
+      const t = token as JWT & { role?: 'admin' | 'user'; uid?: string };
+      if (session.user) {
+        session.user.role = t.role;
+        // @ts-expect-error - augmented in next-auth.d.ts
+        session.user.id = t.uid;
+      }
+      return session as Session;
     },
   },
   pages: {
@@ -59,4 +67,7 @@ export const authOptions: NextAuthOptions = {
 
 // Export only options for NextAuth v4 usage
 
+export async function getSession() {
+  return (getServerSession as unknown as (opts: any) => Promise<any>)(authOptions);
+}
 

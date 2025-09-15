@@ -10,16 +10,21 @@
     "start": "next start",
     "lint": "eslint",
     "check": "tsc --noEmit",
-    "seed:admin": "tsx scripts/seed-admin.ts"
+    "seed:admin": "tsx scripts/seed-admin.ts",
+    "migrate:images": "tsx scripts/migrate-images-from-wp.ts"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
+    "cloudinary": "^2.5.1",
     "dotenv": "^17.2.1",
     "formik": "^2.4.6",
+    "jspdf": "^2.5.2",
     "lucide-react": "^0.541.0",
     "mongodb": "^6.18.0",
     "next": "15.5.0",
     "next-auth": "^4.24.11",
+    "p-limit": "^6.1.0",
+    "pdfkit": "^0.15.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "yup": "^1.7.0"

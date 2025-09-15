@@ -26,8 +26,8 @@ export default function AdminCategoriesPage() {
   }, [items, q]);
 
   return (
-    <div className="min-h-screen py-6">
-      <div className="mb-3"><a href="/admin" className="text-sm underline">← Retour</a></div>
+    <div className="min-h-screen py-6 px-4 sm:px-6 lg:px-8 mx-auto w-full max-w-6xl">
+      <div className="mb-3"><Link href="/admin" className="text-sm underline">← Retour</Link></div>
       <div className="mb-4 flex items-center gap-2">
         <input className="rounded border px-2 py-1 text-sm" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Recherche…" />
         <Link href="/admin/categories/new" className="ml-auto inline-flex items-center gap-2 rounded border px-3 py-1.5 text-sm hover:bg-gray-50">

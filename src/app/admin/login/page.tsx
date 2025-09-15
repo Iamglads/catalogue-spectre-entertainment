@@ -26,8 +26,8 @@ function LoginFormInner() {
           } else {
             router.push(next);
           }
-        } catch (e: unknown) {
-          helpers.setStatus(e?.message || 'Erreur inconnue');
+        } catch (e) {
+          helpers.setStatus((e as Error)?.message || 'Erreur inconnue');
         }
       }}
     >

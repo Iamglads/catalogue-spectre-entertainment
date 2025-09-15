@@ -14,18 +14,24 @@ const getCategoriesCached = unstable_cache(
       .find({}, { projection: { name: 1, slug: 1, fullPath: 1, depth: 1, parentId: 1 } })
       .sort({ fullPath: 1 })
       .toArray();
-    const items = docs.map((d: any) => ({
-    }
-    )
-    )
-    const items = docs.map((d: Document) => ({
+
+    type CategoryDoc = Document & {
+      _id: unknown;
+      name?: string;
+      slug?: string;
+      fullPath?: string;
+      depth?: number;
+      parentId?: unknown | null;
+    };
+
+    const items = (docs as CategoryDoc[]).map((d) => ({
       _id: String(d._id),
-      name: d.name as string,
-      slug: d.slug as string,
-      fullPath: d.fullPath as string,
-      depth: (d.depth as number) ?? 0,
+      name: d.name ?? '',
+      slug: d.slug ?? '',
+      fullPath: d.fullPath ?? '',
+      depth: d.depth ?? 0,
       parentId: d.parentId ? String(d.parentId) : null,
-      label: `${'\u2014 '.repeat(((d.depth as number) ?? 0))}${d.name as string}`,
+      label: `${'\u2014 '.repeat(d.depth ?? 0)}${d.name ?? ''}`,
     }));
     return { items };
   },

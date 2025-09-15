@@ -61,7 +61,8 @@ export default function SendListForm({ selectedIds, quantities, onSuccess }: Pro
       setSent({ ok: true });
       onSuccess();
     } catch (e: unknown) {
-      setSent({ ok: false, error: e?.message || 'Erreur inconnue' });
+      const errMsg = e instanceof Error ? e.message : 'Erreur inconnue';
+      setSent({ ok: false, error: errMsg });
     } finally {
       setSending(false);
     }
