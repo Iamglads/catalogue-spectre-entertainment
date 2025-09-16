@@ -21,9 +21,15 @@ export default function AdminHomePage() {
       desc: "Gérer la hiérarchie des catégories",
       color: "bg-purple-50 border-purple-200 hover:bg-purple-100"
     },
+    {
+      href: "/admin/invites",
+      title: "Invitations",
+      desc: "Inviter un collaborateur (rôle utilisateur)",
+      color: "bg-yellow-50 border-yellow-200 hover:bg-yellow-100"
+    },
   ];
   return (
-    <div className="min-h-screen py-6 mx-auto w-full max-w-5xl">
+    <div className="min-h-screen py-6 px-4 sm:px-6 lg:px-8 mx-auto w-full max-w-6xl">
       <div className="mb-4 flex items-center justify-between">
         <h1 className="text-2xl font-semibold">Administration</h1>
         <Link href="/" className="text-sm underline">← Retour au site</Link>

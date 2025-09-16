@@ -76,8 +76,8 @@ export default function ListePage() {
       <div className="mb-8 flex items-center justify-between gap-4">
         <div>
           <h1 className="text-headline">Ma liste</h1>
-          <p className="text-caption mt-1">Gérez votre sélection d'équipements</p>
           <p className="text-caption mt-1">Gérez votre sélection d&apos;équipements</p>
+          
         </div>
         <div className="flex items-center gap-2">
           <Link href="/" className="btn btn-ghost">← Retour au catalogue</Link>

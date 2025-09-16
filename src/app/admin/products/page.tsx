@@ -1,8 +1,7 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Pencil, Trash2, Plus } from "lucide-react";
-import { useCallback } from "react";
 
 type Product = { _id: string; name: string; images?: string[]; regularPrice?: number; salePrice?: number; categoryIds?: string[] };
 type Category = { _id: string; label: string };
@@ -62,18 +61,7 @@ export default function AdminProductsPage() {
   useEffect(() => {
     try { localStorage.setItem('admin:products:status', status); } catch {}
   }, [status]);
-  
-  useEffect(() => { 
-    (async () => { 
-      try { 
-        const r = await fetch('/api/categories'); 
-        if (r.ok) { 
-          const j = await r.json(); 
-          setCategories(j.items || []); 
-        } 
-      } catch {} 
-    })(); 
-  }, []);
+  useEffect(() => { (async () => { try { const r = await fetch('/api/categories'); if (r.ok) { const j = await r.json() as { items: Category[] }; setCategories(j.items || []); } } catch {} })(); }, []);
 
   async function removeItem(id: string) {
     const found = items.find((p) => p._id === id);
@@ -81,12 +69,12 @@ export default function AdminProductsPage() {
   }
 
   return (
-    <div className="min-h-screen py-6">
-      <div className="mb-3"><a href="/admin" className="text-sm underline">← Retour</a></div>
+    <div className="min-h-screen py-6 px-4 sm:px-6 lg:px-8">
+      <div className="mb-3"><Link href="/admin" className="text-sm underline">← Retour</Link></div>
       <div className="mb-4 flex items-center gap-2">
         <input className="rounded border px-2 py-1 text-sm" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Recherche…" />
         <button className="rounded border px-3 py-1.5 text-sm" onClick={() => { setPage(1); try { localStorage.setItem('admin:products:q', q); } catch {}; load(); }}>Rechercher</button>
-        <select className="rounded border px-2 py-1 text-sm" value={status} onChange={(e) => { setStatus(e.target.value as 'all' | 'published' | 'draft'); setPage(1); }}>
+        <select className="rounded border px-2 py-1 text-sm" value={status} onChange={(e) => { const v = e.target.value as 'all' | 'published' | 'draft'; setStatus(v); setPage(1); }}>
           <option value="all">Tous</option>
           <option value="published">Publiés</option>
           <option value="draft">Brouillons</option>
@@ -154,7 +142,8 @@ export default function AdminProductsPage() {
                     onClick={() => {
                       const field: 'regularPrice' | 'salePrice' = typeof p.salePrice === 'number' ? 'salePrice' : 'regularPrice';
                       setEditingField(field);
-                      setEditingValue(String((p as Record<string, unknown>)[field] ?? ''));
+                      const current = field === 'salePrice' ? p.salePrice : p.regularPrice;
+                      setEditingValue(String(current ?? ''));
                       setEditingId(p._id);
                     }}
                     title="Cliquer pour modifier le prix"

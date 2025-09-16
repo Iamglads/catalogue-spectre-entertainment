@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { Geist, Geist_Mono, Orbitron } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
 import Navigation from "./_components/Navigation";
@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const heading = Montserrat({
+const heading = Orbitron({
   variable: "--font-heading",
   subsets: ["latin"],
   weight: ["600", "700"],
@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light">
       <body className={`${geistSans.variable} ${geistMono.variable} ${heading.variable} antialiased`}>
         <Providers>
           <Navigation />
@@ -41,7 +41,7 @@ export default function RootLayout({
         <footer className="border-t bg-white/80 backdrop-blur-sm">
           <div className="container-max section-padding py-8 text-center text-sm text-gray-600 space-y-2">
             <div>
-              Spectre Entertainment — Tous droits réservés ·{' '}
+              Spectre Entertainment -Tous droits réservés ·{' '}
               <a
                 href="https://spectre-entertainment.com/politique-de-confidentialite/"
                 target="_blank"

@@ -1,14 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
 import { ObjectId, type Document } from 'mongodb';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/auth';
+import { getSession } from '@/lib/auth';
 import { slugify } from '@/lib/slug';
 
 // List + create
-export async function GET() {
-  const session = await getServerSession(authOptions);
-  if (!session?.user || (session.user as { role?: string }).role !== 'admin') {
+export async function GET(req: NextRequest) {
+  const session = await getSession();
+  const user = session?.user as { role?: 'admin' | 'user' } | undefined;
+  if (!user || user.role !== 'admin') {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
   const client = await clientPromise;
@@ -19,8 +19,9 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
-  const session = await getServerSession(authOptions);
-  if (!session?.user || (session.user as { role?: string }).role !== 'admin') {
+  const session = await getSession();
+  const user = session?.user as { role?: 'admin' | 'user' } | undefined;
+  if (!user || user.role !== 'admin') {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
   const { name, parentId } = (await req.json()) as { name?: string; parentId?: string | null };
@@ -35,3 +36,5 @@ export async function POST(req: NextRequest) {
   const res = await categories.insertOne({ name, slug, fullPath, depth, parentId: parent?._id ?? null, createdAt: new Date(), updatedAt: new Date() });
   return NextResponse.json({ _id: String(res.insertedId) });
 }
+
+

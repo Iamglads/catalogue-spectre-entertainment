@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, Search, Phone, ExternalLink, ChevronDown, Grid3X3, Heart, Settings } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 import ListCounter from './ListCounter';
-import ThemeToggle from '../theme-toggle';
+// Theme toggle removed; default to light theme
 import UserButton from '../user-button';
 
 type Category = {
@@ -55,10 +55,7 @@ export default function Navigation() {
   const getSubCategories = (parentId: string) => 
     categories.filter(cat => cat.parentId === parentId);
 
-  const navigationItems = [
-    { href: '/', label: 'Catalogue', icon: Grid3X3, active: pathname === '/' },
-    { href: '/liste', label: 'Ma Liste', icon: Heart, active: pathname === '/liste' },
-  ];
+
 
   const adminItems = isAdmin ? [
     { href: '/admin', label: 'Administration', icon: Settings },
@@ -69,18 +66,17 @@ export default function Navigation() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-sm">
-        <div className="container-max">
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/50">
+        <div className="w-full">
           {/* Top bar - Contact info */}
           <div className="hidden lg:flex items-center justify-between py-2 px-6 text-sm text-gray-600 border-b border-gray-100">
             <div className="flex items-center gap-6">
-              <a href="tel:4503320894" className="flex items-center gap-2 hover:text-brand transition-colors">
+              <Link href="tel:4503320894" className="flex items-center gap-2 hover:text-brand transition-colors">
                 <Phone className="h-4 w-4" />
                 450 332-0894
-              </a>
-              <span className="text-gray-400">940 Jean‑Neveu, Longueuil (Québec) J4G 2M1</span>
+              </Link>
             </div>
-            <a
+            <Link
               href="https://spectre-entertainment.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -88,38 +84,25 @@ export default function Navigation() {
             >
               Site principal
               <ExternalLink className="h-3 w-3" />
-            </a>
+            </Link>
           </div>
 
           {/* Main navigation */}
-          <div className="flex items-center justify-between h-16 px-6">
+          <div className="flex max-w-7xl mx-auto items-center justify-between h-16 px-6">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
               <Image 
                 src="/Logo.png" 
                 alt="Spectre Entertainment" 
-                width={160} 
+                width={100} 
                 height={40} 
-                className="h-8 w-auto transition-transform group-hover:scale-105" 
+                className="h-6 w-auto transition-transform group-hover:scale-105" 
               />
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1">
-              {navigationItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                    item.active 
-                      ? 'bg-brand text-white shadow-sm' 
-                      : 'text-gray-700 hover:bg-gray-100 hover:text-brand'
-                  }`}
-                >
-                  <item.icon className="h-4 w-4" />
-                  {item.label}
-                </Link>
-              ))}
+            <nav className="hidden lg:flex items-center gap-2 flex-1 ml-6">
+              
 
               {/* Categories Dropdown */}
               <div className="relative">
@@ -128,7 +111,7 @@ export default function Navigation() {
                     e.stopPropagation();
                     setCategoriesOpen(!categoriesOpen);
                   }}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-brand transition-all"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-gray-700 bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-white/90 hover:text-brand transition-all"
                 >
                   Catégories
                   <ChevronDown className={`h-4 w-4 transition-transform ${categoriesOpen ? 'rotate-180' : ''}`} />
@@ -178,31 +161,36 @@ export default function Navigation() {
                   </div>
                 )}
               </div>
-            </nav>
 
-            {/* Search Bar - Desktop */}
-            <div className="hidden md:flex items-center flex-1 max-w-md mx-8">
-              <div className="relative w-full">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-                <input
-                  type="search"
-                  placeholder="Rechercher dans le catalogue..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' && searchQuery.trim()) {
-                      window.location.href = `/?q=${encodeURIComponent(searchQuery.trim())}`;
-                    }
-                  }}
-                  className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm placeholder:text-gray-500 focus:bg-white focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
-                />
+              {/* Search Bar - Desktop (glued next to Categories) */}
+              <div className="flex-1 min-w-[280px] ml-2">
+                <div className="relative w-full">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+                  <input
+                    type="search"
+                    placeholder="Rechercher dans le catalogue..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' && searchQuery.trim()) {
+                        window.location.href = `/?q=${encodeURIComponent(searchQuery.trim())}`;
+                      }
+                    }}
+                    className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm placeholder:text-gray-500 focus:bg-white focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
+                  />
+                </div>
               </div>
-            </div>
+            </nav>
 
             {/* Right side actions */}
             <div className="flex items-center gap-2">
               <ListCounter />
-              <ThemeToggle />
+              {/* Admin link on desktop when logged in */}
+              {isAdmin && (
+                <Link href="/admin" className="hidden lg:inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand transition-colors">
+                  Administration
+                </Link>
+              )}
               
               {/* Mobile menu button */}
               <button
@@ -223,7 +211,7 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-t animate-fade-in">
+          <div className="lg:hidden bg-white/95 backdrop-blur-md border-t animate-fade-in">
             {/* Mobile Search */}
             <div className="p-4 border-b">
               <div className="relative">
@@ -246,20 +234,7 @@ export default function Navigation() {
 
             {/* Mobile Navigation Items */}
             <div className="p-4 space-y-2">
-              {navigationItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                    item.active 
-                      ? 'bg-brand text-white' 
-                      : 'text-gray-700 hover:bg-gray-100'
-                  }`}
-                >
-                  <item.icon className="h-5 w-5" />
-                  {item.label}
-                </Link>
-              ))}
+           
 
               {/* Mobile Categories */}
               <div className="pt-2">

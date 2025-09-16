@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+export const dynamic = 'force-dynamic';
 import { unstable_cache } from 'next/cache';
 import clientPromise from '@/lib/mongodb';
 import { ObjectId, type Document } from 'mongodb';
@@ -119,7 +120,13 @@ export async function GET(req: NextRequest) {
     );
 
     const { total, items } = await fetchPage();
-    const itemsOut = items.map((d: Document) => ({ ...d, _id: String(d._id) }));
+    const itemsOut = items.map((d: Document) => ({
+      ...d,
+      _id: String(d._id),
+      allCategoryIds: Array.isArray((d as any).allCategoryIds)
+        ? (d as any).allCategoryIds.map((id: unknown) => String(id))
+        : [],
+    }));
 
     const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
 

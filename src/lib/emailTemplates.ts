@@ -78,4 +78,20 @@ export function finalQuoteEmail(opts: {
   `;
 }
 
+export function inviteEmail(opts: { toName?: string; inviteUrl: string }) {
+  const { toName, inviteUrl } = opts;
+  return `
+    <div style="font:14px/1.6 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Arial, sans-serif; color:#111">
+      <h2 style="margin:0 0 8px 0">Invitation à rejoindre l'administration</h2>
+      ${toName ? `<p style=\"margin:0 0 12px 0;color:#333\">Bonjour ${toName},</p>` : ''}
+      <p style="margin:0 0 12px 0;color:#333">Vous avez été invité(e) à collaborer au catalogue Spectre.</p>
+      <p style="margin:0 0 12px 0;color:#333">Cliquez sur le bouton ci-dessous pour créer votre mot de passe et accéder à l’interface :</p>
+      <p style="margin:0 0 16px 0">
+        <a href="${inviteUrl}" style="display:inline-block;background:#0c71c3;color:#fff;padding:10px 16px;border-radius:6px;text-decoration:none">Accepter l’invitation</a>
+      </p>
+      <p style="margin:0 0 12px 0;color:#666;font-size:12px">Si le bouton ne fonctionne pas, copiez-collez ce lien dans votre navigateur :<br/>${inviteUrl}</p>
+    </div>
+  `;
+}
+
 

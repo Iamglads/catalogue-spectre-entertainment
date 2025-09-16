@@ -1,11 +1,12 @@
 "use client";
-import { Eye, X, ChevronLeft, ChevronRight, Heart } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { Eye, X, ChevronLeft, ChevronRight, Heart, Search } from "lucide-react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { addOrUpdateItem, removeItem, loadList } from '@/lib/listStorage';
 import Breadcrumbs from './_components/Breadcrumbs';
 import QuickActions from './_components/QuickActions';
 import RealisationsSlider from './_components/RealisationsSlider';
 import { useSearchParams } from 'next/navigation';
+import CategorySelect from './_components/CategorySelect';
 
 type Product = {
   _id: string;
@@ -19,6 +20,7 @@ type Product = {
   widthInches?: number | string;
   heightInches?: number | string;
   lengthInches?: number | string;
+  allCategoryIds?: string[];
 };
 
 type ApiResponse = {
@@ -29,13 +31,14 @@ type ApiResponse = {
   items: Product[];
 };
 
-export default function Home() {
+function HomeContent() {
   const searchParams = useSearchParams();
   const [q, setQ] = useState("");
+  const [searchDraft, setSearchDraft] = useState("");
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<ApiResponse | null>(null);
-  const [categories, setCategories] = useState<Array<{ _id: string; label: string; fullPath: string }>>([]);
+  const [categories, setCategories] = useState<Array<{ _id: string; label: string; fullPath: string; name: string; depth: number }>>([]);
   const [categoryId, setCategoryId] = useState<string>("");
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [viewer, setViewer] = useState<Product | null>(null);
@@ -48,6 +51,7 @@ export default function Home() {
     const urlCategoryId = searchParams.get('categoryId');
     if (urlQ) setQ(urlQ);
     if (urlCategoryId) setCategoryId(urlCategoryId);
+    if (urlQ) setSearchDraft(urlQ);
   }, [searchParams]);
 
   // Persist selection + quantities in localStorage (legacy) and initialize from new list storage
@@ -79,6 +83,19 @@ export default function Home() {
     return p.toString();
   }, [q, page, categoryId]);
 
+  // Debounce search draft -> q
+  useEffect(() => {
+    const id = setTimeout(() => {
+      setQ(searchDraft);
+    }, 300);
+    return () => clearTimeout(id);
+  }, [searchDraft]);
+
+  // Reset to first page whenever filters change
+  useEffect(() => {
+    setPage(1);
+  }, [q, categoryId]);
+
   useEffect(() => {
     let canceled = false;
     (async () => {
@@ -107,7 +124,7 @@ export default function Home() {
       try {
         const res = await fetch('/api/categories');
         if (!res.ok) throw new Error('Failed to load categories');
-        const json = (await res.json()) as { items: Array<{ _id: string; label: string; fullPath: string }> };
+        const json = (await res.json()) as { items: Array<{ _id: string; label: string; fullPath: string; name: string; depth: number }> };
         if (!canceled) setCategories(json.items);
       } catch (e) {
         console.error(e);
@@ -120,6 +137,7 @@ export default function Home() {
 
   const items = data?.items ?? [];
   const selectedCategory = useMemo(() => categories.find((c) => c._id === categoryId) || null, [categories, categoryId]);
+  const categoryById = useMemo(() => new Map(categories.map((c) => [c._id, c])), [categories]);
 
   function formatDims(p: Product): string | null {
     const L = p.lengthInches;
@@ -190,13 +208,66 @@ export default function Home() {
       
       <header className="mb-8 space-y-6">
         <div className="text-center space-y-2">
-          <h1 className="text-display text-gray-900">Catalogue Spectre</h1>
-          <p className="text-body max-w-2xl mx-auto">
-            Découvrez notre collection complète de décors et équipements pour vos événements
-          </p>
+          <h1 className="text-display text-gray-900">Catalogue des décors</h1>
         </div>
-        <QuickActions />
       </header>
+
+      {/* Barre de filtres */}
+      <div className="mb-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+        <div className="relative flex-1">
+          <Search className="absolute inset-y-0 left-3 my-auto h-4 w-4 text-gray-400 pointer-events-none" />
+          <input
+            value={searchDraft}
+            onChange={(e) => setSearchDraft(e.target.value)}
+            placeholder="Rechercher un décor…"
+            className="input pl-9"
+            aria-label="Recherche"
+          />
+        </div>
+        <CategorySelect
+          categories={categories.map((c) => ({ _id: c._id, label: c.label, fullPath: c.fullPath }))}
+          value={categoryId}
+          onChange={(id) => setCategoryId(id)}
+          placeholder="Catégorie…"
+        />
+      </div>
+
+      {/* Filtres sélectionnés + compteur */}
+      <div className="mb-6 flex flex-col gap-2">
+        <div className="text-caption text-gray-600">{data?.total ?? 0} résultats</div>
+        {(q.trim() || selectedCategory) && (
+          <div className="flex flex-wrap items-center gap-2">
+            {q.trim() && (
+              <button
+                className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-sm bg-white hover:bg-gray-50"
+                onClick={() => { setSearchDraft(''); setQ(''); }}
+                aria-label="Supprimer le filtre de recherche"
+              >
+                <span className="text-gray-700">Recherche: "{q}"</span>
+                <X className="h-3.5 w-3.5 text-gray-500" />
+              </button>
+            )}
+            {selectedCategory && (
+              <button
+                className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-sm bg-white hover:bg-gray-50"
+                onClick={() => setCategoryId("")}
+                aria-label="Supprimer le filtre catégorie"
+              >
+                <span className="text-gray-700">{selectedCategory.label}</span>
+                <X className="h-3.5 w-3.5 text-gray-500" />
+              </button>
+            )}
+            {(q.trim() || selectedCategory) && (
+              <button
+                className="ml-1 text-sm text-gray-600 hover:text-gray-900 underline"
+                onClick={() => { setSearchDraft(''); setQ(''); setCategoryId(''); }}
+              >
+                Effacer tout
+              </button>
+            )}
+          </div>
+        )}
+      </div>
 
       {loading ? (
         <>
@@ -215,17 +286,15 @@ export default function Home() {
         </>
       ) : (
         <>
-          {selectedCategory && (
-            <div className="mb-6 text-center">
-              <span className="badge badge-primary">
-                {selectedCategory.label} · {data?.total ?? 0} résultats
-              </span>
-            </div>
-          )}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
             {items.map((p) => {
               const image = p.images?.[0];
               const isSelected = selectedIds.has(p._id);
+              const tags = (p.allCategoryIds || [])
+                .map((id) => categoryById.get(id))
+                .filter(Boolean)
+                .sort((a, b) => (a!.depth - b!.depth))
+                .slice(-3); // show deepest up to 3
               return (
                 <div key={p._id} className="card overflow-hidden hover-lift group animate-fade-in">
                   <div className="relative aspect-[4/3] bg-gray-50">
@@ -251,6 +320,15 @@ export default function Home() {
                     <div className="text-title text-gray-900 line-clamp-2 mb-2">{p.name}</div>
                     {formatDims(p) && (
                       <div className="text-caption mb-3">{formatDims(p)}</div>
+                    )}
+                    {tags.length > 0 && (
+                      <div className="mb-3 flex flex-wrap gap-1.5">
+                        {tags.map((c) => (
+                          <span key={c!._id} className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 border">
+                            {c!.name}
+                          </span>
+                        ))}
+                      </div>
                     )}
                     <div className="flex items-center justify-between">
                       <div className="flex-1" />
@@ -363,11 +441,31 @@ export default function Home() {
                     ))}
                   </div>
                 )}
+
+                {/* Descriptions placed below thumbnails */}
+                {(viewer.shortDescription || viewer.description) && (
+                  <div className="mt-6 space-y-2">
+                    {viewer.shortDescription && (
+                      <div className="text-body text-gray-800">{viewer.shortDescription}</div>
+                    )}
+                    {viewer.description && (
+                      <div className="prose prose-sm max-w-none text-gray-700" dangerouslySetInnerHTML={{ __html: viewer.description }} />
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </div>
       )}
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div className="container-max section-padding py-8"><div className="text-center text-sm text-gray-500">Chargement…</div></div>}>
+      <HomeContent />
+    </Suspense>
   );
 }
