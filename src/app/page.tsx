@@ -1,6 +1,6 @@
 "use client";
 import { Eye, X, ChevronLeft, ChevronRight, Heart, Search } from "lucide-react";
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { addOrUpdateItem, removeItem, loadList } from '@/lib/listStorage';
 import Breadcrumbs from './_components/Breadcrumbs';
 import QuickActions from './_components/QuickActions';
@@ -30,6 +30,18 @@ type ApiResponse = {
   totalPages: number;
   items: Product[];
 };
+
+function getTagStyles(id: string): { backgroundColor: string; borderColor: string; color: string } {
+  let hash = 0 >>> 0;
+  for (let i = 0; i < id.length; i++) {
+    hash = (((hash << 5) - hash) + id.charCodeAt(i)) >>> 0; // hash * 31 + char
+  }
+  const hue = hash % 360;
+  const backgroundColor = `hsla(${hue}, 85%, 85%, 0.75)`; // pastel with opacity
+  const borderColor = `hsla(${hue}, 70%, 60%, 0.55)`; // slightly stronger for border
+  const color = `hsl(${hue}, 35%, 25%)`; // readable text
+  return { backgroundColor, borderColor, color };
+}
 
 function HomeContent() {
   const searchParams = useSearchParams();
@@ -323,11 +335,14 @@ function HomeContent() {
                     )}
                     {tags.length > 0 && (
                       <div className="mb-3 flex flex-wrap gap-1.5">
-                        {tags.map((c) => (
-                          <span key={c!._id} className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 border">
-                            {c!.name}
-                          </span>
-                        ))}
+                        {tags.map((c) => {
+                          const styles = getTagStyles(c!._id);
+                          return (
+                            <span key={c!._id} className="text-xs px-2 py-0.5 rounded-full border" style={styles}>
+                              {c!.name}
+                            </span>
+                          );
+                        })}
                       </div>
                     )}
                     <div className="flex items-center justify-between">
@@ -377,86 +392,16 @@ function HomeContent() {
         </>
       )}
 
-      {/* Modal de visualisation */}
+      {/* Modal de visualisation accessible */}
       {viewer && (
-        <div className="fixed inset-0 z-50">
-          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setViewer(null)} />
-          <div className="absolute inset-0 flex items-center justify-center p-4">
-            <div className="w-full max-w-5xl rounded-2xl bg-white shadow-2xl overflow-hidden animate-fade-in">
-              <div className="flex items-center justify-between px-6 py-4 border-b bg-gray-50">
-                <div className="text-title truncate pr-4 text-gray-900">{viewer.name}</div>
-                <button
-                  aria-label="Fermer"
-                  className="rounded-full p-2 hover:bg-gray-200 transition-colors"
-                  onClick={() => setViewer(null)}
-                >
-                  <X className="h-5 w-5" />
-                </button>
-              </div>
-              <div className="p-6">
-                <div className="relative w-full aspect-[4/3] bg-gray-50 flex items-center justify-center rounded-xl overflow-hidden">
-                  {viewer.images && viewer.images.length > 0 ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={viewer.images[Math.max(0, Math.min(viewerIndex, viewer.images.length - 1))]}
-                      alt={viewer.name}
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  ) : (
-                    <div className="text-body text-gray-400">Aucune image</div>
-                  )}
-
-                  {viewer.images && viewer.images.length > 1 && (
-                    <>
-                      <button
-                        aria-label="Précédente"
-                        className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-lg hover:bg-white hover:shadow-xl transition-all"
-                        onClick={() => setViewerIndex((i) => (i > 0 ? i - 1 : viewer.images ? viewer.images.length - 1 : 0))}
-                      >
-                        <ChevronLeft className="h-5 w-5" />
-                      </button>
-                      <button
-                        aria-label="Suivante"
-                        className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-lg hover:bg-white hover:shadow-xl transition-all"
-                        onClick={() => setViewerIndex((i) => (viewer && viewer.images ? (i + 1) % viewer.images.length : 0))}
-                      >
-                        <ChevronRight className="h-5 w-5" />
-                      </button>
-                    </>
-                  )}
-                </div>
-
-                {viewer.images && viewer.images.length > 1 && (
-                  <div className="mt-6 grid grid-flow-col auto-cols-[96px] gap-3 overflow-x-auto pb-2">
-                    {viewer.images.map((src, idx) => (
-                      <button
-                        key={`${src}-${idx}`}
-                        className={`relative h-20 w-24 flex-shrink-0 rounded-lg border-2 ${idx === viewerIndex ? 'border-blue-500 shadow-md' : 'border-gray-200 hover:border-gray-300'} overflow-hidden transition-all`}
-                        onClick={() => setViewerIndex(idx)}
-                        aria-label={`Image ${idx + 1}`}
-                      >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={src} alt="" className="h-full w-full object-cover" />
-                      </button>
-                    ))}
-                  </div>
-                )}
-
-                {/* Descriptions placed below thumbnails */}
-                {(viewer.shortDescription || viewer.description) && (
-                  <div className="mt-6 space-y-2">
-                    {viewer.shortDescription && (
-                      <div className="text-body text-gray-800">{viewer.shortDescription}</div>
-                    )}
-                    {viewer.description && (
-                      <div className="prose prose-sm max-w-none text-gray-700" dangerouslySetInnerHTML={{ __html: viewer.description }} />
-                    )}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ViewerModal
+          product={viewer}
+          index={viewerIndex}
+          onClose={() => setViewer(null)}
+          onPrev={() => setViewerIndex((i) => (viewer && viewer.images ? (i > 0 ? i - 1 : viewer.images.length - 1) : 0))}
+          onNext={() => setViewerIndex((i) => (viewer && viewer.images ? (i + 1) % viewer.images.length : 0))}
+          onSelectIndex={(i) => setViewerIndex(i)}
+        />
       )}
     </div>
   );
@@ -467,5 +412,122 @@ export default function Home() {
     <Suspense fallback={<div className="container-max section-padding py-8"><div className="text-center text-sm text-gray-500">Chargement…</div></div>}>
       <HomeContent />
     </Suspense>
+  );
+}
+
+type ViewerModalProps = {
+  product: Product;
+  index: number;
+  onClose: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+  onSelectIndex: (i: number) => void;
+};
+
+function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }: ViewerModalProps) {
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const previous = document.activeElement as HTMLElement | null;
+    dialogRef.current?.focus();
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') onClose();
+      else if (e.key === 'ArrowLeft') onPrev();
+      else if (e.key === 'ArrowRight') onNext();
+    }
+    window.addEventListener('keydown', onKey);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      previous?.focus();
+    };
+  }, [onClose, onPrev, onNext]);
+
+  const hasImages = Array.isArray(product.images) && product.images.length > 0;
+  const currentSrc = hasImages ? product.images![Math.max(0, Math.min(index, product.images!.length - 1))] : undefined;
+
+  return (
+    <div className="fixed inset-0 z-50" role="dialog" aria-modal="true" aria-label={product.name}>
+      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
+      <div className="absolute inset-0 flex items-center justify-center p-4">
+        <div
+          ref={dialogRef}
+          tabIndex={-1}
+          className="w-full max-w-6xl max-h-[90vh] rounded-2xl bg-white shadow-2xl overflow-hidden animate-fade-in flex flex-col"
+        >
+          <div className="flex items-center justify-between px-6 py-4 border-b bg-gray-50 sticky top-0">
+            <div className="text-title truncate pr-4 text-gray-900">{product.name}</div>
+            <button
+              aria-label="Fermer"
+              className="rounded-full p-2 hover:bg-gray-200 transition-colors"
+              onClick={onClose}
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+
+          <div className="p-6 overflow-auto">
+            <div className="relative w-full bg-gray-50 flex items-center justify-center rounded-xl overflow-hidden">
+              {/* Keep within viewport: limit height and width */}
+              {hasImages ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={currentSrc}
+                  alt={product.name}
+                  className="max-h-[70vh] max-w-full object-contain"
+                />
+              ) : (
+                <div className="w-full aspect-[4/3] flex items-center justify-center text-sm text-gray-400 bg-gray-100">Aucune image</div>
+              )}
+
+              {hasImages && product.images!.length > 1 && (
+                <>
+                  <button
+                    aria-label="Précédente"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-lg hover:bg-white hover:shadow-xl transition-all"
+                    onClick={(e) => { e.stopPropagation(); onPrev(); }}
+                  >
+                    <ChevronLeft className="h-5 w-5" />
+                  </button>
+                  <button
+                    aria-label="Suivante"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-lg hover:bg-white hover:shadow-xl transition-all"
+                    onClick={(e) => { e.stopPropagation(); onNext(); }}
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </>
+              )}
+            </div>
+
+            {hasImages && product.images!.length > 1 && (
+              <div className="mt-6 grid grid-flow-col auto-cols-[96px] gap-3 overflow-x-auto pb-2">
+                {product.images!.map((src, idx) => (
+                  <button
+                    key={`${src}-${idx}`}
+                    className={`relative h-20 w-24 flex-shrink-0 rounded-lg border-2 ${idx === index ? 'border-blue-500 shadow-md' : 'border-gray-200 hover:border-gray-300'} overflow-hidden transition-all`}
+                    onClick={() => onSelectIndex(idx)}
+                    aria-label={`Image ${idx + 1}`}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={src} alt="" className="h-full w-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {(product.shortDescription || product.description) && (
+              <div className="mt-6 space-y-2">
+                {product.shortDescription && (
+                  <div className="text-body text-gray-800">{product.shortDescription}</div>
+                )}
+                {product.description && (
+                  <div className="prose prose-sm max-w-none text-gray-700" dangerouslySetInnerHTML={{ __html: product.description }} />
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

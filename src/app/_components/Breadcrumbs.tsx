@@ -58,12 +58,13 @@ export default function Breadcrumbs() {
       }
     }
 
-    if (searchQuery) {
-      items.push({
-        label: `Recherche: "${searchQuery}"`,
-        active: true
-      });
-    }
+    // Remove search crumb to avoid duplication in header
+    // if (searchQuery) {
+    //   items.push({
+    //     label: `Recherche: "${searchQuery}"`,
+    //     active: true
+    //   });
+    // }
 
     setBreadcrumbs(items);
   }, [categoryId, searchQuery, categories]);
