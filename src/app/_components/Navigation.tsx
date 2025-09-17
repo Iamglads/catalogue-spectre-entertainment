@@ -68,27 +68,8 @@ export default function Navigation() {
     <>
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/50">
         <div className="w-full">
-          {/* Top bar - Contact info */}
-          <div className="hidden max-w-7xl mx-auto lg:flex items-center justify-between py-2 px-6 text-sm text-gray-600">
-            <div className="flex items-center gap-6">
-              <Link href="tel:4503320894" className="bg-[#007aff] text-white font-bold flex items-center gap-2 px-2 py-1 rounded hover:opacity-90 transition-colors">
-                <Phone className="h-4 w-4" />
-                450 332-0894
-              </Link>
-            </div>
-            <Link
-              href="https://spectre-entertainment.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex underline items-center gap-2 hover:text-brand transition-colors"
-            >
-              Site principal
-              <ExternalLink className="h-3 w-3" />
-            </Link>
-          </div>
-
-          {/* Main navigation */}
-          <div className="flex max-w-7xl mx-auto items-center justify-between h-16 px-6">
+          {/* Single-line header: logo + contacts + actions */}
+          <div className="flex max-w-7xl mx-auto items-center justify-between h-16 px-6 gap-3">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
               <Image 
@@ -100,10 +81,22 @@ export default function Navigation() {
               />
             </Link>
 
-          
 
             {/* Right side actions */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
+              <Link href="tel:4503320894" className="hidden md:inline-flex bg-[#007aff] text-white font-semibold items-center gap-2 px-2 py-1 rounded hover:opacity-90 transition-colors">
+                <Phone className="h-4 w-4" />
+                450 332-0894
+              </Link>
+              <Link
+                href="https://spectre-entertainment.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden md:inline-flex items-center gap-2 text-sm underline underline-offset-4 hover:text-brand transition-colors"
+              >
+                Retourner au site
+                <ExternalLink className="h-3 w-3" />
+              </Link>
               <ListCounter />
               {/* Admin link on desktop when logged in */}
               {isAdmin && (
