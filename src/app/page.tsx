@@ -1,6 +1,7 @@
 "use client";
 import { Eye, X, ChevronLeft, ChevronRight, Heart, Search } from "lucide-react";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import { addOrUpdateItem, removeItem, loadList } from '@/lib/listStorage';
 import Breadcrumbs from './_components/Breadcrumbs';
 import QuickActions from './_components/QuickActions';
@@ -227,12 +228,11 @@ function HomeContent() {
       {/* Barre de filtres */}
       <div className="mb-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <div className="relative flex-1">
-          <Search className="absolute inset-y-0 left-3 my-auto h-4 w-4 text-gray-400 pointer-events-none" />
           <input
             value={searchDraft}
             onChange={(e) => setSearchDraft(e.target.value)}
             placeholder="Rechercher un décor…"
-            className="input pl-9"
+            className="input pl-12"
             aria-label="Recherche"
           />
         </div>
@@ -308,12 +308,12 @@ function HomeContent() {
                 .sort((a, b) => (a!.depth - b!.depth))
                 .slice(-3); // show deepest up to 3
               return (
-                <div key={p._id} className="card overflow-hidden hover-lift group animate-fade-in">
+                <div key={p._id} className="card overflow-hidden hover-lift group animate-fade-in h-full flex flex-col">
                   <div className="relative aspect-[4/3] bg-gray-50">
                     <button
                       aria-label="Voir les images"
                       title="Voir les images"
-                      className="absolute right-3 top-3 z-10 rounded-full bg-white/90 p-2 shadow-sm hover:bg-white hover:shadow-md transition-all opacity-0 group-hover:opacity-100"
+                      className="absolute right-3 top-3 z-10 rounded-full bg-white/90 p-2 shadow-sm hover:bg-white hover:shadow-md transition-all opacity-0 group-hover:opacity-100 cursor-pointer"
                       onClick={() => {
                         setViewer(p);
                         setViewerIndex(0);
@@ -322,17 +322,20 @@ function HomeContent() {
                       <Eye className="h-4 w-4 text-gray-700" />
                     </button>
                     {image ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={image} alt={p.name} className="w-full h-full object-cover transition-transform group-hover:scale-105" />
+                      <Image
+                        src={image}
+                        alt={p.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 20vw"
+                        className="object-cover transition-transform group-hover:scale-105"
+                      />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-sm text-gray-400 bg-gray-100">Aucune image</div>
                     )}
                   </div>
-                  <div className="p-4">
+                  <div className="p-4 flex-1 flex flex-col">
                     <div className="text-title text-gray-900 line-clamp-2 mb-2">{p.name}</div>
-                    {formatDims(p) && (
-                      <div className="text-caption mb-3">{formatDims(p)}</div>
-                    )}
+                    {/* Dimensions retirées de la card */}
                     {tags.length > 0 && (
                       <div className="mb-3 flex flex-wrap gap-1.5">
                         {tags.map((c) => {
@@ -345,10 +348,9 @@ function HomeContent() {
                         })}
                       </div>
                     )}
-                    <div className="flex items-center justify-between">
-                      <div className="flex-1" />
+                    <div className="mt-auto flex items-center justify-end">
                       <button
-                        className="inline-flex items-center justify-center p-2 rounded-full hover:bg-gray-100 transition-colors interactive"
+                        className="inline-flex items-center justify-center p-2 rounded-full hover:bg-gray-100 transition-colors interactive cursor-pointer"
                         onClick={() => toggleSelectProduct(p)}
                         aria-label={isSelected ? 'Retirer de la liste' : 'Ajouter à la liste'}
                         title={isSelected ? 'Retirer de la liste' : 'Ajouter à la liste'}
@@ -458,7 +460,7 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
             <div className="text-title truncate pr-4 text-gray-900">{product.name}</div>
             <button
               aria-label="Fermer"
-              className="rounded-full p-2 hover:bg-gray-200 transition-colors"
+              className="rounded-full p-2 hover:bg-gray-200 transition-colors cursor-pointer"
               onClick={onClose}
             >
               <X className="h-5 w-5" />
@@ -469,12 +471,15 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
             <div className="relative w-full bg-gray-50 flex items-center justify-center rounded-xl overflow-hidden">
               {/* Keep within viewport: limit height and width */}
               {hasImages ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={currentSrc}
-                  alt={product.name}
-                  className="max-h-[70vh] max-w-full object-contain"
-                />
+                <div className="relative w-full h-[70vh]">
+                  <Image
+                    src={currentSrc!}
+                    alt={product.name}
+                    fill
+                    sizes="100vw"
+                    className="object-contain"
+                  />
+                </div>
               ) : (
                 <div className="w-full aspect-[4/3] flex items-center justify-center text-sm text-gray-400 bg-gray-100">Aucune image</div>
               )}
@@ -483,14 +488,14 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
                 <>
                   <button
                     aria-label="Précédente"
-                    className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-lg hover:bg-white hover:shadow-xl transition-all"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-lg hover:bg-white hover:shadow-xl transition-all cursor-pointer"
                     onClick={(e) => { e.stopPropagation(); onPrev(); }}
                   >
                     <ChevronLeft className="h-5 w-5" />
                   </button>
                   <button
                     aria-label="Suivante"
-                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-lg hover:bg-white hover:shadow-xl transition-all"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-lg hover:bg-white hover:shadow-xl transition-all cursor-pointer"
                     onClick={(e) => { e.stopPropagation(); onNext(); }}
                   >
                     <ChevronRight className="h-5 w-5" />
@@ -508,8 +513,7 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
                     onClick={() => onSelectIndex(idx)}
                     aria-label={`Image ${idx + 1}`}
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={src} alt="" className="h-full w-full object-cover" />
+                    <Image src={src} alt="" width={96} height={80} className="h-full w-full object-cover" />
                   </button>
                 ))}
               </div>

@@ -359,7 +359,7 @@ export default function AdminQuoteDetailPage() {
         <div className="mb-2">
           <div className="text-xs text-gray-600 mb-1">Recherchez et cliquez pour ajouter. Les articles déjà ajoutés sont indiqués.</div>
           <div className="flex items-center gap-2">
-            <input className="w-full max-w-sm rounded border px-3 py-2 text-sm" placeholder="Rechercher des produits à ajouter…" value={search} onChange={(e) => setSearch(e.target.value)} />
+            <input className="w-full max-w-sm rounded border px-3 py-2 text-sm" placeholder="Rechercher des décors à ajouter…" value={search} onChange={(e) => setSearch(e.target.value)} />
             <span className="text-xs text-gray-500 min-w-[80px] text-right">{searchLoading ? 'Recherche…' : (searchResults.length ? `${searchResults.length} résultats` : '')}</span>
           </div>
         </div>

@@ -69,9 +69,9 @@ export default function Navigation() {
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/50">
         <div className="w-full">
           {/* Top bar - Contact info */}
-          <div className="hidden lg:flex items-center justify-between py-2 px-6 text-sm text-gray-600 border-b border-gray-100">
+          <div className="hidden max-w-7xl mx-auto lg:flex items-center justify-between py-2 px-6 text-sm text-gray-600">
             <div className="flex items-center gap-6">
-              <Link href="tel:4503320894" className="flex items-center gap-2 hover:text-brand transition-colors">
+              <Link href="tel:4503320894" className="bg-[#007aff] text-white font-bold flex items-center gap-2 px-2 py-1 rounded hover:opacity-90 transition-colors">
                 <Phone className="h-4 w-4" />
                 450 332-0894
               </Link>
@@ -80,7 +80,7 @@ export default function Navigation() {
               href="https://spectre-entertainment.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-brand transition-colors"
+              className="flex underline items-center gap-2 hover:text-brand transition-colors"
             >
               Site principal
               <ExternalLink className="h-3 w-3" />
@@ -100,87 +100,7 @@ export default function Navigation() {
               />
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-2 flex-1 ml-6">
-              
-
-              {/* Categories Dropdown */}
-              <div className="relative">
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setCategoriesOpen(!categoriesOpen);
-                  }}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-gray-700 bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-white/90 hover:text-brand transition-all"
-                >
-                  Catégories
-                  <ChevronDown className={`h-4 w-4 transition-transform ${categoriesOpen ? 'rotate-180' : ''}`} />
-                </button>
-
-                {categoriesOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-xl border shadow-xl z-50 animate-fade-in">
-                    <div className="p-4 border-b">
-                      <h3 className="font-semibold text-gray-900 mb-2">Parcourir par catégorie</h3>
-                    </div>
-                    <div className="max-h-96 overflow-y-auto p-2">
-                      {mainCategories.map((category) => {
-                        const subCategories = getSubCategories(category._id);
-                        return (
-                          <div key={category._id} className="mb-2">
-                            <Link
-                              href={`/?categoryId=${category._id}`}
-                              className="block px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
-                            >
-                              {category.name}
-                            </Link>
-                            {subCategories.length > 0 && (
-                              <div className="ml-4 space-y-1">
-                                {subCategories.slice(0, 5).map((sub) => (
-                                  <Link
-                                    key={sub._id}
-                                    href={`/?categoryId=${sub._id}`}
-                                    className="block px-3 py-1.5 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand rounded-lg transition-colors"
-                                  >
-                                    {sub.name}
-                                  </Link>
-                                ))}
-                                {subCategories.length > 5 && (
-                                  <Link
-                                    href={`/?categoryId=${category._id}`}
-                                    className="block px-3 py-1.5 text-xs text-brand hover:bg-blue-50 rounded-lg transition-colors"
-                                  >
-                                    Voir tous ({subCategories.length})
-                                  </Link>
-                                )}
-                              </div>
-                            )}
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Search Bar - Desktop (glued next to Categories) */}
-              <div className="flex-1 min-w-[280px] ml-2">
-                <div className="relative w-full">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-                  <input
-                    type="search"
-                    placeholder="Rechercher dans le catalogue..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' && searchQuery.trim()) {
-                        window.location.href = `/?q=${encodeURIComponent(searchQuery.trim())}`;
-                      }
-                    }}
-                    className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm placeholder:text-gray-500 focus:bg-white focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
-                  />
-                </div>
-              </div>
-            </nav>
+          
 
             {/* Right side actions */}
             <div className="flex items-center gap-2">

@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Pencil, Trash2, Plus } from "lucide-react";
 
 type Product = { _id: string; name: string; images?: string[]; regularPrice?: number; salePrice?: number; categoryIds?: string[] };
@@ -69,7 +70,7 @@ export default function AdminProductsPage() {
   }
 
   return (
-    <div className="min-h-screen py-6 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
       <div className="mb-3"><Link href="/admin" className="text-sm underline">← Retour</Link></div>
       <div className="mb-4 flex items-center gap-2">
         <input className="rounded border px-2 py-1 text-sm" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Recherche…" />
@@ -99,10 +100,15 @@ export default function AdminProductsPage() {
             <div key={p._id} className="grid grid-cols-12 gap-2 items-center px-3 py-2 border-b">
               <div className="col-span-6 min-w-0 flex items-center gap-3">
                 {p.images?.[0] ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={p.images[0]} alt="" className="h-10 w-14 rounded object-cover border" />
+                  <Image
+                    src={p.images[0]}
+                    alt=""
+                    width={112}
+                    height={80}
+                    className="h-20 w-28 rounded object-cover border"
+                  />
                 ) : (
-                  <div className="h-10 w-14 rounded border bg-gray-100" />
+                  <div className="h-20 w-28 rounded border bg-gray-100" />
                 )}
                 <div className="text-sm font-medium truncate">{p.name}</div>
               </div>

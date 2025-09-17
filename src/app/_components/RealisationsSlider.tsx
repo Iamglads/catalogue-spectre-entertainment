@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 function Row({
   items,
@@ -34,8 +35,7 @@ function Row({
               role={onItemClick ? 'button' : undefined}
               aria-label={onItemClick ? 'Voir en plein écran' : undefined}
             >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src} alt="" className="h-full w-auto object-cover" />
+            <Image src={src} alt="" width={256} height={192} className="h-full w-auto object-cover" />
           </div>
           );
         })}
@@ -107,29 +107,32 @@ export default function RealisationsSlider() {
         >
           <button
             onClick={(e) => { e.stopPropagation(); setSelectedIndex(null); }}
-            className="absolute top-4 right-4 text-white/80 hover:text-white text-2xl"
+            className="absolute top-4 right-4 text-white/80 hover:text-white text-2xl cursor-pointer"
             aria-label="Fermer"
           >
             ×
           </button>
           <button
             onClick={(e) => { e.stopPropagation(); setSelectedIndex((prev) => prev === null ? prev : (prev - 1 + items.length) % items.length); }}
-            className="absolute left-3 sm:left-6 text-white/80 hover:text-white text-3xl select-none"
+            className="absolute left-3 sm:left-6 text-white/80 hover:text-white text-3xl select-none cursor-pointer"
             aria-label="Précédent"
           >
             ‹
           </button>
           <div className="max-w-6xl max-h-[85vh] w-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={items[selectedIndex]}
-              alt=""
-              className="max-h-[85vh] w-auto h-auto object-contain rounded-md shadow-2xl"
-            />
+            <div className="relative w-full h-[85vh]">
+              <Image
+                src={items[selectedIndex]}
+                alt=""
+                fill
+                sizes="100vw"
+                className="object-contain rounded-md shadow-2xl"
+              />
+            </div>
           </div>
           <button
             onClick={(e) => { e.stopPropagation(); setSelectedIndex((prev) => prev === null ? prev : (prev + 1) % items.length); }}
-            className="absolute right-3 sm:right-6 text-white/80 hover:text-white text-3xl select-none"
+            className="absolute right-3 sm:right-6 text-white/80 hover:text-white text-3xl select-none cursor-pointer"
             aria-label="Suivant"
           >
             ›

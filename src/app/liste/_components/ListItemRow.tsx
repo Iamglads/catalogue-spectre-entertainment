@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { Trash2 } from "lucide-react";
 
 export type ProductLite = {
@@ -21,8 +22,7 @@ type Props = {
 export default function ListItemRow({ product, quantity, onDecrease, onIncrease, onChange, onRemove }: Props) {
   return (
     <div className="card p-4 flex items-center gap-4 hover-lift animate-fade-in">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={product.images?.[0] || ''} alt="" className="h-16 w-20 rounded-lg object-cover bg-gray-100 border" />
+      <Image src={product.images?.[0] || ''} alt="" width={160} height={128} className="h-16 w-20 rounded-lg object-cover bg-gray-100 border" />
       <div className="flex-1 min-w-0">
         <div className="text-title truncate">{product.name}</div>
         {product.shortDescription && <div className="text-caption truncate mt-1">{product.shortDescription}</div>}

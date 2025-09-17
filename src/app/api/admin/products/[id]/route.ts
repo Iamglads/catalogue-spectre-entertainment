@@ -72,7 +72,22 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     for (const v of uploaded) { if (typeof v !== 'string') imagePublicIdsSet.add(v.publicId); }
   }
 
-  const updateDoc: Document = { ...body, images, imagePublicIds: Array.from(imagePublicIdsSet), categoryIds, allCategoryIds, updatedAt: new Date() };
+  // Sanitize incoming body: never attempt to set immutable/synthetic fields
+  const sanitizedBody: Document = { ...body };
+  delete (sanitizedBody as any)._id;
+  delete (sanitizedBody as any).categoryIds;
+  delete (sanitizedBody as any).allCategoryIds;
+  delete (sanitizedBody as any).images;
+  delete (sanitizedBody as any).imagePublicIds;
+
+  const updateDoc: Document = {
+    ...sanitizedBody,
+    images,
+    imagePublicIds: Array.from(imagePublicIdsSet),
+    categoryIds,
+    allCategoryIds,
+    updatedAt: new Date(),
+  };
   await products.updateOne({ _id: new ObjectId(id) }, { $set: updateDoc });
   const auditUser = session?.user as { id?: string; email?: string } | undefined;
   await logAudit({ userId: auditUser?.id, email: auditUser?.email || null, action: 'product.update', resource: { type: 'product', id }, metadata: { fields: Object.keys(body || {}) } });
