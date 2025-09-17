@@ -53,32 +53,23 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
     const n = Number(v);
     return Number.isFinite(n) && n > 0 ? Math.floor(n) : 1;
   };
-  const itemsRaw = (q.items as Array<{ id?: string; name: string; quantity?: number | string; unitPrice?: number | string; image?: string }>).map((it, idx) => ({
-    idx,
-    id: it.id,
-    name: it.name,
-    rawUnitPrice: it.unitPrice,
-    quantity: toQty(it.quantity),
-    unitPrice: toNumber(it.unitPrice),
-    image: it.image,
-  }));
+  const itemsRaw = (q.items as Array<{ id?: string; name: string; quantity?: number | string; unitPrice?: number | string; image?: string }>).
+    map((it, idx) => {
+      const parsed = toNumber(it.unitPrice);
+      return {
+        idx,
+        id: it.id,
+        name: it.name,
+        rawUnitPrice: it.unitPrice,
+        quantity: toQty(it.quantity),
+        unitPrice: typeof parsed === 'number' ? parsed : 0,
+        image: it.image,
+      };
+    });
   if (!Array.isArray(itemsRaw) || itemsRaw.length === 0) {
     return NextResponse.json({ error: 'No items to send' }, { status: 400 });
   }
-  const invalidItems = itemsRaw.filter((it) => !Number.isFinite(Number(it.unitPrice)));
-  if (invalidItems.length) {
-    return NextResponse.json({
-      error: 'All items must have a unitPrice before sending',
-      invalidItems: invalidItems.map((it) => ({
-        index: it.idx,
-        id: it.id,
-        name: it.name,
-        unitPriceRaw: it.rawUnitPrice,
-        unitPriceParsed: it.unitPrice,
-      })),
-      hint: 'Assurez-vous que chaque prix est un nombre (utilisez un point pour les décimales, ex: 12.5).',
-    }, { status: 400 });
-  }
+  // Note: if some unitPrice is missing or invalid, it is treated as 0 to avoid blocking send
   const itemsTableHtml = renderItemsTableWithPrices(itemsRaw.map(({ name, quantity, unitPrice, image }) => ({ name, quantity, unitPrice, image })));
   const subtotal = itemsRaw.reduce((acc, it) => acc + ((Number(it.unitPrice) || 0) * (Number(it.quantity) || 1)), 0);
   const tps = subtotal * 0.05;

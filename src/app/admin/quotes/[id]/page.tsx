@@ -272,6 +272,19 @@ export default function AdminQuoteDetailPage() {
           {!q.customer?.email && <div className="text-xs text-amber-600">Email client requis</div>}
           <button className="rounded border px-3 py-1.5 text-sm" onClick={save}>Enregistrer</button>
           <button className="rounded border px-3 py-1.5 text-sm bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50" onClick={sendQuote} disabled={!readyToSend}>Envoyer</button>
+          <button
+            className="rounded border px-3 py-1.5 text-sm bg-red-600 text-white hover:bg-red-700"
+            onClick={async () => {
+              if (!confirm('Supprimer cette soumission ? Cette action est irréversible.')) return;
+              const res = await fetch(`/api/admin/quotes/${params.id}`, { method: 'DELETE' });
+              if (res.ok) {
+                // Audit logged server-side; redirect to list
+                router.push('/admin/quotes');
+              }
+            }}
+          >
+            Supprimer
+          </button>
         </div>
         {/* Timeline compacte */}
         <div className="basis-full pt-1 text-[11px] text-gray-600 flex items-center gap-3">
@@ -285,26 +298,26 @@ export default function AdminQuoteDetailPage() {
         <div className="rounded border bg-white p-3 text-sm">
           <div className="font-medium mb-2">Client</div>
           <div className="grid grid-cols-2 gap-2">
-            <label>Nom<input className="w-full rounded border px-2 py-1" value={q.customer?.name || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), customer: { ...(x?.customer || {}), name: e.target.value } }))} /></label>
-            <label>Email<input className="w-full rounded border px-2 py-1" value={q.customer?.email || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), customer: { ...(x?.customer || {}), email: e.target.value } }))} /></label>
-            <label>Téléphone<input className="w-full rounded border px-2 py-1" value={q.customer?.phone || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), customer: { ...(x?.customer || {}), phone: e.target.value } }))} /></label>
-            <label>Entreprise<input className="w-full rounded border px-2 py-1" value={q.customer?.company || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), customer: { ...(x?.customer || {}), company: e.target.value } }))} /></label>
+            <label>Nom<input className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-600 focus:ring-2 focus:ring-blue-500/20" value={q.customer?.name || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), customer: { ...(x?.customer || {}), name: e.target.value } }))} /></label>
+            <label>Email<input className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-600 focus:ring-2 focus:ring-blue-500/20" value={q.customer?.email || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), customer: { ...(x?.customer || {}), email: e.target.value } }))} /></label>
+            <label>Téléphone<input className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-600 focus:ring-2 focus:ring-blue-500/20" value={q.customer?.phone || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), customer: { ...(x?.customer || {}), phone: e.target.value } }))} /></label>
+            <label>Entreprise<input className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-600 focus:ring-2 focus:ring-blue-500/20" value={q.customer?.company || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), customer: { ...(x?.customer || {}), company: e.target.value } }))} /></label>
           </div>
         </div>
         <div className="rounded border bg-white p-3 text-sm">
           <div className="font-medium mb-2">Livraison</div>
           <label className="block mb-2">Méthode
-            <select className="w-full rounded border px-2 py-1" value={q.delivery?.method || 'pickup'} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), delivery: { ...((x as QuoteDoc).delivery || {}), method: e.target.value as 'pickup' | 'delivery' } }))}>
+            <select className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-600 focus:ring-2 focus:ring-blue-500/20" value={q.delivery?.method || 'pickup'} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), delivery: { ...((x as QuoteDoc).delivery || {}), method: e.target.value as 'pickup' | 'delivery' } }))}>
               <option value="pickup">Ramassage</option>
               <option value="delivery">Livraison</option>
             </select>
           </label>
           <div className="grid grid-cols-2 gap-2">
-            <label>Ligne 1<input className="w-full rounded border px-2 py-1" value={q.delivery?.address?.line1 || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), delivery: { ...((x as QuoteDoc).delivery || {}), address: { ...((x as QuoteDoc).delivery?.address || {}), line1: e.target.value } } }))} /></label>
-            <label>Ligne 2<input className="w-full rounded border px-2 py-1" value={q.delivery?.address?.line2 || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), delivery: { ...((x as QuoteDoc).delivery || {}), address: { ...((x as QuoteDoc).delivery?.address || {}), line2: e.target.value } } }))} /></label>
-            <label>Ville<input className="w-full rounded border px-2 py-1" value={q.delivery?.address?.city || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), delivery: { ...((x as QuoteDoc).delivery || {}), address: { ...((x as QuoteDoc).delivery?.address || {}), city: e.target.value } } }))} /></label>
-            <label>Province<input className="w-full rounded border px-2 py-1" value={q.delivery?.address?.province || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), delivery: { ...((x as QuoteDoc).delivery || {}), address: { ...((x as QuoteDoc).delivery?.address || {}), province: e.target.value } } }))} /></label>
-            <label>Code postal<input className="w-full rounded border px-2 py-1" value={q.delivery?.address?.postalCode || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), delivery: { ...((x as QuoteDoc).delivery || {}), address: { ...((x as QuoteDoc).delivery?.address || {}), postalCode: e.target.value } } }))} /></label>
+            <label>Ligne 1<input className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-600 focus:ring-2 focus:ring-blue-500/20" value={q.delivery?.address?.line1 || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), delivery: { ...((x as QuoteDoc).delivery || {}), address: { ...((x as QuoteDoc).delivery?.address || {}), line1: e.target.value } } }))} /></label>
+            <label>Ligne 2<input className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-600 focus:ring-2 focus:ring-blue-500/20" value={q.delivery?.address?.line2 || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), delivery: { ...((x as QuoteDoc).delivery || {}), address: { ...((x as QuoteDoc).delivery?.address || {}), line2: e.target.value } } }))} /></label>
+            <label>Ville<input className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-600 focus:ring-2 focus:ring-blue-500/20" value={q.delivery?.address?.city || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), delivery: { ...((x as QuoteDoc).delivery || {}), address: { ...((x as QuoteDoc).delivery?.address || {}), city: e.target.value } } }))} /></label>
+            <label>Province<input className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-600 focus:ring-2 focus:ring-blue-500/20" value={q.delivery?.address?.province || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), delivery: { ...((x as QuoteDoc).delivery || {}), address: { ...((x as QuoteDoc).delivery?.address || {}), province: e.target.value } } }))} /></label>
+            <label>Code postal<input className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-600 focus:ring-2 focus:ring-blue-500/20" value={q.delivery?.address?.postalCode || ''} onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), delivery: { ...((x as QuoteDoc).delivery || {}), address: { ...((x as QuoteDoc).delivery?.address || {}), postalCode: e.target.value } } }))} /></label>
           </div>
         </div>
       </div>
@@ -315,7 +328,7 @@ export default function AdminQuoteDetailPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           <label className="md:col-span-2">Sujet
             <input
-              className="w-full rounded border px-2 py-1"
+              className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-600 focus:ring-2 focus:ring-blue-500/20"
               placeholder={`Soumission - ${q.customer?.name || ''}`}
               value={q.subject || ''}
               onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), subject: e.target.value }))}
@@ -324,7 +337,7 @@ export default function AdminQuoteDetailPage() {
           <label>Message d’introduction
             <textarea
               rows={3}
-              className="w-full rounded border px-2 py-1"
+              className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-600 focus:ring-2 focus:ring-blue-500/20"
               placeholder="Veuillez trouver ci-dessous le détail de votre soumission. N’hésitez pas à nous écrire pour toute modification."
               value={q.intro || ''}
               onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), intro: e.target.value }))}
@@ -333,7 +346,7 @@ export default function AdminQuoteDetailPage() {
           <label>Note de pied de page
             <textarea
               rows={3}
-              className="w-full rounded border px-2 py-1"
+              className="w-full rounded border border-gray-300 px-2 py-1 focus:border-blue-600 focus:ring-2 focus:ring-blue-500/20"
               placeholder="Merci pour votre confiance — Spectre Entertainment"
               value={q.footerNote || ''}
               onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), footerNote: e.target.value }))}
@@ -346,8 +359,8 @@ export default function AdminQuoteDetailPage() {
       <div className="rounded border bg-white p-3 text-sm">
         <div className="font-medium mb-2">Notes internes</div>
         <textarea
-          rows={4}
-          className="w-full rounded border px-3 py-2 text-sm"
+          rows={4]
+          className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-500/20"
           placeholder="Notes visibles uniquement par l’équipe (non envoyées au client)."
           value={q.notes || ''}
           onChange={(e) => setQ((x) => ({ ...(x as QuoteDoc), notes: e.target.value }))}

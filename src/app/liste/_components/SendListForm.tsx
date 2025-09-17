@@ -59,6 +59,18 @@ export default function SendListForm({ selectedIds, quantities, onSuccess }: Pro
         return;
       }
       setSent({ ok: true });
+      // Reset form fields after successful send
+      setName("");
+      setEmail("");
+      setPhone("");
+      setCompany("");
+      setMessage("");
+      setPostalCode("");
+      setDeliveryMethod("pickup");
+      setAddr1("");
+      setAddr2("");
+      setCity("");
+      setProvince("QC");
       onSuccess();
     } catch (e: unknown) {
       const errMsg = e instanceof Error ? e.message : 'Erreur inconnue';
