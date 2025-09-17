@@ -359,7 +359,7 @@ export default function AdminQuoteDetailPage() {
       <div className="rounded border bg-white p-3 text-sm">
         <div className="font-medium mb-2">Notes internes</div>
         <textarea
-          rows={4]
+          rows={4}
           className="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-500/20"
           placeholder="Notes visibles uniquement par l’équipe (non envoyées au client)."
           value={q.notes || ''}
