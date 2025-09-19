@@ -55,7 +55,7 @@ export default function SendListForm({ selectedIds, quantities, onSuccess }: Pro
       const res = await fetch('/api/send-list', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       if (!res.ok) {
         const txt = await res.text();
-        setSent({ ok: false, error: txt });
+        setSent({ ok: false, error: txt || 'Impossible de soumettre: quantités indisponibles' });
         return;
       }
       setSent({ ok: true });

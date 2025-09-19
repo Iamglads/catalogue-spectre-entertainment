@@ -46,10 +46,32 @@ export async function POST(req: NextRequest) {
         visibility: 'visible',
         $or: [ { 'raw.Publié': 1 }, { 'raw.Publié': '1' } ],
       },
-      { projection: { name: 1, images: 1, shortDescription: 1, lengthInches: 1, widthInches: 1, heightInches: 1 } }
+      { projection: { name: 1, images: 1, shortDescription: 1, lengthInches: 1, widthInches: 1, heightInches: 1, stockQty: 1, isInStock: 1 } }
     ).toArray();
 
     const qtyMap = new Map(body.items.map((i) => [i.id, Math.max(1, Number(i.quantity) || 1)]));
+
+    // Validation: ensure requested quantity is available
+    const insufficient: Array<{ id: string; name: string; requested: number; available: number }> = [];
+    for (const d of docs) {
+      const id = String(d._id);
+      const requested = qtyMap.get(id) ?? 1;
+      const stock = (d as Document & { stockQty?: number }).stockQty;
+      const inStock = (d as Document & { isInStock?: boolean }).isInStock;
+      if (typeof stock === 'number') {
+        const available = Math.max(0, stock);
+        if (requested > available) {
+          insufficient.push({ id, name: (d as any)?.name || '', requested, available });
+        }
+      } else if (inStock === false) {
+        insufficient.push({ id, name: (d as any)?.name || '', requested, available: 0 });
+      }
+    }
+
+    if (insufficient.length > 0) {
+      const msg = 'Quantité indisponible pour: ' + insufficient.map((it) => `${it.name} (demandée ${it.requested}, disponible ${it.available})`).join(', ');
+      return new NextResponse(msg, { status: 400, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+    }
 
     const rows = docs.map((d: Document & { images?: string[]; name?: string; shortDescription?: string; lengthInches?: number; widthInches?: number; heightInches?: number }) => {
       const id = String(d._id);

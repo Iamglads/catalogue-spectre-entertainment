@@ -79,16 +79,40 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
   delete (sanitizedBody as any).allCategoryIds;
   delete (sanitizedBody as any).images;
   delete (sanitizedBody as any).imagePublicIds;
+  // Do not persist control flags
+  delete (sanitizedBody as any).featureNow;
+
+  // Coerce featuredAt and featureNow semantics
+  const featureNow = Boolean((body as any)?.featureNow);
+  let featuredAtToSet: Date | undefined;
+  let unsetFeaturedAt = false;
+  if (featureNow) {
+    featuredAtToSet = new Date();
+  } else if (Object.prototype.hasOwnProperty.call(body || {}, 'featuredAt')) {
+    const raw = (body as any).featuredAt;
+    if (raw == null || raw === '') {
+      unsetFeaturedAt = true;
+      delete (sanitizedBody as any).featuredAt;
+    } else if (typeof raw === 'string' || typeof raw === 'number') {
+      featuredAtToSet = new Date(raw as any);
+    } // if it's already a Date, it will be kept below
+  }
 
   const updateDoc: Document = {
     ...sanitizedBody,
+    ...(typeof featuredAtToSet !== 'undefined' ? { featuredAt: featuredAtToSet } : {}),
     images,
     imagePublicIds: Array.from(imagePublicIdsSet),
     categoryIds,
     allCategoryIds,
     updatedAt: new Date(),
   };
-  await products.updateOne({ _id: new ObjectId(id) }, { $set: updateDoc });
+
+  const updateOps: Document = { $set: updateDoc };
+  if (unsetFeaturedAt) {
+    (updateOps as any).$unset = { featuredAt: '' };
+  }
+  await products.updateOne({ _id: new ObjectId(id) }, updateOps);
   const auditUser = session?.user as { id?: string; email?: string } | undefined;
   await logAudit({ userId: auditUser?.id, email: auditUser?.email || null, action: 'product.update', resource: { type: 'product', id }, metadata: { fields: Object.keys(body || {}) } });
   return NextResponse.json({ ok: true });

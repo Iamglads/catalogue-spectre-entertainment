@@ -109,7 +109,31 @@ export async function POST(req: NextRequest) {
     for (const v of uploaded) { if (typeof v !== 'string') imagePublicIdsSet.add(v.publicId); }
   }
 
-  const doc: Document = { ...body, images, imagePublicIds: Array.from(imagePublicIdsSet), categoryIds, allCategoryIds, createdAt: new Date(), updatedAt: new Date() };
+  // Handle featuredAt and featureNow on create
+  const featureNow = Boolean((body as any)?.featureNow);
+  let featuredAt: Date | undefined;
+  if (featureNow) {
+    featuredAt = new Date();
+  } else if (Object.prototype.hasOwnProperty.call(body || {}, 'featuredAt')) {
+    const raw = (body as any).featuredAt;
+    if (raw != null && raw !== '') {
+      featuredAt = new Date(raw as any);
+    }
+  }
+
+  const sanitized: Document = { ...body };
+  delete (sanitized as any).featureNow;
+
+  const doc: Document = {
+    ...sanitized,
+    ...(typeof featuredAt !== 'undefined' ? { featuredAt } : {}),
+    images,
+    imagePublicIds: Array.from(imagePublicIdsSet),
+    categoryIds,
+    allCategoryIds,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  };
   const res = await products.insertOne(doc);
   const auditUser = session?.user as { id?: string; email?: string } | undefined;
   await logAudit({ userId: auditUser?.id, email: auditUser?.email || null, action: 'product.create', resource: { type: 'product', id: String(res.insertedId) }, metadata: { name: body?.name } });

@@ -41,6 +41,7 @@ export async function GET(req: NextRequest) {
     const maxPrice = parseNumberParam(searchParams.get('maxPrice'));
     const inStock = parseBooleanParam(searchParams.get('inStock'));
     const brand = searchParams.get('brand');
+    const featuredParam = parseBooleanParam(searchParams.get('featured'));
 
     const pageParam = parseNumberParam(searchParams.get('page'));
     const page = pageParam && pageParam > 0 ? pageParam : 1;
@@ -97,6 +98,11 @@ export async function GET(req: NextRequest) {
       and.push({ $expr: { $and: priceExprParts } });
     }
 
+    if (typeof featuredParam === 'boolean' && featuredParam) {
+      // Only include products that have a valid featuredAt date
+      and.push({ featuredAt: { $type: 'date' } });
+    }
+
     if (and.length) filter.$and = and;
 
     const skip = (page - 1) * PAGE_SIZE;
@@ -108,7 +114,7 @@ export async function GET(req: NextRequest) {
           products.countDocuments(filter),
           products
             .find(filter)
-            .sort({ createdAt: -1, _id: 1 })
+            .sort((typeof featuredParam === 'boolean' && featuredParam) ? { featuredAt: -1, _id: 1 } : { createdAt: -1, _id: 1 })
             .skip(skip)
             .limit(PAGE_SIZE)
             .toArray(),

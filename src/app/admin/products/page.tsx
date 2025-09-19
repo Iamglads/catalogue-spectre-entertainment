@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Pencil, Trash2, Plus } from "lucide-react";
 
-type Product = { _id: string; name: string; images?: string[]; regularPrice?: number; salePrice?: number; categoryIds?: string[] };
+type Product = { _id: string; name: string; images?: string[]; regularPrice?: number; salePrice?: number; stockQty?: number; categoryIds?: string[] };
 type Category = { _id: string; label: string };
 type ApiResponse = { total: number; page: number; pageSize: number; totalPages: number; items: Product[] };
 
@@ -90,7 +90,8 @@ export default function AdminProductsPage() {
         <div className="grid grid-cols-12 gap-2 px-3 py-2 border-b text-xs font-medium text-gray-600">
           <div className="col-span-6">Article</div>
           <div className="col-span-2">Prix</div>
-          <div className="col-span-3">Catégories</div>
+          <div className="col-span-1">Stock</div>
+          <div className="col-span-2">Catégories</div>
           <div className="col-span-1 text-right">Actions</div>
         </div>
         {items.map((p) => {
@@ -158,7 +159,8 @@ export default function AdminProductsPage() {
                   </button>
                 )}
               </div>
-              <div className="col-span-3 text-xs text-gray-700 truncate">{cats.join(', ') || '—'}</div>
+              <div className="col-span-1 text-sm text-gray-800">{typeof p.stockQty === 'number' ? p.stockQty : '—'}</div>
+              <div className="col-span-2 text-xs text-gray-700 truncate">{cats.join(', ') || '—'}</div>
               <div className="col-span-1 flex items-center justify-end gap-2">
                 <Link aria-label="Éditer" title="Éditer" className="inline-flex items-center justify-center rounded border p-1.5 hover:bg-gray-50" href={`/admin/products/${p._id}`}>
                   <Pencil className="h-4 w-4" />

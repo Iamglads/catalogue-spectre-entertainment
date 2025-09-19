@@ -17,6 +17,7 @@ type ProductForm = {
   widthInches?: number;
   heightInches?: number;
   categoryIds?: string[];
+  featuredAt?: string | null;
 };
 
 export default function AdminEditProductPage() {
@@ -106,6 +107,15 @@ export default function AdminEditProductPage() {
           <input type="number" className="w-full rounded border px-3 py-2 text-sm" value={form.stockQty ?? ''} onChange={(e) => setForm((f) => ({ ...f, stockQty: Math.max(0, Number(e.target.value) || 0) }))} />
         </label>
         <label className="text-sm">
+          <div className="mb-1 text-gray-600">Mise en avant depuis</div>
+          <input
+            type="datetime-local"
+            className="w-full rounded border px-3 py-2 text-sm"
+            value={form.featuredAt ? new Date(form.featuredAt).toISOString().slice(0,16) : ''}
+            onChange={(e) => setForm((f) => ({ ...f, featuredAt: e.target.value || null }))}
+          />
+        </label>
+        <label className="text-sm">
           <div className="mb-1 text-gray-600">Dimensions (L × l × H) en pouces</div>
           <div className="grid grid-cols-3 gap-2">
             <input type="number" className="w-full rounded border px-3 py-2 text-sm" placeholder="Long." value={form.lengthInches ?? ''} onChange={(e) => setForm((f) => ({ ...f, lengthInches: e.target.value === '' ? undefined : Number(e.target.value) }))} />
@@ -136,6 +146,34 @@ export default function AdminEditProductPage() {
             })}
           </div>
         </label>
+      </div>
+      <div className="mx-auto w-full max-w-5xl">
+        <div className="flex items-center gap-2">
+          {!isNew && (
+            <>
+              <button
+                className="rounded border px-3 py-1.5 text-sm"
+                onClick={async () => {
+                  await fetch(`/api/admin/products/${params.id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ featureNow: true }) });
+                  const res = await fetch(`/api/admin/products/${params.id}`);
+                  if (res.ok) setForm(await res.json());
+                }}
+              >
+                Mettre en avant maintenant
+              </button>
+              <button
+                className="rounded border px-3 py-1.5 text-sm"
+                onClick={async () => {
+                  await fetch(`/api/admin/products/${params.id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ featuredAt: null }) });
+                  const res = await fetch(`/api/admin/products/${params.id}`);
+                  if (res.ok) setForm(await res.json());
+                }}
+              >
+                Retirer de la mise en avant
+              </button>
+            </>
+          )}
+        </div>
       </div>
       {!isNew && <ProductAudit productId={params.id} />}
     </div>
