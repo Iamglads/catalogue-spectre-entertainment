@@ -18,6 +18,7 @@ type Product = {
   regularPrice?: number;
   salePrice?: number;
   isInStock?: boolean;
+  stockQty?: number;
   widthInches?: number | string;
   heightInches?: number | string;
   lengthInches?: number | string;
@@ -447,6 +448,17 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
   const hasImages = Array.isArray(product.images) && product.images.length > 0;
   const currentSrc = hasImages ? product.images![Math.max(0, Math.min(index, product.images!.length - 1))] : undefined;
 
+  function stripHtml(html: string): string {
+    return html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').trim();
+  }
+
+  const shortText = (product.shortDescription || '').trim();
+  const longHtml = product.description || '';
+  const longText = stripHtml(longHtml);
+  const hasShort = Boolean(shortText);
+  const hasLong = Boolean(longText);
+  const areSame = hasShort && hasLong && shortText === longText;
+
   return (
     <div className="fixed inset-0 z-50" role="dialog" aria-modal="true" aria-label={product.name}>
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
@@ -519,13 +531,35 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
               </div>
             )}
 
-            {(product.shortDescription || product.description) && (
-              <div className="mt-6 space-y-2">
-                {product.shortDescription && (
-                  <div className="text-body text-gray-800">{product.shortDescription}</div>
+            {/* Stock / disponibilité */}
+            {(typeof product.stockQty === 'number' || typeof product.isInStock === 'boolean') && (
+              <div className="mt-6">
+                {typeof product.stockQty === 'number' ? (
+                  <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm">
+                    <span className="text-gray-700">Stock:&nbsp;</span>
+                    <span className={`font-medium ${product.stockQty > 0 ? 'text-green-600' : 'text-red-600'}`}>{product.stockQty}</span>
+                  </div>
+                ) : (
+                  <div className={`inline-flex items-center rounded-full border px-3 py-1 text-sm ${product.isInStock ? 'text-green-600' : 'text-red-600'}`}>
+                    {product.isInStock ? 'En stock' : 'Rupture de stock'}
+                  </div>
                 )}
-                {product.description && (
-                  <div className="prose prose-sm max-w-none text-gray-700" dangerouslySetInnerHTML={{ __html: product.description }} />
+              </div>
+            )}
+
+            {(hasShort || hasLong) && (
+              <div className="mt-6 space-y-2">
+                {areSame ? (
+                  hasLong ? (
+                    <div className="prose prose-sm max-w-none text-gray-700" dangerouslySetInnerHTML={{ __html: longHtml }} />
+                  ) : (
+                    <div className="text-body text-gray-800">{shortText}</div>
+                  )
+                ) : (
+                  <>
+                    {hasShort && (<div className="text-body text-gray-800">{shortText}</div>)}
+                    {hasLong && (<div className="prose prose-sm max-w-none text-gray-700" dangerouslySetInnerHTML={{ __html: longHtml }} />)}
+                  </>
                 )}
               </div>
             )}

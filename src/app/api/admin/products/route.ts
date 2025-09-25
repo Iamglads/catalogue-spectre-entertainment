@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { revalidateTag } from 'next/cache';
 import clientPromise from '@/lib/mongodb';
 import { ObjectId, type Document } from 'mongodb';
 import { getServerSession } from 'next-auth/next';
@@ -36,7 +37,12 @@ export async function GET(req: NextRequest) {
   const skip = (page - 1) * pageSize;
   const [total, rows] = await Promise.all([
     products.countDocuments(filter),
-    products.find(filter).sort({ _id: -1 }).skip(skip).limit(pageSize).toArray(),
+    products
+      .find(filter)
+      .sort({ updatedAt: -1, createdAt: -1, _id: -1 })
+      .skip(skip)
+      .limit(pageSize)
+      .toArray(),
   ]);
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
   return NextResponse.json({
@@ -113,6 +119,7 @@ export async function POST(req: NextRequest) {
   const res = await products.insertOne(doc);
   const auditUser = session?.user as { id?: string; email?: string } | undefined;
   await logAudit({ userId: auditUser?.id, email: auditUser?.email || null, action: 'product.create', resource: { type: 'product', id: String(res.insertedId) }, metadata: { name: body?.name } });
+  try { revalidateTag('products'); } catch {}
   return NextResponse.json({ _id: String(res.insertedId) });
 }
 

@@ -22,6 +22,7 @@ export default function AdminProductsPage() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editingField, setEditingField] = useState<'regularPrice' | 'salePrice'>('regularPrice');
   const [editingValue, setEditingValue] = useState<string>('');
+  const [flash, setFlash] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
   const lastKeyRef = useRef<string>('');
 
@@ -85,6 +86,7 @@ export default function AdminProductsPage() {
           Ajouter
         </Link>
       </div>
+      {flash && <div className="mb-3 text-sm text-green-700 bg-green-50 border border-green-200 rounded px-3 py-2">{flash}</div>}
       {error && <div className="mb-3 text-xs text-red-600">{error}</div>}
       <div className="rounded border bg-white text-gray-900">
         <div className="grid grid-cols-12 gap-2 px-3 py-2 border-b text-xs font-medium text-gray-600">
@@ -160,6 +162,20 @@ export default function AdminProductsPage() {
               </div>
               <div className="col-span-3 text-xs text-gray-700 truncate">{cats.join(', ') || '—'}</div>
               <div className="col-span-1 flex items-center justify-end gap-2">
+                <button
+                  aria-label="Mettre en avant"
+                  title="Mettre en avant"
+                  className="inline-flex items-center justify-center rounded border px-2 py-1 text-xs hover:bg-gray-50"
+                  onClick={async () => {
+                    await fetch(`/api/admin/products/${p._id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ featureNow: true }) });
+                    await load();
+                    const now = new Date().toLocaleString();
+                    setFlash(`Mise en avant mise à jour: ${now}`);
+                    setTimeout(() => setFlash(null), 3500);
+                  }}
+                >
+                  Mettre en avant
+                </button>
                 <Link aria-label="Éditer" title="Éditer" className="inline-flex items-center justify-center rounded border p-1.5 hover:bg-gray-50" href={`/admin/products/${p._id}`}>
                   <Pencil className="h-4 w-4" />
                 </Link>

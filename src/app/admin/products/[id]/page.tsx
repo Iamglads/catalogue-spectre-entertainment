@@ -9,6 +9,7 @@ type ProductForm = {
   description?: string;
   shortDescription?: string;
   images?: string[];
+  imagePublicIds?: string[];
   visibility?: 'visible' | 'hidden';
   regularPrice?: number;
   salePrice?: number;
@@ -24,6 +25,7 @@ export default function AdminEditProductPage() {
   const router = useRouter();
   const [form, setForm] = useState<ProductForm>({ name: "", categoryIds: [] });
   const [allCategories, setAllCategories] = useState<Array<{ _id: string; name: string; depth: number }>>([]);
+  const [flash, setFlash] = useState<string | null>(null);
   const isNew = params.id === 'new';
 
   useEffect(() => {
@@ -67,7 +69,29 @@ export default function AdminEditProductPage() {
         {!isNew && <button className="rounded border px-3 py-1.5 text-sm text-red-600" onClick={remove}>Supprimer</button>}
       </div>
       <div className="mx-auto w-full max-w-5xl">
-        <div className="text-lg font-semibold mb-2">{isNew ? 'Ajouter un équipement' : 'Éditer un équipement'}</div>
+        <div className="flex items-center justify-between mb-2">
+          <div className="text-lg font-semibold">{isNew ? 'Ajouter un équipement' : 'Éditer un équipement'}</div>
+          {!isNew && (
+            <div className="flex items-center gap-2">
+              <button
+                className="rounded border px-3 py-1.5 text-sm"
+                onClick={async () => {
+                  await fetch(`/api/admin/products/${params.id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ featureNow: true }) });
+                  const res = await fetch(`/api/admin/products/${params.id}`);
+                  if (res.ok) setForm(await res.json());
+                  const now = new Date().toLocaleString();
+                  setFlash(`Mise en avant mise à jour: ${now}`);
+                  setTimeout(() => setFlash(null), 3500);
+                }}
+              >
+                Mettre en avant maintenant
+              </button>
+            </div>
+          )}
+        </div>
+        {flash && (
+          <div className="mb-3 text-sm text-green-700 bg-green-50 border border-green-200 rounded px-3 py-2">{flash}</div>
+        )}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mx-auto w-full max-w-5xl">
         <label className="text-sm">
@@ -83,8 +107,54 @@ export default function AdminEditProductPage() {
           <textarea className="w-full rounded border px-3 py-2 text-sm" value={form.description || ''} onChange={(e) => setForm((f) => ({ ...f, description: e.target.value }))} />
         </label>
         <label className="text-sm">
-          <div className="mb-1 text-gray-600">Images (CSV)</div>
-          <input className="w-full rounded border px-3 py-2 text-sm" value={(form.images || []).join(', ')} onChange={(e) => setForm((f) => ({ ...f, images: e.target.value.split(',').map((s) => s.trim()).filter(Boolean) }))} />
+          <div className="mb-1 text-gray-600">Images</div>
+          <div className="space-y-2">
+            <div className="flex flex-wrap gap-2">
+              {(form.images || []).map((src, idx) => (
+                <div key={`${src}-${idx}`} className="relative w-24 h-20 rounded border overflow-hidden bg-gray-100 group">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={src} alt="" className="w-full h-full object-cover" />
+                  <button
+                    type="button"
+                    aria-label="Retirer cette image"
+                    title="Retirer cette image"
+                    className="absolute top-1 right-1 rounded bg-white/90 text-xs px-1.5 py-0.5 border shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                    onClick={() => {
+                      setForm((f) => {
+                        const nextImages = Array.from(f.images || []);
+                        const nextIds = Array.from(f.imagePublicIds || []);
+                        nextImages.splice(idx, 1);
+                        if (idx < nextIds.length) nextIds.splice(idx, 1);
+                        return { ...f, images: nextImages, imagePublicIds: nextIds };
+                      });
+                    }}
+                  >
+                    Retirer
+                  </button>
+                </div>
+              ))}
+            </div>
+            <input
+              type="file"
+              multiple
+              accept="image/*"
+              className="w-full rounded border px-3 py-2 text-sm"
+              onChange={async (e) => {
+                const files = e.target.files;
+                if (!files || files.length === 0) return;
+                const fd = new FormData();
+                Array.from(files).forEach((f) => fd.append('files', f));
+                const res = await fetch('/api/admin/cloudinary/upload', { method: 'POST', body: fd });
+                if (!res.ok) return;
+                const j = await res.json();
+                const urls: string[] = (j.items || []).map((it: { url: string }) => it.url);
+                const ids: string[] = (j.items || []).map((it: { publicId: string }) => it.publicId);
+                setForm((f) => ({ ...f, images: [ ...(f.images || []), ...urls ], imagePublicIds: [ ...(f.imagePublicIds || []), ...ids ] }));
+                // reset input value to allow re-upload same files if needed
+                e.currentTarget.value = '';
+              }}
+            />
+          </div>
         </label>
         <label className="text-sm">
           <div className="mb-1 text-gray-600">Visible</div>

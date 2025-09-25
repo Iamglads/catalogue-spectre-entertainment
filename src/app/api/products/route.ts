@@ -108,7 +108,7 @@ export async function GET(req: NextRequest) {
           products.countDocuments(filter),
           products
             .find(filter)
-            .sort({ createdAt: -1, _id: 1 })
+            .sort({ updatedAt: -1, createdAt: -1, _id: 1 })
             .skip(skip)
             .limit(PAGE_SIZE)
             .toArray(),

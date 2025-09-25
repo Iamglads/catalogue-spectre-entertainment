@@ -84,10 +84,7 @@ export default function Navigation() {
 
             {/* Right side actions */}
             <div className="flex items-center gap-3">
-              <Link href="tel:4503320894" className="hidden md:inline-flex bg-[#007aff] text-white font-semibold items-center gap-2 px-2 py-1 rounded hover:opacity-90 transition-colors">
-                <Phone className="h-4 w-4" />
-                450 332-0894
-              </Link>
+              
               <Link
                 href="https://spectre-entertainment.com"
                 target="_blank"
@@ -96,6 +93,10 @@ export default function Navigation() {
               >
                 Retourner au site
                 <ExternalLink className="h-3 w-3" />
+              </Link>
+              <Link href="tel:4503320894" className="hidden md:inline-flex bg-[#007aff] text-white font-semibold items-center gap-2 px-2 py-1 rounded hover:opacity-90 transition-colors">
+                <Phone className="h-4 w-4" />
+                450 332-0894
               </Link>
               <ListCounter />
               {/* Admin link on desktop when logged in */}
