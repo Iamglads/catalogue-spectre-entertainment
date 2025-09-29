@@ -66,10 +66,10 @@ export default function Navigation() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/50">
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50">
         <div className="w-full">
           {/* Single-line header: logo + contacts + actions */}
-          <div className="flex max-w-7xl mx-auto items-center justify-between h-16 px-6 gap-3">
+          <div className="flex max-w-7xl mx-auto items-center justify-between h-16 px-4 sm:px-6 lg:px-8 gap-3">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
               <Image 
@@ -83,25 +83,25 @@ export default function Navigation() {
 
 
             {/* Right side actions */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               
               <Link
                 href="https://spectre-entertainment.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:inline-flex items-center gap-2 text-sm underline underline-offset-4 hover:text-brand transition-colors"
+                className="hidden md:inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm hover:bg-gray-50 transition-colors"
               >
-                Retourner au site
-                <ExternalLink className="h-3 w-3" />
+                <ExternalLink className="h-4 w-4 text-gray-700" />
+                <span className="text-gray-800">Site principal</span>
               </Link>
-              <Link href="tel:4503320894" className="hidden md:inline-flex bg-[#007aff] text-white font-semibold items-center gap-2 px-2 py-1 rounded hover:opacity-90 transition-colors">
+              <Link href="tel:4503320894" className="hidden md:inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm bg-blue-600 text-white hover:bg-blue-700 transition-colors">
                 <Phone className="h-4 w-4" />
-                450 332-0894
+                <span className="font-medium">450 332-0894</span>
               </Link>
               <ListCounter />
               {/* Admin link on desktop when logged in */}
               {isAdmin && (
-                <Link href="/admin" className="hidden lg:inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand transition-colors">
+                <Link href="/admin" className="hidden lg:inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
                   Administration
                 </Link>
               )}
@@ -109,7 +109,7 @@ export default function Navigation() {
               {/* Mobile menu button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                className="lg:hidden p-2 rounded-full hover:bg-gray-100 transition-colors"
                 aria-label="Menu"
               >
                 {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

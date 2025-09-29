@@ -6,6 +6,8 @@ import { addOrUpdateItem, removeItem, loadList } from '@/lib/listStorage';
 import Breadcrumbs from './_components/Breadcrumbs';
 import QuickActions from './_components/QuickActions';
 import RealisationsSlider from './_components/RealisationsSlider';
+import ForSaleSlider from './_components/ForSaleSlider';
+import HeroGallery from './_components/HeroGallery';
 import { useSearchParams } from 'next/navigation';
 import CategorySelect from './_components/CategorySelect';
 
@@ -220,11 +222,7 @@ function HomeContent() {
     <div className="container-max section-padding py-8">
       <Breadcrumbs />
       
-      <header className="mb-8 space-y-6">
-        <div className="text-center space-y-2">
-          <h1 className="text-display text-gray-900">Catalogue des décors</h1>
-        </div>
-      </header>
+    
 
       {/* Barre de filtres */}
       <div className="mb-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
@@ -391,6 +389,7 @@ function HomeContent() {
             </div>
           </div>
 
+          <ForSaleSlider />
           <RealisationsSlider />
         </>
       )}
@@ -412,9 +411,12 @@ function HomeContent() {
 
 export default function Home() {
   return (
-    <Suspense fallback={<div className="container-max section-padding py-8"><div className="text-center text-sm text-gray-500">Chargement…</div></div>}>
-      <HomeContent />
-    </Suspense>
+    <>
+      <HeroGallery />
+      <Suspense fallback={<div className="container-max section-padding py-8"><div className="text-center text-sm text-gray-500">Chargement…</div></div>}>
+        <HomeContent />
+      </Suspense>
+    </>
   );
 }
 

@@ -83,7 +83,7 @@ export default function ListePage() {
           <Link href="/" className="btn btn-ghost">← Retour au catalogue</Link>
           <button
             className="btn btn-secondary"
-            onClick={() => { setSelectedIds([]); setQuantities({}); }}
+            onClick={() => { clearList(); setSelectedIds([]); setQuantities({}); clearAfterSuccess(); }}
           >
             Vider
           </button>
