@@ -1,8 +1,7 @@
 "use client";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Eye, Heart, X } from "lucide-react";
-import { addOrUpdateItem, loadList, removeItem } from "@/lib/listStorage";
+import { ChevronLeft, ChevronRight, Eye, X } from "lucide-react";
 
 type Product = {
   _id: string;
@@ -32,23 +31,8 @@ function ForSaleContent() {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<ApiResponse | null>(null);
-  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [viewer, setViewer] = useState<Product | null>(null);
   const [viewerIndex, setViewerIndex] = useState(0);
-
-  // Init sélection depuis listStorage/localStorage
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem('catalogue:selected');
-      if (raw) setSelectedIds(new Set(JSON.parse(raw)));
-      const list = loadList();
-      if (list.length) setSelectedIds(new Set(list.map((it) => it.id)));
-    } catch {}
-  }, []);
-
-  useEffect(() => {
-    try { localStorage.setItem('catalogue:selected', JSON.stringify(Array.from(selectedIds))); } catch {}
-  }, [selectedIds]);
 
   const queryString = useMemo(() => {
     const p = new URLSearchParams();
@@ -87,22 +71,6 @@ function ForSaleContent() {
     return () => { canceled = true; };
   }, [queryString]);
 
-  function toggleSelectProduct(product: Product) {
-    setSelectedIds((prev) => {
-      const next = new Set(prev);
-      const id = product._id;
-      if (next.has(id)) {
-        next.delete(id);
-        try { removeItem(id); } catch {}
-      } else {
-        next.add(id);
-        const image = product.images?.[0];
-        try { addOrUpdateItem({ id, name: product.name, image, shortDescription: product.shortDescription }, 1); } catch {}
-      }
-      try { localStorage.setItem('catalogue:selected', JSON.stringify(Array.from(next))); } catch {}
-      return next;
-    });
-  }
 
   const items = data?.items ?? [];
 
@@ -145,7 +113,6 @@ function ForSaleContent() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
             {items.map((p) => {
               const image = p.images?.[0];
-              const isSelected = selectedIds.has(p._id);
               return (
                 <div key={p._id} className="card overflow-hidden hover-lift group animate-fade-in h-full flex flex-col">
                   <div className="relative aspect-[4/3] bg-gray-50">
@@ -165,16 +132,7 @@ function ForSaleContent() {
                   </div>
                   <div className="p-4 flex-1 flex flex-col">
                     <div className="text-title text-gray-900 line-clamp-2 mb-2">{p.name}</div>
-                    <div className="mt-auto flex items-center justify-end">
-                      <button
-                        className="inline-flex items-center justify-center p-2 rounded-full hover:bg-gray-100 transition-colors interactive cursor-pointer"
-                        onClick={() => toggleSelectProduct(p)}
-                        aria-label={isSelected ? 'Retirer de la liste' : 'Ajouter à la liste'}
-                        title={isSelected ? 'Retirer de la liste' : 'Ajouter à la liste'}
-                      >
-                        <Heart strokeWidth={1.5} fill={isSelected ? 'currentColor' : 'none'} className={`h-5 w-5 transition-colors ${isSelected ? 'text-red-500' : 'text-gray-400 hover:text-red-500'}`} />
-                      </button>
-                    </div>
+                    {/* No add to list button for items for sale */}
                   </div>
                 </div>
               );

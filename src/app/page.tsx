@@ -313,6 +313,7 @@ function HomeContent() {
               const tags = (p.allCategoryIds || [])
                 .map((id) => categoryById.get(id))
                 .filter(Boolean)
+                .filter((c) => c!.name !== 'Décors à vendre') // Hide "Décors à vendre" tag
                 .sort((a, b) => (a!.depth - b!.depth))
                 .slice(-3); // show deepest up to 3
               return (
@@ -467,10 +468,15 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
   const currentSrc = hasImages ? product.images![Math.max(0, Math.min(index, product.images!.length - 1))] : undefined;
 
   function stripHtml(html: string): string {
-    return html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').trim();
+    return html
+      .replace(/<[^>]*>/g, '') // Remove HTML tags
+      .replace(/&nbsp;/g, ' ') // Replace &nbsp; with space
+      .replace(/\\+/g, '') // Remove backslashes
+      .replace(/\\n/g, '\n') // Convert \n to actual line breaks
+      .trim();
   }
 
-  const shortText = (product.shortDescription || '').trim();
+  const shortText = (product.shortDescription || '').replace(/\\+/g, '').replace(/\\n/g, '\n').trim();
   const longHtml = product.description || '';
   const longText = stripHtml(longHtml);
   const hasShort = Boolean(shortText);
@@ -569,14 +575,14 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
               <div className="mt-6 space-y-2">
                 {areSame ? (
                   hasLong ? (
-                    <div className="prose prose-sm max-w-none text-gray-700" dangerouslySetInnerHTML={{ __html: longHtml }} />
+                    <div className="prose prose-sm max-w-none text-gray-700 whitespace-pre-line">{longText}</div>
                   ) : (
-                    <div className="text-body text-gray-800">{shortText}</div>
+                    <div className="text-body text-gray-800 whitespace-pre-line">{shortText}</div>
                   )
                 ) : (
                   <>
-                    {hasShort && (<div className="text-body text-gray-800">{shortText}</div>)}
-                    {hasLong && (<div className="prose prose-sm max-w-none text-gray-700" dangerouslySetInnerHTML={{ __html: longHtml }} />)}
+                    {hasShort && (<div className="text-body text-gray-800 whitespace-pre-line">{shortText}</div>)}
+                    {hasLong && (<div className="prose prose-sm max-w-none text-gray-700 whitespace-pre-line">{longText}</div>)}
                   </>
                 )}
               </div>
