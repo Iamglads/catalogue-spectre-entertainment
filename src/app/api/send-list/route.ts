@@ -46,18 +46,25 @@ export async function POST(req: NextRequest) {
         visibility: 'visible',
         $or: [ { 'raw.Publié': 1 }, { 'raw.Publié': '1' } ],
       },
-      { projection: { name: 1, images: 1, shortDescription: 1, lengthInches: 1, widthInches: 1, heightInches: 1 } }
+      { projection: { name: 1, images: 1, shortDescription: 1, lengthInches: 1, widthInches: 1, heightInches: 1, regularPrice: 1, salePrice: 1 } }
     ).toArray();
 
     const qtyMap = new Map(body.items.map((i) => [i.id, Math.max(1, Number(i.quantity) || 1)]));
 
-    const rows = docs.map((d: Document & { images?: string[]; name?: string; shortDescription?: string; lengthInches?: number; widthInches?: number; heightInches?: number }) => {
+    const rows = docs.map((d: Document & { images?: string[]; name?: string; shortDescription?: string; lengthInches?: number; widthInches?: number; heightInches?: number; regularPrice?: number; salePrice?: number }) => {
       const id = String(d._id);
       const q = qtyMap.get(id) ?? 1;
       const dims = [d.lengthInches, d.widthInches, d.heightInches].some(Boolean)
         ? `Dim.: ${d.lengthInches ?? '—'} × ${d.widthInches ?? '—'} × ${d.heightInches ?? '—'} po`
         : '';
       const firstImage = Array.isArray(d.images) ? d.images?.[0] : undefined;
+      
+      // Calculate price for this item
+      const sale = typeof d.salePrice === 'number' ? d.salePrice : null;
+      const regular = typeof d.regularPrice === 'number' ? d.regularPrice : null;
+      const price = sale !== null ? sale : (regular !== null ? regular : null);
+      const priceHtml = price !== null ? `<div style="color:#2563eb;font-weight:600;font-size:14px;margin-top:4px">${price.toFixed(2)} $</div>` : '';
+      
       return `
         <tr>
           <td style="padding:8px;border-bottom:1px solid #eee;vertical-align:top;">
@@ -67,6 +74,7 @@ export async function POST(req: NextRequest) {
             <div style="font-weight:600;color:#111;">${d.name ?? ''}</div>
             ${d.shortDescription ? `<div style=\"color:#666;font-size:12px\">${d.shortDescription}</div>` : ''}
             ${dims ? `<div style=\"color:#444;font-size:12px;margin-top:2px\">${dims}</div>` : ''}
+            ${priceHtml}
           </td>
           <td style="padding:8px;border-bottom:1px solid #eee;text-align:right;white-space:nowrap;">x ${q}</td>
         </tr>
