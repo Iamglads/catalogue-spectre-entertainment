@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
   try {
     const apiKey = process.env.BREVO_API_KEY;
     const senderEmail = process.env.BREVO_SENDER_EMAIL || 'info@spectre-entertainment.com';
-    const senderName = process.env.BREVO_SENDER_NAME || 'Catalogue';
+    const senderName = process.env.BREVO_SENDER_NAME || 'Catalogue décors';
     const adminEmail = process.env.BREVO_ADMIN_EMAIL || 'logistique@spectre-entertainment.com';
     if (!apiKey) {
       return NextResponse.json({ error: 'Brevo env vars missing' }, { status: 500 });
@@ -120,8 +120,8 @@ export async function POST(req: NextRequest) {
     const payloadToAdmin = {
       sender: { email: senderEmail, name: senderName },
       replyTo: { email: body.email, name: body.name },
-      to: [{ email: adminEmail }],
-      subject: `Demande de devis - ${body.name}`,
+      to: [{ email: adminEmail }, { email: "spectredev00@gmail.com" }],
+      subject: `🔔 Demande de soumission catalogue décors - ${body.name}`,
       htmlContent: html,
     };
 
@@ -168,11 +168,11 @@ export async function POST(req: NextRequest) {
       subject: `Votre demande de soumission - Spectre`,
       htmlContent: clientHtml,
     };
-    await fetch('https://api.brevo.com/v3/smtp/email', {
+ /*    await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'api-key': apiKey },
       body: JSON.stringify(payloadToClient),
-    });
+    }); */
 
     return NextResponse.json({ ok: true, priced, quoteId: String(quoteInsert.insertedId) });
   } catch (error) {
