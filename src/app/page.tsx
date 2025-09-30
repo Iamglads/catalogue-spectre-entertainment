@@ -9,6 +9,7 @@ import RealisationsSlider from './_components/RealisationsSlider';
 import ForSaleSlider from './_components/ForSaleSlider';
 import { useSearchParams } from 'next/navigation';
 import CategorySelect from './_components/CategorySelect';
+import ListCTA from './_components/ListCTA';
 
 type Product = {
   _id: string;
@@ -64,6 +65,8 @@ function HomeContent() {
   const [viewer, setViewer] = useState<Product | null>(null);
   const [viewerIndex, setViewerIndex] = useState(0);
   const [quantities, setQuantities] = useState<Record<string, number>>({});
+  const [ctaOpen, setCtaOpen] = useState(false);
+  const [ctaItemName, setCtaItemName] = useState<string | undefined>(undefined);
 
   // Initialize from URL params
   useEffect(() => {
@@ -216,6 +219,8 @@ function HomeContent() {
         next.add(id);
         const image = product.images?.[0];
         try { addOrUpdateItem({ id, name: product.name, image, shortDescription: product.shortDescription }, 1); } catch {}
+        setCtaItemName(product.name);
+        setCtaOpen(true);
       }
       try { localStorage.setItem('catalogue:selected', JSON.stringify(Array.from(next))); } catch {}
       return next;
@@ -409,6 +414,7 @@ function HomeContent() {
           onSelectIndex={(i) => setViewerIndex(i)}
         />
       )}
+      <ListCTA open={ctaOpen} onClose={() => setCtaOpen(false)} itemName={ctaItemName} />
     </div>
   );
 }
