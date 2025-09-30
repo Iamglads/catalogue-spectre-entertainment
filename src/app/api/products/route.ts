@@ -120,13 +120,26 @@ export async function GET(req: NextRequest) {
     );
 
     const { total, items } = await fetchPage();
-    const itemsOut = items.map((d: Document) => ({
-      ...d,
-      _id: String(d._id),
-      allCategoryIds: Array.isArray((d as any).allCategoryIds)
-        ? (d as any).allCategoryIds.map((id: unknown) => String(id))
-        : [],
-    }));
+    const itemsOut = items.map((d: Document) => {
+      const anyDoc = d as any;
+      const inventory: number | undefined = typeof anyDoc.inventory === 'number'
+        ? anyDoc.inventory
+        : (typeof anyDoc.stockQty === 'number' ? anyDoc.stockQty : undefined);
+      const normalized: Record<string, unknown> = {
+        ...d,
+        _id: String(d._id),
+        allCategoryIds: Array.isArray(anyDoc.allCategoryIds)
+          ? anyDoc.allCategoryIds.map((id: unknown) => String(id))
+          : [],
+      };
+      if (typeof inventory === 'number') {
+        normalized.stockQty = inventory;
+        if (typeof anyDoc.isInStock !== 'boolean') {
+          normalized.isInStock = inventory > 0;
+        }
+      }
+      return normalized;
+    });
 
     const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
 

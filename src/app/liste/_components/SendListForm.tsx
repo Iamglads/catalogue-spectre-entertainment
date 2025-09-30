@@ -86,11 +86,26 @@ export default function SendListForm({ selectedIds, quantities, onSuccess }: Pro
       
       <div className="space-y-4">
         <div className="text-body font-medium">Vos coordonnées</div>
-        <input className="input" placeholder="Nom complet" value={name} onChange={(e) => setName(e.target.value)} required />
-        <input className="input" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <input className="input" placeholder="Téléphone" value={phone} onChange={(e) => setPhone(e.target.value)} required />
-        <input className="input" placeholder="Entreprise (optionnel)" value={company} onChange={(e) => setCompany(e.target.value)} />
-        <textarea className="input min-h-[80px] resize-none" placeholder="Message (optionnel)" value={message} onChange={(e) => setMessage(e.target.value)} />
+        <label className="text-sm">
+          <div className="mb-1 text-gray-600">Nom complet <span className="text-red-600">*</span></div>
+          <input className="input" value={name} onChange={(e) => setName(e.target.value)} required aria-required="true" />
+        </label>
+        <label className="text-sm">
+          <div className="mb-1 text-gray-600">Email <span className="text-red-600">*</span></div>
+          <input type="email" className="input" value={email} onChange={(e) => setEmail(e.target.value)} required aria-required="true" />
+        </label>
+        <label className="text-sm">
+          <div className="mb-1 text-gray-600">Téléphone <span className="text-red-600">*</span></div>
+          <input type="tel" inputMode="tel" className="input" value={phone} onChange={(e) => setPhone(e.target.value)} required aria-required="true" />
+        </label>
+        <label className="text-sm">
+          <div className="mb-1 text-gray-600">Entreprise (optionnel)</div>
+          <input className="input" value={company} onChange={(e) => setCompany(e.target.value)} />
+        </label>
+        <label className="text-sm">
+          <div className="mb-1 text-gray-600">Message (optionnel)</div>
+          <textarea className="input min-h-[80px] resize-none" value={message} onChange={(e) => setMessage(e.target.value)} />
+        </label>
       </div>
       
       <div className="space-y-4">
@@ -111,13 +126,28 @@ export default function SendListForm({ selectedIds, quantities, onSuccess }: Pro
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-3">
-          <input className="input" placeholder="Adresse (ligne 1)" value={addr1} onChange={(e) => setAddr1(e.target.value)} required={deliveryMethod === 'delivery'} />
-          <input className="input" placeholder="Adresse (ligne 2)" value={addr2} onChange={(e) => setAddr2(e.target.value)} />
+          <label className="text-sm">
+            <div className="mb-1 text-gray-600">Adresse (ligne 1) <span className="text-red-600">*</span></div>
+            <input className="input" value={addr1} onChange={(e) => setAddr1(e.target.value)} required aria-required="true" />
+          </label>
+          <label className="text-sm">
+            <div className="mb-1 text-gray-600">Adresse (ligne 2) (optionnel)</div>
+            <input className="input" value={addr2} onChange={(e) => setAddr2(e.target.value)} />
+          </label>
           <div className="grid grid-cols-2 gap-2">
-            <input className="input" placeholder="Ville" value={city} onChange={(e) => setCity(e.target.value)} required={deliveryMethod === 'delivery'} />
-            <input className="input" placeholder="Province" value={province} onChange={(e) => setProvince(e.target.value)} required={deliveryMethod === 'delivery'} />
+            <label className="text-sm">
+              <div className="mb-1 text-gray-600">Ville <span className="text-red-600">*</span></div>
+              <input className="input" value={city} onChange={(e) => setCity(e.target.value)} required aria-required="true" />
+            </label>
+            <label className="text-sm">
+              <div className="mb-1 text-gray-600">Province <span className="text-red-600">*</span></div>
+              <input className="input" value={province} onChange={(e) => setProvince(e.target.value)} required aria-required="true" />
+            </label>
           </div>
-          <input className="input" placeholder="Code postal (ex: H2X 1Y4)" value={postalCode} onChange={(e) => setPostalCode(e.target.value)} required={deliveryMethod === 'delivery'} />
+          <label className="text-sm">
+            <div className="mb-1 text-gray-600">Code postal <span className="text-red-600">*</span></div>
+            <input className="input" placeholder="ex: H2X 1Y4" value={postalCode} onChange={(e) => setPostalCode(e.target.value)} required aria-required="true" />
+          </label>
         </div>
       )}
       </div>

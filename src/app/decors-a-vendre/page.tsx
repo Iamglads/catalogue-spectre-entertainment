@@ -142,6 +142,10 @@ function ForSaleContent() {
                         <div className="text-xs text-gray-500">Prix de vente</div>
                       </div>
                     )}
+                    {/* Quantité réelle si connue */}
+                    {typeof p.stockQty === 'number' && (
+                      <div className="mt-2 text-xs text-gray-600">Quantité en inventaire: <span className="font-medium">{p.stockQty}</span></div>
+                    )}
                     {/* No add to list button for items for sale */}
                   </div>
                 </div>
