@@ -6,6 +6,10 @@ import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/lib/auth';
 import { slugify } from '@/lib/slug';
 
+function cleanCategoryName(name?: string): string {
+  return (name || '').replace(/\\+/g, '').trim();
+}
+
 export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const session = await (getServerSession as unknown as (opts: any) => Promise<any>)(authOptions);
@@ -18,7 +22,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
   const categories = db.collection<Document>('categories');
   const doc = await categories.findOne({ _id: new ObjectId(id) });
   if (!doc) return NextResponse.json({ error: 'Not found' }, { status: 404 });
-  return NextResponse.json({ ...doc, _id: String(doc._id), parentId: doc.parentId ? String(doc.parentId) : null });
+  return NextResponse.json({ ...doc, name: cleanCategoryName(doc.name as string), _id: String(doc._id), parentId: doc.parentId ? String(doc.parentId) : null });
 }
 
 export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -33,7 +37,8 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
   const db = client.db();
   const categories = db.collection<Document>('categories');
   const parent = parentId ? await categories.findOne({ _id: new ObjectId(parentId) }) : null;
-  const slug = name ? slugify(name) : undefined;
+  const cleaned = name !== undefined ? cleanCategoryName(name) : undefined;
+  const slug = cleaned !== undefined ? slugify(cleaned) : undefined;
   let fullPath: string | undefined;
   let depth: number | undefined;
   if (slug !== undefined) {
@@ -46,7 +51,7 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     }
   }
   const $set: Document = { updatedAt: new Date() };
-  if (name !== undefined) $set.name = name;
+  if (cleaned !== undefined) $set.name = cleaned;
   if (slug !== undefined) $set.slug = slug;
   if (fullPath !== undefined) $set.fullPath = fullPath;
   if (depth !== undefined) $set.depth = depth;

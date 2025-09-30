@@ -7,7 +7,6 @@ import Breadcrumbs from './_components/Breadcrumbs';
 import QuickActions from './_components/QuickActions';
 import RealisationsSlider from './_components/RealisationsSlider';
 import ForSaleSlider from './_components/ForSaleSlider';
-import HeroGallery from './_components/HeroGallery';
 import { useSearchParams } from 'next/navigation';
 import CategorySelect from './_components/CategorySelect';
 
@@ -45,6 +44,11 @@ function getTagStyles(id: string): { backgroundColor: string; borderColor: strin
   const borderColor = `hsla(${hue}, 70%, 60%, 0.55)`; // slightly stronger for border
   const color = `hsl(${hue}, 35%, 25%)`; // readable text
   return { backgroundColor, borderColor, color };
+}
+
+function sanitizeCategoryText(text?: string): string {
+  // Remove stray backslashes and trim whitespace
+  return (text || '').replace(/\\+/g, '').trim();
 }
 
 function HomeContent() {
@@ -264,7 +268,7 @@ function HomeContent() {
                 onClick={() => setCategoryId("")}
                 aria-label="Supprimer le filtre catégorie"
               >
-                <span className="text-gray-700">{selectedCategory.label}</span>
+                <span className="text-gray-700">{sanitizeCategoryText(selectedCategory.label)}</span>
                 <X className="h-3.5 w-3.5 text-gray-500" />
               </button>
             )}
@@ -341,7 +345,7 @@ function HomeContent() {
                           const styles = getTagStyles(c!._id);
                           return (
                             <span key={c!._id} className="text-xs px-2 py-0.5 rounded-full border" style={styles}>
-                              {c!.name}
+                              {sanitizeCategoryText(c!.name)}
                             </span>
                           );
                         })}
@@ -412,7 +416,13 @@ function HomeContent() {
 export default function Home() {
   return (
     <>
-      <HeroGallery />
+      <section className="w-full bg-[var(--muted)] border-b">
+        <div className="section-padding mx-auto max-w-7xl py-12 sm:py-16 lg:py-20">
+          <div className="max-w-3xl">
+            <h1 className="text-display">Catalogue des décors</h1>
+          </div>
+        </div>
+      </section>
       <Suspense fallback={<div className="container-max section-padding py-8"><div className="text-center text-sm text-gray-500">Chargement…</div></div>}>
         <HomeContent />
       </Suspense>

@@ -5,6 +5,10 @@ import type { Document } from 'mongodb';
 
 export const revalidate = 3600;
 
+function cleanCategoryName(name?: string): string {
+  return (name || '').replace(/\\+/g, '').trim();
+}
+
 const getCategoriesCached = unstable_cache(
   async () => {
     const client = await clientPromise;
@@ -26,12 +30,12 @@ const getCategoriesCached = unstable_cache(
 
     const items = (docs as CategoryDoc[]).map((d) => ({
       _id: String(d._id),
-      name: d.name ?? '',
+      name: cleanCategoryName(d.name),
       slug: d.slug ?? '',
       fullPath: d.fullPath ?? '',
       depth: d.depth ?? 0,
       parentId: d.parentId ? String(d.parentId) : null,
-      label: `${'\u2014 '.repeat(d.depth ?? 0)}${d.name ?? ''}`,
+      label: `${'\u2014 '.repeat(d.depth ?? 0)}${cleanCategoryName(d.name)}`,
     }));
     return { items };
   },

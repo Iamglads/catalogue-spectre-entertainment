@@ -16,11 +16,15 @@ export default function CategorySelect({ categories, value, onChange, placeholde
   const [query, setQuery] = useState("");
   const containerRef = useRef<HTMLDivElement | null>(null);
 
+  function sanitizeCategoryText(text?: string): string {
+    return (text || '').replace(/\\+/g, '').trim();
+  }
+
   const selected = useMemo(() => categories.find((c) => c._id === value) || null, [categories, value]);
   const items = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return categories.slice(0, 200);
-    return categories.filter((c) => c.label.toLowerCase().includes(q)).slice(0, 200);
+    return categories.filter((c) => sanitizeCategoryText(c.label).toLowerCase().includes(q)).slice(0, 200);
   }, [categories, query]);
 
   useEffect(() => {
@@ -42,7 +46,7 @@ export default function CategorySelect({ categories, value, onChange, placeholde
         aria-expanded={open}
       >
         <span className="truncate">
-          {selected ? selected.label : <span className="text-gray-400">{placeholder}</span>}
+          {selected ? sanitizeCategoryText(selected.label) : <span className="text-gray-400">{placeholder}</span>}
         </span>
         {selected && (
           <span
@@ -76,7 +80,7 @@ export default function CategorySelect({ categories, value, onChange, placeholde
                   onClick={() => { onChange(c._id); setOpen(false); setQuery(""); }}
                   className={`block w-full text-left px-4 py-2.5 text-sm hover:bg-gray-50 transition-colors ${value === c._id ? 'bg-blue-50 text-blue-700 font-medium' : ''}`}
                 >
-                  {c.label}
+              {sanitizeCategoryText(c.label)}
                 </button>
               </li>
             ))}
