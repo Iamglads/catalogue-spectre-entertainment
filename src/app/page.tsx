@@ -556,19 +556,13 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
               </div>
             )}
 
-            {/* Quantité en inventaire / disponibilité */}
-            {(typeof product.stockQty === 'number' || typeof product.isInStock === 'boolean') && (
+            {/* Quantité en inventaire - afficher seulement si disponible */}
+            {typeof product.stockQty === 'number' && product.stockQty > 0 && (
               <div className="mt-6">
-                {typeof product.stockQty === 'number' ? (
-                  <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm">
-                    <span className="text-gray-700">Quantité en inventaire:&nbsp;</span>
-                    <span className={`font-medium ${product.stockQty > 0 ? 'text-green-600' : 'text-red-600'}`}>{product.stockQty}</span>
-                  </div>
-                ) : (
-                  <div className={`inline-flex items-center rounded-full border px-3 py-1 text-sm ${product.isInStock ? 'text-green-600' : 'text-red-600'}`}>
-                    {product.isInStock ? 'Disponible en inventaire' : 'Rupture d\'inventaire'}
-                  </div>
-                )}
+                <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm">
+                  <span className="text-gray-700">Quantité en inventaire:&nbsp;</span>
+                  <span className="font-medium text-green-600">{product.stockQty}</span>
+                </div>
               </div>
             )}
 
