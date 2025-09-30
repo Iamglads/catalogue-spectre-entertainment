@@ -134,10 +134,10 @@ function ForSaleContent() {
                   <div className="p-4 flex-1 flex flex-col">
                     <div className="text-title text-gray-900 line-clamp-2 mb-2">{p.name}</div>
                     {/* Prix de vente */}
-                    {p.salePriceForSale && (
+                    {p.salePriceForSale !== undefined && p.salePriceForSale !== null && (
                       <div className="mt-auto">
                         <div className="text-lg font-bold text-green-600">
-                          {p.salePriceForSale.toFixed(2)} $
+                          {p.salePriceForSale === 0 ? 'À donner' : `${p.salePriceForSale.toFixed(2)} $`}
                         </div>
                         <div className="text-xs text-gray-500">Prix de vente</div>
                       </div>
