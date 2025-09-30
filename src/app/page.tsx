@@ -556,6 +556,21 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
               </div>
             )}
 
+            {/* Informations de stock */}
+            {(typeof product.stockQty === 'number' || typeof product.isInStock === 'boolean') && (
+              <div className="mt-6">
+                {typeof product.stockQty === 'number' ? (
+                  <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm">
+                    <span className="text-gray-700">Quantité en stock:&nbsp;</span>
+                    <span className="font-medium text-blue-600">{product.stockQty}</span>
+                  </div>
+                ) : (
+                  <div className={`inline-flex items-center rounded-full border px-3 py-1 text-sm ${product.isInStock ? 'text-green-600' : 'text-red-600'}`}>
+                    {product.isInStock ? 'Disponible' : 'Non disponible'}
+                  </div>
+                )}
+              </div>
+            )}
 
             {(hasShort || hasLong) && (
               <div className="mt-6 space-y-2">
