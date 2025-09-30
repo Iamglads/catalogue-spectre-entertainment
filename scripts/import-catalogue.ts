@@ -37,7 +37,6 @@ interface ProductDoc {
   lengthInches?: number | string;
   weightLbs?: number | string;
   images?: string[];
-  imagePublicIds?: string[];
   visibility?: string;
   taxStatus?: string;
   brand?: string;
@@ -78,14 +77,12 @@ function slugify(input: string): string {
 
 function parseCategoryChains(value: unknown): string[][] {
   if (typeof value !== 'string' || !value.trim()) return [];
-  // Supporte plusieurs séparateurs hiérarchiques: '>', '/', '\\'
-  // Ex: "Mobiliers > Chaises, Thématique / Tour du monde, Vase \\ Personnage"
-  const HIERARCHY_SPLIT = /[>\/\\]+/; // > or / or \
+  // Ex: "Mobiliers > Chaises, Thématique > Tour du monde, Mobiliers"
   return value
     .split(',')
     .map((s) => s.trim())
     .filter(Boolean)
-    .map((chain) => chain.split(HIERARCHY_SPLIT).map((p) => p.trim()).filter(Boolean))
+    .map((chain) => chain.split('>').map((p) => p.trim()).filter(Boolean))
     .filter((arr) => arr.length > 0);
 }
 
@@ -198,22 +195,14 @@ async function main() {
 
   let mapped = 0;
   let upserted = 0;
-  const incomingExternalIds = new Set<number>();
 
   for (const item of data) {
     const base = mapItem(item);
     if (!base) continue;
     mapped++;
-    incomingExternalIds.add(base.externalId);
 
     // Extraire chaînes de catégories
     const chains = parseCategoryChains((item as any)['Catégories']);
-    // Catégorie additionnelle (optionnelle) via ENV: IMPORT_EXTRA_CATEGORY_CHAIN="Parent > Enfant"
-    const extraChainEnv = process.env.IMPORT_EXTRA_CATEGORY_CHAIN;
-    if (extraChainEnv && extraChainEnv.trim()) {
-      const extra = extraChainEnv.split('>').map((s) => s.trim()).filter(Boolean);
-      if (extra.length) chains.push(extra);
-    }
 
     // Construire les IDs de catégories
     const leafIds: ObjectId[] = [];
@@ -228,45 +217,18 @@ async function main() {
     const allCategoryIds = Array.from(allIdSet, (hex) => new ObjectId(hex));
 
     const { externalId, ...rest } = base;
-
-    // Préserver les images Cloudinary existantes si aucune image entrante n'est fournie
-    const existing = await products.findOne({ externalId }, { projection: { images: 1, imagePublicIds: 1, categoryIds: 1, allCategoryIds: 1 } });
-
-    // Construire $set sans undefined pour éviter d'écraser par accident
-    const setDoc: Partial<ProductDoc> & { updatedAt: Date } = { updatedAt: new Date() } as any;
-    for (const [k, v] of Object.entries(rest)) {
-      if (v !== undefined && k !== 'images') {
-        (setDoc as any)[k] = v;
-      }
-    }
-    // Catégories: ne définir que si on en a calculé
-    if (leafIds.length) (setDoc as any).categoryIds = leafIds;
-    if (allCategoryIds.length) (setDoc as any).allCategoryIds = allCategoryIds;
-
-    // Images: si le JSON contient des images non vides, on les applique; sinon on garde l'existant
-    const incomingImages = Array.isArray(rest.images) ? rest.images.filter(Boolean) : [];
-    if (incomingImages.length > 0) {
-      (setDoc as any).images = incomingImages;
-    } else if (existing?.images && existing.images.length > 0) {
-      (setDoc as any).images = existing.images;
-      if (Array.isArray((existing as any).imagePublicIds)) {
-        (setDoc as any).imagePublicIds = (existing as any).imagePublicIds;
-      }
-    }
-
     const update = {
-      $set: setDoc,
+      $set: {
+        ...rest,
+        categoryIds: leafIds.length ? leafIds : undefined,
+        allCategoryIds: allCategoryIds.length ? allCategoryIds : undefined,
+        updatedAt: new Date(),
+      },
       $setOnInsert: { externalId, createdAt: new Date() },
     } as const;
 
     const res = await products.updateOne({ externalId }, update, { upsert: true });
     if (res.upsertedCount || res.modifiedCount) upserted++;
-  }
-
-  // Suppression des produits absents du nouveau fichier si demandé
-  if (process.env.IMPORT_DELETE_MISSING === 'true') {
-    const delRes = await products.deleteMany({ externalId: { $nin: Array.from(incomingExternalIds) } });
-    console.log(`Supprimés (absents du nouveau JSON): ${delRes.deletedCount}`);
   }
 
   console.log(`Mapped: ${mapped}, Upserted/Modified: ${upserted}`);

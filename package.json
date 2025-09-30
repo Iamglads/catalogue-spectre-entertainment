@@ -4,14 +4,18 @@
   "private": true,
   "scripts": {
     "import": "tsx scripts/import-catalogue.ts",
-    "import:check": "npm run check && npm run import",
+    "import:full": "node -e \"console.error('Use carefully: this will update product fields.');\" && tsx scripts/import-catalogue.ts",
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
     "check": "tsc --noEmit",
     "seed:admin": "tsx scripts/seed-admin.ts",
-    "migrate:images": "tsx scripts/migrate-images-from-wp.ts"
+    "migrate:images": "tsx scripts/migrate-images-from-wp.ts",
+    "fix:categories": "tsx scripts/fix-categories.ts",
+    "prune:categories": "tsx scripts/prune-empty-categories.ts",
+    "backup:for-sale": "tsx scripts/backup-for-sale.ts",
+    "restore:for-sale": "tsx scripts/restore-for-sale.ts"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",

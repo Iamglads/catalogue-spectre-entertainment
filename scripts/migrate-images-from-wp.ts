@@ -49,6 +49,19 @@ async function uploadFromUrl(entityId: string, url: string): Promise<string> {
   return res.secure_url;
 }
 
+async function getExistingSecureUrl(entityId: string, url: string): Promise<string | null> {
+  const public_id = toPublicId(entityId, url);
+  try {
+    // @ts-ignore api types are loose in v2
+    const res = await cloudinary.api.resource(public_id, { resource_type: 'image' });
+    if (res && typeof res.secure_url === 'string' && res.secure_url) return String(res.secure_url);
+    return null;
+  } catch (e: any) {
+    // If not found, Cloudinary returns 404 error
+    return null;
+  }
+}
+
 async function migrateProductsImages(dbName = undefined) {
   const mongoUri = process.env.MONGODB_URI!;
   const client = new MongoClient(mongoUri);
@@ -94,11 +107,14 @@ async function migrateProductsImages(dbName = undefined) {
       const newImages: string[] = await Promise.all(
         images.map((u) => limit(async () => {
           if (isWpImage(u)) {
+            const src = String(u);
             try {
-              return await uploadFromUrl(id, String(u));
+              const existing = await getExistingSecureUrl(id, src);
+              if (existing) return existing; // repoint to existing Cloudinary resource
+              return await uploadFromUrl(id, src); // upload only if missing
             } catch (e) {
-              console.error('Upload failed', id, u, e);
-              return String(u);
+              console.error('Cloudinary check/upload failed', id, u, e);
+              return src;
             }
           }
           return String(u);

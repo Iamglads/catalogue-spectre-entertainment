@@ -1,0 +1,355 @@
+{
+  "count": 59,
+  "createdAt": "2025-09-30T19:48:11.003Z",
+  "items": [
+    {
+      "_id": "68acbd00e0a37930bf86bd65",
+      "externalId": 6360,
+      "name": "Lévrier",
+      "salePriceForSale": 300
+    },
+    {
+      "_id": "68acbd01e0a37930bf86bd85",
+      "externalId": 6405,
+      "name": "Foyer d'extérieur",
+      "salePriceForSale": 150
+    },
+    {
+      "_id": "68acbd02e0a37930bf86bd92",
+      "externalId": 6422,
+      "name": "Trophée gonflable",
+      "salePriceForSale": 75
+    },
+    {
+      "_id": "68acbd02e0a37930bf86bd99",
+      "externalId": 6432,
+      "name": "Toile d'hiver",
+      "salePriceForSale": 75
+    },
+    {
+      "_id": "68acbd06e0a37930bf86bdf6",
+      "externalId": 6535,
+      "name": "Masques mascarade",
+      "salePriceForSale": 150
+    },
+    {
+      "_id": "68acbd08e0a37930bf86be4b",
+      "externalId": 6632,
+      "name": "Chute d'eau 1",
+      "salePriceForSale": 75
+    },
+    {
+      "_id": "68acbd08e0a37930bf86be4c",
+      "externalId": 6633,
+      "name": "Chute d'eau 2",
+      "salePriceForSale": 75
+    },
+    {
+      "_id": "68acbd09e0a37930bf86be64",
+      "externalId": 6660,
+      "name": "Main de monstre",
+      "salePriceForSale": 35
+    },
+    {
+      "_id": "68acbd0de0a37930bf86beea",
+      "externalId": 6816,
+      "name": "Saturne",
+      "salePriceForSale": 100
+    },
+    {
+      "_id": "68acbd0ee0a37930bf86bef1",
+      "externalId": 6823,
+      "name": "Bee Gees",
+      "salePriceForSale": 75
+    },
+    {
+      "_id": "68acbd0fe0a37930bf86bf09",
+      "externalId": 7741,
+      "name": "Forêt cabane à sucre",
+      "salePriceForSale": 100
+    },
+    {
+      "_id": "68acbd0fe0a37930bf86bf0d",
+      "externalId": 7746,
+      "name": "Château glace",
+      "salePriceForSale": 500
+    },
+    {
+      "_id": "68acbd0fe0a37930bf86bf10",
+      "externalId": 7749,
+      "name": "Arche de glace",
+      "salePriceForSale": 225
+    },
+    {
+      "_id": "68acbd0fe0a37930bf86bf23",
+      "externalId": 7768,
+      "name": "Montagne enneigé avec forêt",
+      "salePriceForSale": 150
+    },
+    {
+      "_id": "68acbd0fe0a37930bf86bf24",
+      "externalId": 7769,
+      "name": "Montagne enneigé",
+      "salePriceForSale": 150
+    },
+    {
+      "_id": "68acbd10e0a37930bf86bf27",
+      "externalId": 7774,
+      "name": "Calèche noire et dorée"
+    },
+    {
+      "_id": "68acbd11e0a37930bf86bf53",
+      "externalId": 7950,
+      "name": "Chien",
+      "salePriceForSale": 300
+    },
+    {
+      "_id": "68acbd11e0a37930bf86bf57",
+      "externalId": 7962,
+      "name": "Temple chinois",
+      "salePriceForSale": 350
+    },
+    {
+      "_id": "68acbd15e0a37930bf86bfcc",
+      "externalId": 8574,
+      "name": "Bateau Croisière T.E. DRAPER",
+      "salePriceForSale": 350
+    },
+    {
+      "_id": "68acbd16e0a37930bf86bfd5",
+      "externalId": 8583,
+      "name": "Foyer en pierre"
+    },
+    {
+      "_id": "68acbd17e0a37930bf86bff9",
+      "externalId": 8619,
+      "name": "Ville noire",
+      "salePriceForSale": 100
+    },
+    {
+      "_id": "68acbd18e0a37930bf86c029",
+      "externalId": 8842,
+      "name": "Arche pont métal",
+      "salePriceForSale": 150
+    },
+    {
+      "_id": "68acbd18e0a37930bf86c032",
+      "externalId": 8882,
+      "name": "Chevaux carrousel",
+      "salePriceForSale": 3500
+    },
+    {
+      "_id": "68acbd1ae0a37930bf86c071",
+      "externalId": 8945,
+      "name": "Homard géant",
+      "salePriceForSale": 550
+    },
+    {
+      "_id": "68acbd1ee0a37930bf86c0e3",
+      "externalId": 9574,
+      "name": "Cabane à chien",
+      "salePriceForSale": 150
+    },
+    {
+      "_id": "68acbd1fe0a37930bf86c108",
+      "externalId": 9612,
+      "name": "Dauphin 3D",
+      "salePriceForSale": 300
+    },
+    {
+      "_id": "68acbd28e0a37930bf86c21b",
+      "externalId": 10579,
+      "name": "Paravent Musicien"
+    },
+    {
+      "_id": "68acbd2ae0a37930bf86c256",
+      "externalId": 10892,
+      "name": "Gouvernail de Bateau Blanc",
+      "salePriceForSale": 5
+    },
+    {
+      "_id": "68acbd2ae0a37930bf86c257",
+      "externalId": 10893,
+      "name": "Gouvernail de Bateau Noir",
+      "salePriceForSale": 5
+    },
+    {
+      "_id": "68acbd2ae0a37930bf86c258",
+      "externalId": 10894,
+      "name": "Ancre de Bateau Beige",
+      "salePriceForSale": 10
+    },
+    {
+      "_id": "68acbd2ae0a37930bf86c259",
+      "externalId": 10895,
+      "name": "Ancre de Bateau Blanc",
+      "salePriceForSale": 10
+    },
+    {
+      "_id": "68acbd2ee0a37930bf86c2c4",
+      "externalId": 11322,
+      "name": "Toile Photobooth Mexicain",
+      "salePriceForSale": 50
+    },
+    {
+      "_id": "68acbd2ee0a37930bf86c2cb",
+      "externalId": 11329,
+      "name": "Toile Photobooth Hawain",
+      "salePriceForSale": 0
+    },
+    {
+      "_id": "68acbd2ee0a37930bf86c2cc",
+      "externalId": 11330,
+      "name": "Toile Galaxie",
+      "salePriceForSale": 50
+    },
+    {
+      "_id": "68acbd2ee0a37930bf86c2d2",
+      "externalId": 11336,
+      "name": "Chiens De Traîneau Et Meneur",
+      "salePriceForSale": 15
+    },
+    {
+      "_id": "68acbd2ee0a37930bf86c2d5",
+      "externalId": 11339,
+      "name": "Husky",
+      "salePriceForSale": 15
+    },
+    {
+      "_id": "68acbd2fe0a37930bf86c2f1",
+      "externalId": 11367,
+      "name": "Hollywood Vintage",
+      "salePriceForSale": 300
+    },
+    {
+      "_id": "68acbd2fe0a37930bf86c2f8",
+      "externalId": 11374,
+      "name": "Caméraman",
+      "salePriceForSale": 15
+    },
+    {
+      "_id": "68acbd2fe0a37930bf86c2fb",
+      "externalId": 11377,
+      "name": "Charlie Chaplin Comedie",
+      "salePriceForSale": 250
+    },
+    {
+      "_id": "68acbd30e0a37930bf86c316",
+      "externalId": 11404,
+      "name": "Lanterne Chinoise Blanche 1'-9''",
+      "salePriceForSale": 20
+    },
+    {
+      "_id": "68acbd30e0a37930bf86c317",
+      "externalId": 11405,
+      "name": "Lanterne Chinoise Blanche 2'-7''",
+      "salePriceForSale": 20
+    },
+    {
+      "_id": "68acbd30e0a37930bf86c318",
+      "externalId": 11406,
+      "name": "Lanterne Chinoise Jaune 1'-4''",
+      "salePriceForSale": 20
+    },
+    {
+      "_id": "68acbd30e0a37930bf86c319",
+      "externalId": 11407,
+      "name": "Lanterne Chinoise Blanche 1'-4''",
+      "salePriceForSale": 20
+    },
+    {
+      "_id": "68acbd31e0a37930bf86c321",
+      "externalId": 11415,
+      "name": "Chevalet En Bois Brun",
+      "salePriceForSale": 65
+    },
+    {
+      "_id": "68acbd31e0a37930bf86c322",
+      "externalId": 11416,
+      "name": "Chevalet En Bois Blanc",
+      "salePriceForSale": 65
+    },
+    {
+      "_id": "68acbd31e0a37930bf86c323",
+      "externalId": 11417,
+      "name": "Chevalet En Bois Beige",
+      "salePriceForSale": 65
+    },
+    {
+      "_id": "68acbd31e0a37930bf86c324",
+      "externalId": 11418,
+      "name": "Chevalet En Bois Noir",
+      "salePriceForSale": 65
+    },
+    {
+      "_id": "68acbd32e0a37930bf86c345",
+      "externalId": 11450,
+      "name": "Petit Vase Boule En Verre",
+      "salePriceForSale": 25
+    },
+    {
+      "_id": "68acbd32e0a37930bf86c347",
+      "externalId": 11452,
+      "name": "Petit Vase Cylindre En Verre",
+      "salePriceForSale": 15
+    },
+    {
+      "_id": "68acbd32e0a37930bf86c348",
+      "externalId": 11453,
+      "name": "Moyen Vase Cylindre En Verre",
+      "salePriceForSale": 20
+    },
+    {
+      "_id": "68acbd32e0a37930bf86c34b",
+      "externalId": 11456,
+      "name": "Vase Fleur En Verre",
+      "salePriceForSale": 35
+    },
+    {
+      "_id": "68acbd32e0a37930bf86c34c",
+      "externalId": 11457,
+      "name": "Vase En Verre",
+      "salePriceForSale": 35
+    },
+    {
+      "_id": "68acbd32e0a37930bf86c34d",
+      "externalId": 11458,
+      "name": "Vase Lampion En Verre",
+      "salePriceForSale": 15
+    },
+    {
+      "_id": "68acbd32e0a37930bf86c350",
+      "externalId": 11461,
+      "name": "Violon 3D"
+    },
+    {
+      "_id": "68acbd33e0a37930bf86c35a",
+      "externalId": 11471,
+      "name": "Grande Coupe Cognac En Verre",
+      "salePriceForSale": 65
+    },
+    {
+      "_id": "68acbd33e0a37930bf86c361",
+      "externalId": 11478,
+      "name": "Miroir De Table Noir"
+    },
+    {
+      "_id": "68acbd33e0a37930bf86c364",
+      "externalId": 11480,
+      "name": "Vase Tour Eiffel En Verre",
+      "salePriceForSale": 25
+    },
+    {
+      "_id": "68acbd34e0a37930bf86c383",
+      "externalId": 11512,
+      "name": "Nappe Verte À Bordure",
+      "salePriceForSale": 15
+    },
+    {
+      "_id": "68acbd34e0a37930bf86c38b",
+      "externalId": 11666,
+      "name": "Clôture de prison",
+      "salePriceForSale": 35
+    }
+  ]
+}

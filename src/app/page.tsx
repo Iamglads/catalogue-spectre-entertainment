@@ -246,7 +246,9 @@ function HomeContent() {
           />
         </div>
         <CategorySelect
-          categories={categories.map((c) => ({ _id: c._id, label: c.label, fullPath: c.fullPath }))}
+          categories={categories
+            .filter((c) => c.fullPath !== 'decors-a-vendre' && !/^(?:decors-a-vendre|décors-à-vendre)$/i.test(c.name || ''))
+            .map((c) => ({ _id: c._id, label: c.label, fullPath: c.fullPath }))}
           value={categoryId}
           onChange={(id) => setCategoryId(id)}
           placeholder="Catégorie…"
