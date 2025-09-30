@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import CategorySelect from './CategorySelect';
 import { Menu, X, Search, Phone, ExternalLink, ChevronDown, Grid3X3, Heart, Settings } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 import ListCounter from './ListCounter';
@@ -15,6 +16,7 @@ type Category = {
   fullPath: string;
   depth: number;
   parentId: string | null;
+  label?: string;
 };
 
 export default function Navigation() {
@@ -150,22 +152,19 @@ export default function Navigation() {
             <div className="p-4 space-y-2">
            
 
-              {/* Mobile Categories */}
-              <div className="pt-2">
-                <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-4 py-2">
+              {/* Mobile Categories (unified with desktop filter) */}
+              <div className="pt-2 px-4">
+                <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider py-2">
                   Catégories
                 </div>
-                <div className="space-y-1 max-h-64 overflow-y-auto">
-                  {mainCategories.slice(0, 8).map((category) => (
-                    <Link
-                      key={category._id}
-                      href={`/?categoryId=${category._id}`}
-                      className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-brand rounded-lg transition-colors"
-                    >
-                      {category.name}
-                    </Link>
-                  ))}
-                </div>
+                <CategorySelect
+                  categories={categories
+                    .filter((c) => c.fullPath !== 'decors-a-vendre')
+                    .map((c) => ({ _id: c._id, label: c.label || `${'\u2014 '.repeat(c.depth)}${c.name}`, fullPath: c.fullPath }))}
+                  value={''}
+                  onChange={(id) => { window.location.href = `/?categoryId=${id}`; setMobileMenuOpen(false); }}
+                  placeholder="Catégorie…"
+                />
               </div>
 
               {/* Admin Section */}
