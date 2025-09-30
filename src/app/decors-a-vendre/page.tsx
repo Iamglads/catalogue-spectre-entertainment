@@ -11,6 +11,7 @@ type Product = {
   images?: string[];
   regularPrice?: number;
   salePrice?: number;
+  salePriceForSale?: number; // Prix de vente (différent des prix de location)
   isInStock?: boolean;
   stockQty?: number;
 };
@@ -132,6 +133,15 @@ function ForSaleContent() {
                   </div>
                   <div className="p-4 flex-1 flex flex-col">
                     <div className="text-title text-gray-900 line-clamp-2 mb-2">{p.name}</div>
+                    {/* Prix de vente */}
+                    {p.salePriceForSale && (
+                      <div className="mt-auto">
+                        <div className="text-lg font-bold text-green-600">
+                          {p.salePriceForSale.toFixed(2)} $
+                        </div>
+                        <div className="text-xs text-gray-500">Prix de vente</div>
+                      </div>
+                    )}
                     {/* No add to list button for items for sale */}
                   </div>
                 </div>

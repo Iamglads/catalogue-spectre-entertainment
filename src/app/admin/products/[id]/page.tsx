@@ -13,6 +13,7 @@ type ProductForm = {
   visibility?: 'visible' | 'hidden';
   regularPrice?: number;
   salePrice?: number;
+  salePriceForSale?: number; // Prix de vente
   stockQty?: number;
   lengthInches?: number;
   widthInches?: number;
@@ -170,6 +171,11 @@ export default function AdminEditProductPage() {
         <label className="text-sm">
           <div className="mb-1 text-gray-600">Prix spécial</div>
           <input type="number" step="0.01" className="w-full rounded border px-3 py-2 text-sm" value={form.salePrice ?? ''} onChange={(e) => setForm((f) => ({ ...f, salePrice: e.target.value === '' ? undefined : Number(e.target.value) }))} />
+        </label>
+        <label className="text-sm">
+          <div className="mb-1 text-gray-600">Prix de vente</div>
+          <input type="number" step="0.01" className="w-full rounded border px-3 py-2 text-sm" value={form.salePriceForSale ?? ''} onChange={(e) => setForm((f) => ({ ...f, salePriceForSale: e.target.value === '' ? undefined : Number(e.target.value) }))} />
+          <div className="text-xs text-gray-500 mt-1">Prix affiché sur la page "Décors à vendre"</div>
         </label>
         <label className="text-sm">
           <div className="mb-1 text-gray-600">Quantité disponible</div>

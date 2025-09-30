@@ -19,6 +19,7 @@ type Product = {
   images?: string[];
   regularPrice?: number;
   salePrice?: number;
+  salePriceForSale?: number; // Prix de vente (différent des prix de location)
   isInStock?: boolean;
   stockQty?: number;
   widthInches?: number | string;

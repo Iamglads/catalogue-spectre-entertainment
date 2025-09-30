@@ -113,7 +113,8 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     (setDoc as any).allCategoryIds = allCategoryIds.length ? allCategoryIds : [];
     hasContentChanges = true;
   }
-  if (hasContentChanges) (setDoc as any).updatedAt = new Date();
+  // Ne pas modifier updatedAt pour préserver l'ordre d'affichage des produits
+  // if (hasContentChanges) (setDoc as any).updatedAt = new Date();
   await products.updateOne({ _id: new ObjectId(id) }, { $set: setDoc });
   const auditUser = session?.user as { id?: string; email?: string } | undefined;
   await logAudit({ userId: auditUser?.id, email: auditUser?.email || null, action: 'product.update', resource: { type: 'product', id }, metadata: { fields: Object.keys(body || {}) } });
