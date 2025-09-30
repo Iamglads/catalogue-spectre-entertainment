@@ -28,6 +28,9 @@ export default function AdminCategoryEditPage() {
     }
   }, [params.id, isNew]);
 
+  useEffect(() => {
+    load();
+  }, [load]);
 
   const parentOptions = useMemo(() => {
     return ([{ _id: '', name: '(aucun parent)', depth: 0 }] as Array<{ _id: string; name: string; depth: number }>).concat(all);
@@ -47,25 +50,56 @@ export default function AdminCategoryEditPage() {
   }
 
   return (
-    <div className="min-h-screen py-6 space-y-3">
-      <div><Link href="/admin/categories" className="text-sm underline">← Retour</Link></div>
-      <div className="flex items-center gap-2">
-        <button className="ml-auto rounded border px-3 py-1.5 text-sm" onClick={save}>{isNew ? 'Créer' : 'Enregistrer'}</button>
-        {!isNew && <button className="rounded border px-3 py-1.5 text-sm text-red-600" onClick={remove}>Supprimer</button>}
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <label className="text-sm">
-          <div className="mb-1 text-gray-600">Nom</div>
-          <input className="w-full rounded border px-3 py-2 text-sm" value={form.name} onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))} />
-        </label>
-        <label className="text-sm">
-          <div className="mb-1 text-gray-600">Parent</div>
-          <select className="w-full rounded border px-3 py-2 text-sm" value={form.parentId || ''} onChange={(e) => setForm((f) => ({ ...f, parentId: e.target.value || null }))}>
-            {parentOptions.map((c) => (
-              <option key={c._id} value={c._id}>{c._id ? `${"— ".repeat(c.depth)}${c.name}` : c.name}</option>
-            ))}
-          </select>
-        </label>
+    <div className="min-h-screen py-6">
+      <div className="max-w-4xl mx-auto px-4 space-y-6">
+        <div><Link href="/admin/categories" className="text-sm underline">← Retour</Link></div>
+        
+        <div className="bg-white rounded-lg border p-6">
+          <h1 className="text-xl font-semibold mb-6">
+            {isNew ? 'Nouvelle catégorie' : 'Modifier la catégorie'}
+          </h1>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <label className="text-sm">
+              <div className="mb-2 text-gray-700 font-medium">Nom de la catégorie</div>
+              <input 
+                className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20" 
+                value={form.name} 
+                onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))} 
+                placeholder="Nom de la catégorie"
+              />
+            </label>
+            <label className="text-sm">
+              <div className="mb-2 text-gray-700 font-medium">Catégorie parent</div>
+              <select 
+                className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20" 
+                value={form.parentId || ''} 
+                onChange={(e) => setForm((f) => ({ ...f, parentId: e.target.value || null }))}
+              >
+                {parentOptions.map((c) => (
+                  <option key={c._id} value={c._id}>{c._id ? `${"— ".repeat(c.depth)}${c.name}` : c.name}</option>
+                ))}
+              </select>
+            </label>
+          </div>
+          
+          <div className="flex items-center justify-end gap-3 mt-8 pt-6 border-t">
+            <button 
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors" 
+              onClick={save}
+            >
+              {isNew ? 'Créer la catégorie' : 'Enregistrer les modifications'}
+            </button>
+            {!isNew && (
+              <button 
+                className="px-4 py-2 bg-red-600 text-white rounded-lg text-sm font-medium hover:bg-red-700 transition-colors" 
+                onClick={remove}
+              >
+                Supprimer
+              </button>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
