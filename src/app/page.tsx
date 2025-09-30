@@ -556,15 +556,6 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
               </div>
             )}
 
-            {/* Quantité en inventaire - afficher seulement si disponible */}
-            {typeof product.stockQty === 'number' && product.stockQty > 0 && (
-              <div className="mt-6">
-                <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm">
-                  <span className="text-gray-700">Quantité en inventaire:&nbsp;</span>
-                  <span className="font-medium text-green-600">{product.stockQty}</span>
-                </div>
-              </div>
-            )}
 
             {(hasShort || hasLong) && (
               <div className="mt-6 space-y-2">
