@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
 import { ObjectId, type Document } from 'mongodb';
+import { quoteRequestEmail, renderItemsTableWithPrices } from '@/lib/emailTemplates';
 
 type SendListBody = {
   name: string;
@@ -46,7 +47,7 @@ export async function POST(req: NextRequest) {
         visibility: 'visible',
         $or: [ { 'raw.Publié': 1 }, { 'raw.Publié': '1' } ],
       },
-      { projection: { name: 1, images: 1, shortDescription: 1, lengthInches: 1, widthInches: 1, heightInches: 1 } }
+      { projection: { name: 1, images: 1, shortDescription: 1, lengthInches: 1, widthInches: 1, heightInches: 1, regularPrice: 1, salePrice: 1 } }
     ).toArray();
 
     const qtyMap = new Map(body.items.map((i) => [i.id, Math.max(1, Number(i.quantity) || 1)]));
@@ -76,24 +77,20 @@ export async function POST(req: NextRequest) {
     // Taxes TPS/TVQ pour Québec (TPS 5%, TVQ 9.975%)
     const TPS_RATE = 0.05;
     const TVQ_RATE = 0.09975;
-    // Si on n'a pas de prix sur les produits, on affiche juste les quantités sans totaux
-    const priced = docs.every((d) => typeof (d as Document & { regularPrice?: number; salePrice?: number }).regularPrice === 'number' || typeof (d as Document & { regularPrice?: number; salePrice?: number }).salePrice === 'number');
-    let subtotal = 0;
-    if (priced) {
-      for (const d of docs) {
-        const id = String(d._id);
-        const q = qtyMap.get(id) ?? 1;
-        const sale = (d as Document & { salePrice?: number }).salePrice;
-        const regular = (d as Document & { regularPrice?: number }).regularPrice;
-        const price = typeof sale === 'number' ? sale : (typeof regular === 'number' ? regular : 0);
-        subtotal += price * q;
-      }
-    }
-    const tps = priced ? subtotal * TPS_RATE : 0;
-    const tvq = priced ? subtotal * TVQ_RATE : 0;
-    const total = priced ? subtotal + tps + tvq : 0;
-
-    const totalsHtml = priced ? `
+    // Construire un tableau d'items avec prix pour l'admin (préférence salePrice sinon regularPrice)
+    const itemsWithPrices = docs.map((d: Document & { images?: string[]; name?: string; regularPrice?: number; salePrice?: number }) => {
+      const id = String(d._id);
+      const q = qtyMap.get(id) ?? 1;
+      const firstImage = Array.isArray(d.images) ? d.images?.[0] : undefined;
+      const price = typeof d.salePrice === 'number' ? d.salePrice : (typeof d.regularPrice === 'number' ? d.regularPrice : undefined);
+      return { name: d.name ?? '', quantity: q, unitPrice: price, image: firstImage };
+    });
+    const subtotal = itemsWithPrices.reduce((acc, it) => acc + ((Number(it.unitPrice) || 0) * (Number(it.quantity) || 1)), 0);
+    const tps = subtotal > 0 ? subtotal * TPS_RATE : 0;
+    const tvq = subtotal > 0 ? subtotal * TVQ_RATE : 0;
+    const total = subtotal > 0 ? subtotal + tps + tvq : 0;
+    const adminItemsTableHtml = renderItemsTableWithPrices(itemsWithPrices);
+    const adminTotalsHtml = subtotal > 0 ? `
       <div style="margin-top:12px;padding-top:8px;border-top:1px solid #eee;max-width:320px;margin-left:auto">
         <div style="display:flex;justify-content:space-between"><span>Sous-total</span><strong>${subtotal.toFixed(2)} $</strong></div>
         <div style="display:flex;justify-content:space-between;color:#555"><span>TPS (5%)</span><span>${tps.toFixed(2)} $</span></div>
@@ -106,16 +103,16 @@ export async function POST(req: NextRequest) {
       ? `<p style="margin:8px 0 0 0;color:#333"><strong>Livraison:</strong> ${body.address?.line1 || ''}${body.address?.line2 ? `, ${body.address?.line2}` : ''}, ${body.address?.city || ''}, ${body.address?.province || ''} ${body.address?.postalCode || ''}</p>`
       : `<p style="margin:8px 0 0 0;color:#333"><strong>Ramassage:</strong> 940 Jean‑Neveu, Longueuil (Québec) J4G 2M1</p>`;
 
-    const html = `
-      <div style="font:14px/1.4 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Arial, sans-serif; color:#111">
-        <h2 style="margin:0 0 8px 0">Nouvelle liste de sélection</h2>
-        <p style="margin:0 0 12px 0; color:#333">Soumise par: <strong>${body.name}</strong> (${body.email})${body.phone ? ` · ${body.phone}` : ''}${body.company ? ` · ${body.company}` : ''}</p>
-        ${body.message ? `<p style=\"margin:0 0 12px 0;color:#333\">Message: ${body.message}</p>` : ''}
-        ${deliveryBlock}
-        <table style="width:100%;border-collapse:collapse;margin-top:12px">${rows}</table>
-        ${totalsHtml}
-      </div>
-    `;
+    const html = quoteRequestEmail({
+      name: body.name,
+      email: body.email,
+      phone: body.phone,
+      company: body.company,
+      message: body.message,
+      deliveryBlock,
+      itemsTableHtml: adminItemsTableHtml,
+      totalsHtml: adminTotalsHtml,
+    });
 
     const payloadToAdmin = {
       sender: { email: senderEmail, name: senderName },
@@ -159,7 +156,7 @@ export async function POST(req: NextRequest) {
         <h2 style="margin:0 0 8px 0">Votre demande de soumission</h2>
         <p style="margin:0 0 12px 0; color:#333">Bonjour ${body.name}, nous avons bien reçu votre demande. Voici le récapitulatif :</p>
         <table style="width:100%;border-collapse:collapse;margin-top:12px">${rows}</table>
-        ${totalsHtml}
+        
         <p style="margin-top:12px;color:#555">Notre équipe vous répondra rapidement. Merci!</p>
       </div>`;
     const payloadToClient = {
