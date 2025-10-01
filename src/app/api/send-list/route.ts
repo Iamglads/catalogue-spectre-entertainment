@@ -89,6 +89,7 @@ export async function POST(req: NextRequest) {
     const tps = subtotal > 0 ? subtotal * TPS_RATE : 0;
     const tvq = subtotal > 0 ? subtotal * TVQ_RATE : 0;
     const total = subtotal > 0 ? subtotal + tps + tvq : 0;
+    const priced = subtotal > 0;
     const adminItemsTableHtml = renderItemsTableWithPrices(itemsWithPrices);
     const adminTotalsHtml = subtotal > 0 ? `
       <div style="margin-top:12px;padding-top:8px;border-top:1px solid #eee;max-width:320px;margin-left:auto">
