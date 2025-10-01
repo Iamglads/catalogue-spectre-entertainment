@@ -470,18 +470,19 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
   const hasImages = Array.isArray(product.images) && product.images.length > 0;
   const currentSrc = hasImages ? product.images![Math.max(0, Math.min(index, product.images!.length - 1))] : undefined;
 
-  function stripHtml(html: string): string {
-    return html
+  function cleanText(text: string): string {
+    return text
       .replace(/<[^>]*>/g, '') // Remove HTML tags
       .replace(/&nbsp;/g, ' ') // Replace &nbsp; with space
       .replace(/\\+/g, '') // Remove backslashes
       .replace(/\\n/g, '\n') // Convert \n to actual line breaks
+      .replace(/\n\s*\n/g, '\n') // Remove multiple consecutive line breaks
+      .replace(/^\s+$/gm, '') // Remove lines with only whitespace
       .trim();
   }
 
-  const shortText = (product.shortDescription || '').replace(/\\+/g, '').replace(/\\n/g, '\n').trim();
-  const longHtml = product.description || '';
-  const longText = stripHtml(longHtml);
+  const shortText = cleanText(product.shortDescription || '');
+  const longText = cleanText(product.description || '');
   const hasShort = Boolean(shortText);
   const hasLong = Boolean(longText);
   const areSame = hasShort && hasLong && shortText === longText;
@@ -569,7 +570,7 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
             )}
 
             {(hasShort || hasLong) && (
-              <div className="mt-6 space-y-2">
+              <div className="mt-6">
                 {areSame ? (
                   hasLong ? (
                     <div className="prose prose-sm max-w-none text-gray-700 whitespace-pre-line">{longText}</div>
@@ -578,8 +579,18 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
                   )
                 ) : (
                   <>
-                    {hasShort && (<div className="text-body text-gray-800 whitespace-pre-line">{shortText}</div>)}
-                    {hasLong && (<div className="prose prose-sm max-w-none text-gray-700 whitespace-pre-line">{longText}</div>)}
+                    {hasShort && (
+                      <div className="text-body text-gray-800 whitespace-pre-line mb-3">
+                        <div className="font-medium text-gray-900 mb-1">Description courte:</div>
+                        {shortText}
+                      </div>
+                    )}
+                    {hasLong && (
+                      <div className="prose prose-sm max-w-none text-gray-700 whitespace-pre-line">
+                        {hasShort && <div className="font-medium text-gray-900 mb-2">Description détaillée:</div>}
+                        {longText}
+                      </div>
+                    )}
                   </>
                 )}
               </div>
