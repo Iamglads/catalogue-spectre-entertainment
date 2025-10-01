@@ -72,7 +72,7 @@ export default function ForSaleSlider() {
                   )}
                 </div>
                 <div className="mt-2">
-                  <div className="text-sm font-medium text-gray-900 capitalize line-clamp-2">{p.name}</div>
+                  <div className="text-sm font-medium text-gray-900 line-clamp-2">{p.name}</div>
                   {p.shortDescription && <div className="text-xs text-gray-600 line-clamp-1">{p.shortDescription}</div>}
                 </div>
               </div>

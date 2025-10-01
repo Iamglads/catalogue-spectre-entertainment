@@ -346,7 +346,7 @@ function HomeContent() {
                     )}
                   </div>
                   <div className="p-4 flex-1 flex flex-col">
-                    <div className="text-title text-gray-900 capitalize line-clamp-2 mb-2">{p.name}</div>
+                    <div className="text-title text-gray-900 line-clamp-2 mb-2">{p.name}</div>
                     {/* Dimensions retirées de la card */}
                     {tags.length > 0 && (
                       <div className="mb-3 flex flex-wrap gap-1.5">
@@ -496,7 +496,7 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
           className="w-full max-w-6xl max-h-[90vh] rounded-2xl bg-white shadow-2xl overflow-hidden animate-fade-in flex flex-col"
         >
           <div className="flex items-center justify-between px-6 py-4 border-b bg-gray-50 sticky top-0">
-            <div className="text-title truncate pr-4 text-gray-900 capitalize">{product.name}</div>
+            <div className="text-title truncate pr-4 text-gray-900">{product.name}</div>
             <button
               aria-label="Fermer"
               className="rounded-full p-2 hover:bg-gray-200 transition-colors cursor-pointer"
