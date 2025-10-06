@@ -20,14 +20,26 @@ function isValidObjectId(id: string): boolean {
 }
 
 function cleanText(text: string): string {
-  return text
+  let t = text
     .replace(/<[^>]*>/g, "")
     .replace(/&nbsp;/g, " ")
     .replace(/\\n/g, "\n")
     .replace(/\\/g, "")
+    .replace(/\r\n/g, "\n");
+
+  // Ligne par ligne: supprimer les lignes "n" isolées et enlever un 'n' parasite au début d'une ligne de dimensions
+  const cleanedLines = t.split("\n").map((line) => {
+    const trimmed = line.trim();
+    if (/^[nN]$/.test(trimmed)) return ""; // ligne 'n' seule
+    return trimmed.replace(/^[nN](?=(\d|['"’”]))/, ""); // 'n' collé devant un chiffre ou une quote
+  }).filter((line) => line !== "");
+
+  t = cleanedLines.join("\n")
     .replace(/\n\s*\n/g, "\n")
     .replace(/^\s+$/gm, "")
     .trim();
+
+  return t;
 }
 
 export async function generateMetadata({ params }: { params: PageParams }): Promise<Metadata> {
