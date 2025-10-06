@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { slugify } from '@/lib/slug';
 import Image from "next/image";
 
 type Product = {
@@ -72,7 +73,9 @@ export default function ForSaleSlider() {
                   )}
                 </div>
                 <div className="mt-2">
-                  <div className="text-sm font-medium text-gray-900 line-clamp-2">{p.name}</div>
+                  <Link href={`/produit/${p._id}/${slugify(p.name)}`} className="text-sm font-medium text-gray-900 line-clamp-2 hover:underline">
+                    {p.name}
+                  </Link>
                   {p.shortDescription && <div className="text-xs text-gray-600 line-clamp-1">{p.shortDescription}</div>}
                 </div>
               </div>

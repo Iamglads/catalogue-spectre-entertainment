@@ -1,6 +1,8 @@
 "use client";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { slugify } from '@/lib/slug';
 import { ChevronLeft, ChevronRight, Eye, X } from "lucide-react";
 
 type Product = {
@@ -132,7 +134,9 @@ function ForSaleContent() {
                     )}
                   </div>
                   <div className="p-4 flex-1 flex flex-col">
-                    <div className="text-title text-gray-900 line-clamp-2 mb-2">{p.name}</div>
+                    <Link href={`/produit/${p._id}/${slugify(p.name)}`} className="text-title text-gray-900 line-clamp-2 mb-2 hover:underline">
+                      {p.name}
+                    </Link>
                     {/* Prix de vente */}
                     {p.salePriceForSale !== undefined && p.salePriceForSale !== null && (
                       <div className="mt-auto">
