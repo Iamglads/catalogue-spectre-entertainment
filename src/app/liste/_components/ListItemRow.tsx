@@ -30,7 +30,7 @@ export default function ListItemRow({ product, quantity, onDecrease, onIncrease,
         <div className="text-title truncate">{product.name}</div>
         {product.shortDescription && <div className="text-caption truncate mt-1">{product.shortDescription}</div>}
         {typeof maxQty === 'number' && (
-          <div className="text-caption mt-1 text-gray-600">Disponibles: {maxQty}</div>
+          <div className="text-caption mt-1 text-gray-600">Inventaire: {maxQty}</div>
         )}
       </div>
       <div className="flex items-center gap-3">

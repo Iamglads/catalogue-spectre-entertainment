@@ -21,6 +21,7 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const q = searchParams.get('q');
   const status = searchParams.get('status');
+  const categoryId = searchParams.get('categoryId');
   const pageParam = Number(searchParams.get('page') || '1');
   const pageSizeParam = Number(searchParams.get('pageSize') || '20');
   const page = Number.isFinite(pageParam) && pageParam > 0 ? pageParam : 1;
@@ -32,6 +33,12 @@ export async function GET(req: NextRequest) {
     and.push({ $or: [ { 'raw.Publié': 1 }, { 'raw.Publié': '1' } ] });
   } else if (status === 'draft') {
     and.push({ $nor: [ { 'raw.Publié': 1 }, { 'raw.Publié': '1' } ] });
+  }
+  if (categoryId) {
+    try {
+      const oid = new ObjectId(categoryId);
+      and.push({ allCategoryIds: oid });
+    } catch {}
   }
   if (and.length) filter.$and = and;
   const skip = (page - 1) * pageSize;

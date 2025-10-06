@@ -163,7 +163,18 @@ export async function POST(req: NextRequest) {
       customer: { name: body.name, email: body.email, phone: body.phone, company: body.company },
       delivery: { method: body.deliveryMethod || 'pickup', address: body.address || null },
       message: body.message || '',
-      items: docs.map((d: Document & { name?: string }) => ({ id: String(d._id), name: d.name ?? '', quantity: qtyMap.get(String(d._id)) ?? 1 })),
+      items: docs.map((d: Document & { name?: string; regularPrice?: number; salePrice?: number; images?: string[] }) => {
+        const id = String(d._id);
+        const unitPrice = typeof d.salePrice === 'number' ? d.salePrice : (typeof d.regularPrice === 'number' ? d.regularPrice : undefined);
+        const image = Array.isArray(d.images) ? d.images[0] : undefined;
+        return { 
+          id, 
+          name: d.name ?? '', 
+          quantity: qtyMap.get(id) ?? 1,
+          unitPrice,
+          image
+        };
+      }),
       priced: Boolean(priced),
       totals: priced ? { subtotal, tps, tvq, total } : null,
     };
@@ -184,11 +195,11 @@ export async function POST(req: NextRequest) {
       subject: `Votre demande de soumission - Spectre`,
       htmlContent: clientHtml,
     };
- /*    await fetch('https://api.brevo.com/v3/smtp/email', {
+    await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'api-key': apiKey },
       body: JSON.stringify(payloadToClient),
-    }); */
+    });
 
     return NextResponse.json({ ok: true, priced, quoteId: String(quoteInsert.insertedId) });
   } catch (error) {

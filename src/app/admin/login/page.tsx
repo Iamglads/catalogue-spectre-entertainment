@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import { signIn } from 'next-auth/react';
+import { Lock, Mail, AlertCircle, Loader2 } from 'lucide-react';
 
 function LoginFormInner() {
   const router = useRouter();
@@ -32,22 +33,69 @@ function LoginFormInner() {
       }}
     >
       {({ isSubmitting, isValid, status }: { isSubmitting: boolean; isValid: boolean; status?: string }) => (
-        <Form className="space-y-3">
+        <Form className="space-y-5">
           <div>
-            <Field name="email" type="email" placeholder="Email admin" className="w-full rounded border px-3 py-2 text-sm" />
-            <div className="text-xs text-red-600"><ErrorMessage name="email" /></div>
+            <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+              <Mail className="h-4 w-4 text-gray-500" />
+              Adresse courriel
+            </label>
+            <Field
+              name="email"
+              type="email"
+              placeholder="admin@exemple.com"
+              className="input w-full"
+            />
+            <ErrorMessage name="email">
+              {msg => (
+                <div className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                  <AlertCircle className="h-3.5 w-3.5" />
+                  {msg}
+                </div>
+              )}
+            </ErrorMessage>
           </div>
+
           <div>
-            <Field name="password" type="password" placeholder="Mot de passe admin" className="w-full rounded border px-3 py-2 text-sm" />
-            <div className="text-xs text-red-600"><ErrorMessage name="password" /></div>
+            <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2">
+              <Lock className="h-4 w-4 text-gray-500" />
+              Mot de passe
+            </label>
+            <Field
+              name="password"
+              type="password"
+              placeholder="••••••••"
+              className="input w-full"
+            />
+            <ErrorMessage name="password">
+              {msg => (
+                <div className="mt-1 text-sm text-red-600 flex items-center gap-1">
+                  <AlertCircle className="h-3.5 w-3.5" />
+                  {msg}
+                </div>
+              )}
+            </ErrorMessage>
           </div>
-          {status && <div className="text-xs text-red-600">{status}</div>}
+
+          {status && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-3 flex items-start gap-2">
+              <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+              <div className="text-sm text-red-800">{status}</div>
+            </div>
+          )}
+
           <button
             type="submit"
-            className="w-full rounded bg-blue-600 px-4 py-2 text-sm text-white hover:bg-blue-700 disabled:opacity-50"
+            className="btn btn-primary w-full justify-center disabled:cursor-not-allowed"
             disabled={isSubmitting || !isValid}
           >
-            {isSubmitting ? 'Connexion…' : 'Se connecter'}
+            {isSubmitting ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Connexion en cours…
+              </>
+            ) : (
+              'Se connecter'
+            )}
           </button>
         </Form>
       )}
@@ -57,15 +105,35 @@ function LoginFormInner() {
 
 export default function AdminLoginPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center py-10">
-      <div className="w-full max-w-sm rounded border bg-white p-6">
-        <div className="text-lg font-semibold mb-4">Connexion admin</div>
-        <Suspense fallback={<div className="text-sm text-gray-600">Chargement…</div>}>
-          <LoginFormInner />
-        </Suspense>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4">
+      <div className="w-full max-w-md">
+        <div className="card p-8 shadow-xl">
+          {/* Logo/Header */}
+          <div className="text-center mb-8">
+          
+            <h1 className="text-2xl font-bold text-gray-900 mb-2">
+              Connectez-vous
+            </h1>
+          
+          </div>
+
+          {/* Form */}
+          <Suspense fallback={
+            <div className="flex items-center justify-center py-8">
+              <Loader2 className="h-6 w-6 animate-spin text-blue-600" />
+            </div>
+          }>
+            <LoginFormInner />
+          </Suspense>
+        </div>
+
+        {/* Footer */}
+        <div className="mt-6 text-center">
+          <p className="text-sm text-gray-500">
+            Catalogue des décors Spectre Entertainment © {new Date().getFullYear()}
+          </p>
+        </div>
       </div>
     </div>
   );
 }
-
-

@@ -113,11 +113,11 @@ export default function SendListForm({ selectedIds, quantities, onSuccess }: Pro
         <div className="flex items-center gap-4 text-sm">
         <label className="inline-flex items-center gap-2 cursor-pointer">
           <input type="radio" name="delivery" checked={deliveryMethod === 'pickup'} onChange={() => setDeliveryMethod('pickup')} className="text-blue-600 cursor-pointer" />
-          Ramassage en magasin
+          Ramassage
         </label>
         <label className="inline-flex items-center gap-2 cursor-pointer">
           <input type="radio" name="delivery" checked={deliveryMethod === 'delivery'} onChange={() => setDeliveryMethod('delivery')} className="text-blue-600 cursor-pointer" />
-          Livraison à mon adresse
+          Livraison
         </label>
       </div>
       {deliveryMethod === 'pickup' ? (
@@ -158,7 +158,7 @@ export default function SendListForm({ selectedIds, quantities, onSuccess }: Pro
         </div>
       )}
       {sent?.ok === false && <div className="text-sm text-red-600 bg-red-50 p-3 rounded-lg">Envoi échoué: {sent.error}</div>}
-      {sent?.ok === true && <div className="text-sm text-green-700 bg-green-50 p-3 rounded-lg">Votre liste a été envoyée avec succès.</div>}
+      {sent?.ok === true && <div className="text-sm text-green-700 bg-green-50 p-3 rounded-lg">Votre liste a été envoyée.</div>}
       <button
         className="btn btn-primary w-full cursor-pointer disabled:cursor-not-allowed"
         onClick={handleSend}

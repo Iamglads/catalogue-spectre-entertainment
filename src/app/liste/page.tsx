@@ -76,7 +76,6 @@ export default function ListePage() {
       <div className="mb-8 flex items-center justify-between gap-4">
         <div>
           <h1 className="text-headline">Ma liste</h1>
-          <p className="text-caption mt-1">Gérez votre sélection d&apos;équipements</p>
           
         </div>
         <div className="flex items-center gap-2">
@@ -101,7 +100,7 @@ export default function ListePage() {
               <div className="text-center py-12 card">
                 <Heart className="h-12 w-12 text-gray-300 mx-auto mb-4" />
                 <div className="text-body text-gray-600 mb-4">Votre liste est vide</div>
-                <Link className="btn btn-primary" href="/">Parcourir le catalogue</Link>
+                <Link className="btn" href="/">Parcourir le catalogue</Link>
               </div>
             ) : (
               items.map((p) => (
