@@ -199,8 +199,6 @@ export default async function ProductDetailPage({ params }: { params: PageParams
 
           <div className="mt-6 grid grid-cols-2 gap-3 text-sm text-gray-700">
             {doc.lengthInches ? <div><span className="text-gray-500">Longueur:&nbsp;</span><span className="font-medium">{String(doc.lengthInches)} po</span></div> : null}
-            {doc.widthInches ? <div><span className="text-gray-500">Largeur:&nbsp;</span><span className="font-medium">{String(doc.widthInches)} po</span></div> : null}
-            {doc.heightInches ? <div><span className="text-gray-500">Hauteur:&nbsp;</span><span className="font-medium">{String(doc.heightInches)} po</span></div> : null}
           </div>
         </div>
       </div>
