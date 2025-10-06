@@ -13,6 +13,7 @@ export default function SendListForm({ selectedIds, quantities, onSuccess }: Pro
   const [phone, setPhone] = useState("");
   const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
+  const [consent, setConsent] = useState(false);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState<null | { ok: boolean; error?: string }>(null);
   const [postalCode, setPostalCode] = useState("");
@@ -26,6 +27,7 @@ export default function SendListForm({ selectedIds, quantities, onSuccess }: Pro
   if (!name) missing.push('nom');
   if (!email) missing.push('email');
   if (!phone) missing.push('téléphone');
+  if (!consent) missing.push('consentement');
   if (selectedIds.length === 0) missing.push('au moins un article');
   if (deliveryMethod === 'delivery') {
     if (!addr1) missing.push('adresse');
@@ -150,6 +152,30 @@ export default function SendListForm({ selectedIds, quantities, onSuccess }: Pro
           </label>
         </div>
       )}
+      </div>
+
+      {/* Consentement */}
+      <div className="border-t pt-4">
+        <label className="flex items-start gap-3 cursor-pointer group">
+          <input
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+            className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
+          />
+          <span className="text-sm text-gray-700 leading-relaxed">
+            Je consens à ce que mes informations soient utilisées pour traiter ma demande conformément à la{' '}
+            <a
+              href="https://spectre-entertainment.com/politique-de-confidentialite/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-700 underline font-medium"
+            >
+              Politique de confidentialité
+            </a>{' '}
+            du site. <span className="text-red-600">*</span>
+          </span>
+        </label>
       </div>
       
       {missing.length > 0 && (

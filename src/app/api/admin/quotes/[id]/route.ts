@@ -68,7 +68,11 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
   const client = await clientPromise;
   const db = client.db();
   const quotes = db.collection<Document>('quotes');
-  await quotes.updateOne({ _id: new ObjectId(id) }, { $set: { ...body, updatedAt: new Date() } });
+  
+  // Exclure _id du body car c'est un champ immuable
+  const { _id, ...updateData } = body;
+  
+  await quotes.updateOne({ _id: new ObjectId(id) }, { $set: { ...updateData, updatedAt: new Date() } });
   return NextResponse.json({ ok: true });
 }
 

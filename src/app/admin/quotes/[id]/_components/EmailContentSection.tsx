@@ -11,7 +11,7 @@ export default function EmailContentSection({ subject, intro, footerNote, onChan
   return (
     <div className="card p-6 space-y-4">
       <h2 className="text-lg font-semibold text-gray-800">
-        Soumission — Informations d'envoi
+        Contenu courriel
       </h2>
       <div className="space-y-4">
         <div>
