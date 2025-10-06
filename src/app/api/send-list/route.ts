@@ -47,10 +47,28 @@ export async function POST(req: NextRequest) {
         visibility: 'visible',
         $or: [ { 'raw.Publié': 1 }, { 'raw.Publié': '1' } ],
       },
-      { projection: { name: 1, images: 1, shortDescription: 1, lengthInches: 1, widthInches: 1, heightInches: 1, regularPrice: 1, salePrice: 1 } }
+      { projection: { name: 1, images: 1, shortDescription: 1, lengthInches: 1, widthInches: 1, heightInches: 1, regularPrice: 1, salePrice: 1, inventory: 1, stockQty: 1 } }
     ).toArray();
 
     const qtyMap = new Map(body.items.map((i) => [i.id, Math.max(1, Number(i.quantity) || 1)]));
+
+    // Validate requested quantities against available inventory
+    const violations: Array<{ id: string; name: string; requested: number; available: number }> = [];
+    for (const d of docs) {
+      const id = String(d._id);
+      const requested = qtyMap.get(id) ?? 1;
+      const anyDoc = d as any;
+      const available: number | undefined = typeof anyDoc.inventory === 'number'
+        ? anyDoc.inventory
+        : (typeof anyDoc.stockQty === 'number' ? anyDoc.stockQty : undefined);
+      if (typeof available === 'number' && requested > available) {
+        violations.push({ id, name: (d as any).name || id, requested, available });
+      }
+    }
+    if (violations.length > 0) {
+      const msg = 'Certains articles dépassent notre inventaire: ' + violations.map(v => `${v.name}: demandé ${v.requested}, disponible ${v.available}`).join('; ') + '. Veuillez ajuster les quantités.';
+      return new NextResponse(msg, { status: 400 });
+    }
 
     const rows = docs.map((d: Document & { images?: string[]; name?: string; shortDescription?: string; lengthInches?: number; widthInches?: number; heightInches?: number }) => {
       const id = String(d._id);

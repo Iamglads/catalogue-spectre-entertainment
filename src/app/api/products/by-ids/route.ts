@@ -33,17 +33,24 @@ export async function GET(req: NextRequest) {
     const docs = await products
       .find(
         { _id: { $in: objectIds } },
-        { projection: { name: 1, images: 1, shortDescription: 1, isInStock: 1 } }
+        { projection: { name: 1, images: 1, shortDescription: 1, isInStock: 1, inventory: 1, stockQty: 1 } }
       )
       .toArray();
 
-    const items = docs.map((d) => ({
-      _id: String(d._id),
-      name: (d as Document & { name?: string }).name || '',
-      shortDescription: (d as Document & { shortDescription?: string }).shortDescription,
-      images: (d as Document & { images?: string[] }).images,
-      isInStock: (d as Document & { isInStock?: boolean }).isInStock,
-    }));
+    const items = docs.map((d) => {
+      const anyDoc = d as any;
+      const inventory: number | undefined = typeof anyDoc.inventory === 'number'
+        ? anyDoc.inventory
+        : (typeof anyDoc.stockQty === 'number' ? anyDoc.stockQty : undefined);
+      return {
+        _id: String(d._id),
+        name: (d as Document & { name?: string }).name || '',
+        shortDescription: (d as Document & { shortDescription?: string }).shortDescription,
+        images: (d as Document & { images?: string[] }).images,
+        isInStock: (d as Document & { isInStock?: boolean }).isInStock,
+        stockQty: typeof inventory === 'number' ? inventory : undefined,
+      } as any;
+    });
 
     return NextResponse.json({ items });
   } catch (error) {
