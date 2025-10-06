@@ -34,7 +34,7 @@ export default function ListItemRow({ product, quantity, onDecrease, onIncrease,
         )}
       </div>
       <div className="flex items-center gap-3">
-        <button className="h-8 w-8 rounded-lg border hover:bg-gray-50 text-sm font-medium transition-colors" onClick={onDecrease} aria-label="Diminuer">−</button>
+        <button className="h-8 w-8 rounded-lg border hover:bg-gray-50 text-sm font-medium transition-colors cursor-pointer" onClick={onDecrease} aria-label="Diminuer">−</button>
         <input
           className="w-16 rounded-lg border px-2 py-1.5 text-sm text-center focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           type="number"
@@ -48,8 +48,8 @@ export default function ListItemRow({ product, quantity, onDecrease, onIncrease,
             onChange(clamped);
           }}
         />
-        <button className="h-8 w-8 rounded-lg border hover:bg-gray-50 text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed" onClick={onIncrease} aria-label="Augmenter" disabled={!canIncrease}>+</button>
-        <button className="ml-2 inline-flex items-center gap-1 text-sm text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg p-2 transition-colors" onClick={onRemove} aria-label="Retirer">
+        <button className="h-8 w-8 rounded-lg border hover:bg-gray-50 text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer" onClick={onIncrease} aria-label="Augmenter" disabled={!canIncrease}>+</button>
+        <button className="ml-2 inline-flex items-center gap-1 text-sm text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg p-2 transition-colors cursor-pointer" onClick={onRemove} aria-label="Retirer">
           <Trash2 className="h-3.5 w-3.5" />
         </button>
       </div>
