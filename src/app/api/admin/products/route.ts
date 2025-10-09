@@ -7,6 +7,7 @@ import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/lib/auth';
 import { logAudit } from '@/lib/audit';
 import { isCloudinaryEnabled, uploadImageFromUrlOrData } from '@/lib/cloudinary';
+import { createAccentInsensitivePattern } from '@/lib/searchUtils';
 
 // List + create
 export async function GET(req: NextRequest) {
@@ -28,7 +29,16 @@ export async function GET(req: NextRequest) {
   const pageSize = Number.isFinite(pageSizeParam) && pageSizeParam > 0 && pageSizeParam <= 100 ? pageSizeParam : 20;
   const filter: Document = {};
   const and: Document[] = [];
-  if (q) and.push({ name: { $regex: q, $options: 'i' } });
+  if (q) {
+    const searchPattern = createAccentInsensitivePattern(q);
+    and.push({
+      $or: [
+        { name: { $regex: searchPattern, $options: 'i' } },
+        { description: { $regex: searchPattern, $options: 'i' } },
+        { brand: { $regex: searchPattern, $options: 'i' } },
+      ]
+    });
+  }
   if (status === 'published') {
     and.push({ $or: [ { 'raw.Publié': 1 }, { 'raw.Publié': '1' } ] });
   } else if (status === 'draft') {

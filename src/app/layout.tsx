@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Orbitron } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
 import Navigation from "./_components/Navigation";
+import ThemedFooter from "./_components/ThemedFooter";
+import HalloweenEffects from "./_components/HalloweenEffects";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +24,7 @@ const heading = Orbitron({
 
 export const metadata: Metadata = {
   title: "Catalogue Spectre",
-  description: "Catalogue de décors avec recherche et liste d’envoi",
+  description: "Catalogue de décors avec recherche et liste d'envoi",
 };
 
 export default function RootLayout({
@@ -32,28 +34,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="light">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${heading.variable} antialiased`}>
+      <head>
+        {/* Preconnect to Google Fonts for theme fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Preload ALL theme fonts */}
+        <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Mountains+of+Christmas:wght@400;700&family=Pacifico&family=Fredoka+One&display=swap" rel="stylesheet" />
+        <style dangerouslySetInnerHTML={{ __html: `
+          @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+        ` }} />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${heading.variable} antialiased flex flex-col min-h-screen`}>
         <Providers>
+          <HalloweenEffects />
           <Navigation />
-        <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+        <main 
+          className="flex-1 bg-gradient-to-br from-gray-50 to-white"
+          style={{
+            backgroundColor: 'var(--theme-background, #fafafa)',
+          }}
+        >
           {children}
         </main>
-        <footer className="border-t bg-white/80 backdrop-blur-sm">
-          <div className="container-max section-padding py-8 text-center text-sm text-gray-600 space-y-2">
-            <div>
-              Spectre Entertainment -Tous droits réservés ·{' '}
-              <a
-                href="https://spectre-entertainment.com/politique-de-confidentialite/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-brand hover:underline transition-colors"
-              >
-                Politique de confidentialité
-              </a>
-            </div>
-            <div className="text-gray-500">940 Jean‑Neveu, Longueuil (Québec) J4G 2M1</div>
-          </div>
-        </footer>
+        <ThemedFooter />
         </Providers>
       </body>
     </html>

@@ -9,6 +9,7 @@ type SendListBody = {
   phone?: string;
   company?: string;
   message?: string;
+  eventDate?: string;
   items: Array<{ id: string; quantity: number }>;
   postalCode?: string;
   deliveryMethod?: 'pickup' | 'delivery';
@@ -122,13 +123,20 @@ export async function POST(req: NextRequest) {
       ? `<p style="margin:8px 0 0 0;color:#333"><strong>Livraison:</strong> ${body.address?.line1 || ''}${body.address?.line2 ? `, ${body.address?.line2}` : ''}, ${body.address?.city || ''}, ${body.address?.province || ''} ${body.address?.postalCode || ''}</p>`
       : `<p style="margin:8px 0 0 0;color:#333"><strong>Ramassage:</strong> 940 Jean‑Neveu, Longueuil (Québec) J4G 2M1</p>`;
 
+    // Format event date for display
+    const eventDateBlock = body.eventDate 
+      ? `<p style="margin:8px 0 0 0;color:#333"><strong>Date de l'événement:</strong> ${new Date(body.eventDate).toLocaleDateString('fr-CA', { year: 'numeric', month: 'long', day: 'numeric' })}</p>`
+      : '';
+
     const html = quoteRequestEmail({
       name: body.name,
       email: body.email,
       phone: body.phone,
       company: body.company,
       message: body.message,
+      eventDate: body.eventDate,
       deliveryBlock,
+      eventDateBlock,
       itemsTableHtml: adminItemsTableHtml,
       totalsHtml: adminTotalsHtml,
     });
@@ -163,6 +171,7 @@ export async function POST(req: NextRequest) {
       customer: { name: body.name, email: body.email, phone: body.phone, company: body.company },
       delivery: { method: body.deliveryMethod || 'pickup', address: body.address || null },
       message: body.message || '',
+      eventDate: body.eventDate || null,
       items: docs.map((d: Document & { name?: string; regularPrice?: number; salePrice?: number; images?: string[] }) => {
         const id = String(d._id);
         const unitPrice = typeof d.salePrice === 'number' ? d.salePrice : (typeof d.regularPrice === 'number' ? d.regularPrice : undefined);

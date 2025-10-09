@@ -41,15 +41,18 @@ export function quoteRequestEmail(opts: {
   phone?: string;
   company?: string;
   message?: string;
+  eventDate?: string;
   deliveryBlock?: string;
+  eventDateBlock?: string;
   itemsTableHtml: string;
   totalsHtml?: string;
 }) {
-  const { name, email, phone, company, message, deliveryBlock, itemsTableHtml, totalsHtml } = opts;
+  const { name, email, phone, company, message, deliveryBlock, eventDateBlock, itemsTableHtml, totalsHtml } = opts;
   return `
     <div style="font:14px/1.4 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Arial, sans-serif; color:#111">
       <h2 style="margin:0 0 8px 0">Nouvelle demande de soumission</h2>
       <p style="margin:0 0 12px 0; color:#333">Soumise par: <strong>${name}</strong> (${email})${phone ? ` · ${phone}` : ''}${company ? ` · ${company}` : ''}</p>
+      ${eventDateBlock || ''}
       ${message ? `<p style=\"margin:0 0 12px 0;color:#333\">Message: ${message}</p>` : ''}
       ${deliveryBlock || ''}
       ${itemsTableHtml}

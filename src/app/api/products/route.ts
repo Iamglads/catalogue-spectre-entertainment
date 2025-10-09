@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic';
 import { unstable_cache } from 'next/cache';
 import clientPromise from '@/lib/mongodb';
 import { ObjectId, type Document } from 'mongodb';
+import { createAccentInsensitivePattern } from '@/lib/searchUtils';
 
 const PAGE_SIZE = 20;
 
@@ -53,11 +54,17 @@ export async function GET(req: NextRequest) {
     and.push({ $or: [ { 'raw.Publié': 1 }, { 'raw.Publié': '1' } ] });
 
     if (q && q.trim()) {
+      // Créer un pattern qui ignore les accents
+      const searchPattern = createAccentInsensitivePattern(q.trim());
+      
       and.push({
         $or: [
-          { name: { $regex: q, $options: 'i' } },
-          { description: { $regex: q, $options: 'i' } },
-          { shortDescription: { $regex: q, $options: 'i' } },
+          { name: { $regex: searchPattern, $options: 'i' } },
+          { description: { $regex: searchPattern, $options: 'i' } },
+          { shortDescription: { $regex: searchPattern, $options: 'i' } },
+          // Recherche aussi dans les tags et catégories
+          { 'tags.name': { $regex: searchPattern, $options: 'i' } },
+          { brand: { $regex: searchPattern, $options: 'i' } },
         ],
       });
     }

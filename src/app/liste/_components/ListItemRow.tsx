@@ -36,7 +36,18 @@ export default function ListItemRow({ product, quantity, onDecrease, onIncrease,
       <div className="flex items-center gap-3">
         <button className="h-8 w-8 rounded-lg border hover:bg-gray-50 text-sm font-medium transition-colors cursor-pointer" onClick={onDecrease} aria-label="Diminuer">−</button>
         <input
-          className="w-16 rounded-lg border px-2 py-1.5 text-sm text-center focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="w-16 rounded-lg border px-2 py-1.5 text-sm text-center focus:outline-none transition-all"
+          style={{
+            borderColor: 'var(--theme-border, #d1d5db)',
+          }}
+          onFocus={(e) => {
+            e.currentTarget.style.borderColor = 'var(--theme-primary, #3b82f6)';
+            e.currentTarget.style.boxShadow = '0 0 0 3px rgba(255, 107, 53, 0.2)';
+          }}
+          onBlur={(e) => {
+            e.currentTarget.style.borderColor = 'var(--theme-border, #d1d5db)';
+            e.currentTarget.style.boxShadow = 'none';
+          }}
           type="number"
           min={1}
           {...(typeof maxQty === 'number' ? { max: maxQty } : {})}

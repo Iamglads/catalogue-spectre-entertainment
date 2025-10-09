@@ -13,6 +13,7 @@ export default function SendListForm({ selectedIds, quantities, onSuccess }: Pro
   const [phone, setPhone] = useState("");
   const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
+  const [eventDate, setEventDate] = useState("");
   const [consent, setConsent] = useState(false);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState<null | { ok: boolean; error?: string }>(null);
@@ -27,6 +28,7 @@ export default function SendListForm({ selectedIds, quantities, onSuccess }: Pro
   if (!name) missing.push('nom');
   if (!email) missing.push('email');
   if (!phone) missing.push('téléphone');
+  if (!eventDate) missing.push('date de l\'événement');
   if (!consent) missing.push('consentement');
   if (selectedIds.length === 0) missing.push('au moins un article');
   if (deliveryMethod === 'delivery') {
@@ -42,7 +44,7 @@ export default function SendListForm({ selectedIds, quantities, onSuccess }: Pro
       setSending(true);
       setSent(null);
       const payload = {
-        name, email, phone, company, message,
+        name, email, phone, company, message, eventDate,
         items: selectedIds.map((id) => ({ id, quantity: Math.max(1, quantities[id] || 1) })),
         postalCode,
         deliveryMethod,
@@ -67,6 +69,7 @@ export default function SendListForm({ selectedIds, quantities, onSuccess }: Pro
       setPhone("");
       setCompany("");
       setMessage("");
+      setEventDate("");
       setPostalCode("");
       setDeliveryMethod("pickup");
       setAddr1("");
@@ -103,6 +106,18 @@ export default function SendListForm({ selectedIds, quantities, onSuccess }: Pro
         <label className="text-sm">
           <div className="mb-1 text-gray-600">Entreprise (optionnel)</div>
           <input className="input" value={company} onChange={(e) => setCompany(e.target.value)} />
+        </label>
+        <label className="text-sm">
+          <div className="mb-1 text-gray-600">Date de l'événement <span className="text-red-600">*</span></div>
+          <input 
+            type="date" 
+            className="input" 
+            value={eventDate} 
+            onChange={(e) => setEventDate(e.target.value)} 
+            required 
+            aria-required="true"
+            min={new Date().toISOString().split('T')[0]}
+          />
         </label>
         <label className="text-sm">
           <div className="mb-1 text-gray-600">Message (optionnel)</div>

@@ -72,7 +72,7 @@ export default function ListePage() {
   }
 
   return (
-    <div className="container-max section-padding py-8">
+    <div className="container-max section-padding py-8 pb-32">
       <div className="mb-8 flex items-center justify-between gap-4">
         <div>
           <h1 className="text-headline">Ma liste</h1>

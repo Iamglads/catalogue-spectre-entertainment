@@ -4,6 +4,7 @@ import clientPromise from "@/lib/mongodb";
 import { ObjectId, type Document } from "mongodb";
 import { slugify } from "@/lib/slug";
 import ProductGallery from "./ProductGallery";
+import SafeHtml from "@/app/_components/SafeHtml";
 // No client SEO here; we use server-side Metadata API and JSON-LD
 
 type PageParams = { id: string; slug: string };
@@ -123,10 +124,15 @@ export default async function ProductDetailPage({ params }: { params: PageParams
 
   const images = (Array.isArray(doc.images) ? (doc.images as unknown[]) : []).filter((u) => typeof u === "string") as string[];
 
-  const shortText = cleanText(String(doc.shortDescription || ""));
-  const longText = cleanText(String(doc.description || ""));
-  const hasShort = Boolean(shortText);
-  const hasLong = Boolean(longText);
+  // Keep raw HTML for descriptions
+  const shortDescription = String(doc.shortDescription || "");
+  const longDescription = String(doc.description || "");
+  
+  // For metadata, use clean text
+  const shortText = cleanText(shortDescription);
+  const longText = cleanText(longDescription);
+  const hasShort = Boolean(shortDescription.trim());
+  const hasLong = Boolean(longDescription.trim());
   const areSame = hasShort && hasLong && shortText === longText;
   const canonicalUrl = `https://spectre-entertainment.com/produit/${id}/${canonicalSlug}`;
   const baseDescription = shortText || longText || `Découvrez notre ${name} dans notre vaste catalogue de décors pour tous vos événements.`;
@@ -186,22 +192,22 @@ export default async function ProductDetailPage({ params }: { params: PageParams
             <div className="space-y-3">
               {areSame ? (
                 hasLong ? (
-                  <div className="prose prose-sm max-w-none text-gray-700 whitespace-pre-line">{longText}</div>
+                  <SafeHtml html={longDescription} className="prose prose-sm max-w-none text-gray-700" />
                 ) : (
-                  <div className="text-body text-gray-800 whitespace-pre-line">{shortText}</div>
+                  <SafeHtml html={shortDescription} className="text-body text-gray-800" />
                 )
               ) : (
                 <>
                   {hasShort && (
-                    <div className="text-body text-gray-800 whitespace-pre-line">
+                    <div className="text-body text-gray-800">
                       <div className="font-medium text-gray-900 mb-1">Description courte:</div>
-                      {shortText}
+                      <SafeHtml html={shortDescription} />
                     </div>
                   )}
                   {hasLong && (
-                    <div className="prose prose-sm max-w-none text-gray-700 whitespace-pre-line">
+                    <div>
                       {hasShort && <div className="font-medium text-gray-900 mb-2">Description détaillée:</div>}
-                      {longText}
+                      <SafeHtml html={longDescription} className="prose prose-sm max-w-none text-gray-700" />
                     </div>
                   )}
                 </>

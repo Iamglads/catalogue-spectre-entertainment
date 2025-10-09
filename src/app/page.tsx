@@ -12,6 +12,9 @@ import ForSaleSlider from './_components/ForSaleSlider';
 import { useSearchParams } from 'next/navigation';
 import CategorySelect from './_components/CategorySelect';
 import ListCTA from './_components/ListCTA';
+import ThemeHero from './_components/ThemeHero';
+import ThemedH1 from './_components/ThemedH1';
+import SafeHtml from './_components/SafeHtml';
 
 type Product = {
   _id: string;
@@ -71,13 +74,37 @@ function HomeContent() {
   const [ctaOpen, setCtaOpen] = useState(false);
   const [ctaItemName, setCtaItemName] = useState<string | undefined>(undefined);
 
-  // Initialize from URL params
+  // Initialize filters from localStorage or URL params
   useEffect(() => {
     const urlQ = searchParams.get('q');
     const urlCategoryId = searchParams.get('categoryId');
-    if (urlQ) setQ(urlQ);
-    if (urlCategoryId) setCategoryId(urlCategoryId);
-    if (urlQ) setSearchDraft(urlQ);
+    
+    // Priority: URL params > localStorage
+    if (urlQ) {
+      setQ(urlQ);
+      setSearchDraft(urlQ);
+    } else {
+      // Load from localStorage if no URL params
+      try {
+        const savedQ = localStorage.getItem('catalogue:filter:q');
+        if (savedQ) {
+          setQ(savedQ);
+          setSearchDraft(savedQ);
+        }
+      } catch {}
+    }
+    
+    if (urlCategoryId) {
+      setCategoryId(urlCategoryId);
+    } else {
+      // Load from localStorage if no URL params
+      try {
+        const savedCategoryId = localStorage.getItem('catalogue:filter:categoryId');
+        if (savedCategoryId) {
+          setCategoryId(savedCategoryId);
+        }
+      } catch {}
+    }
   }, [searchParams]);
 
   // Persist selection + quantities in localStorage (legacy) and initialize from new list storage
@@ -116,6 +143,27 @@ function HomeContent() {
     }, 300);
     return () => clearTimeout(id);
   }, [searchDraft]);
+
+  // Persist filters to localStorage
+  useEffect(() => {
+    try {
+      if (q.trim()) {
+        localStorage.setItem('catalogue:filter:q', q);
+      } else {
+        localStorage.removeItem('catalogue:filter:q');
+      }
+    } catch {}
+  }, [q]);
+
+  useEffect(() => {
+    try {
+      if (categoryId) {
+        localStorage.setItem('catalogue:filter:categoryId', categoryId);
+      } else {
+        localStorage.removeItem('catalogue:filter:categoryId');
+      }
+    } catch {}
+  }, [categoryId]);
 
   // Reset to first page whenever filters change
   useEffect(() => {
@@ -285,7 +333,16 @@ function HomeContent() {
             {(q.trim() || selectedCategory) && (
               <button
                 className="ml-1 text-sm text-gray-600 hover:text-gray-900 underline"
-                onClick={() => { setSearchDraft(''); setQ(''); setCategoryId(''); }}
+                onClick={() => { 
+                  setSearchDraft(''); 
+                  setQ(''); 
+                  setCategoryId(''); 
+                  // Clear from localStorage when user explicitly clears
+                  try {
+                    localStorage.removeItem('catalogue:filter:q');
+                    localStorage.removeItem('catalogue:filter:categoryId');
+                  } catch {}
+                }}
               >
                 Effacer tout
               </button>
@@ -430,13 +487,13 @@ function HomeContent() {
 export default function Home() {
   return (
     <>
-      <section className="w-full bg-[var(--muted)] border-b">
-        <div className="section-padding mx-auto max-w-7xl py-12 sm:py-16 lg:py-20">
-          <div className="max-w-3xl">
-            <h1 className="text-display">Catalogue des décors</h1>
-          </div>
+      <ThemeHero>
+        <div className="max-w-3xl">
+          <ThemedH1 className="text-display">
+            Catalogue des décors
+          </ThemedH1>
         </div>
-      </section>
+      </ThemeHero>
       <Suspense fallback={<div className="container-max section-padding py-8"><div className="text-center text-sm text-gray-500">Chargement…</div></div>}>
         <HomeContent />
       </Suspense>
@@ -485,10 +542,15 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
       .trim();
   }
 
-  const shortText = cleanText(product.shortDescription || '');
-  const longText = cleanText(product.description || '');
-  const hasShort = Boolean(shortText);
-  const hasLong = Boolean(longText);
+  // Keep raw HTML for descriptions
+  const shortDescription = product.shortDescription || '';
+  const longDescription = product.description || '';
+  
+  // For text-only display, use clean text
+  const shortText = cleanText(shortDescription);
+  const longText = cleanText(longDescription);
+  const hasShort = Boolean(shortDescription.trim());
+  const hasLong = Boolean(longDescription.trim());
   const areSame = hasShort && hasLong && shortText === longText;
 
   return (
@@ -577,22 +639,22 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
               <div className="mt-6">
                 {areSame ? (
                   hasLong ? (
-                    <div className="prose prose-sm max-w-none text-gray-700 whitespace-pre-line">{longText}</div>
+                    <SafeHtml html={longDescription} className="prose prose-sm max-w-none text-gray-700" />
                   ) : (
-                    <div className="text-body text-gray-800 whitespace-pre-line">{shortText}</div>
+                    <SafeHtml html={shortDescription} className="text-body text-gray-800" />
                   )
                 ) : (
                   <>
                     {hasShort && (
-                      <div className="text-body text-gray-800 whitespace-pre-line mb-3">
+                      <div className="text-body text-gray-800 mb-3">
                         <div className="font-medium text-gray-900 mb-1">Description courte:</div>
-                        {shortText}
+                        <SafeHtml html={shortDescription} />
                       </div>
                     )}
                     {hasLong && (
-                      <div className="prose prose-sm max-w-none text-gray-700 whitespace-pre-line">
+                      <div>
                         {hasShort && <div className="font-medium text-gray-900 mb-2">Description détaillée:</div>}
-                        {longText}
+                        <SafeHtml html={longDescription} className="prose prose-sm max-w-none text-gray-700" />
                       </div>
                     )}
                   </>

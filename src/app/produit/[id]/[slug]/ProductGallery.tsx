@@ -78,3 +78,10 @@ export default function ProductGallery({ images, name }: Props) {
 
 
 
+
+
+
+
+
+
+
