@@ -144,7 +144,7 @@ export async function POST(req: NextRequest) {
     const payloadToAdmin = {
       sender: { email: senderEmail, name: senderName },
       replyTo: { email: body.email, name: body.name },
-      to: [{ email: adminEmail }, { email: "stephane@spectre-entertainment.com" }],
+      to: [{ email: adminEmail }, { email: "logistique@spectre-entertainment.com" }],
       subject: `🔔 Demande de soumission catalogue décors - ${body.name}`,
       htmlContent: html,
     };

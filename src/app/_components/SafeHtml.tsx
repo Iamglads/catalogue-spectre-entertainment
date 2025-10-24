@@ -24,3 +24,4 @@ export default function SafeHtml({ html, className = '' }: SafeHtmlProps) {
   );
 }
 
+

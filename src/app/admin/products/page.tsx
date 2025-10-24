@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Pencil, Trash2, Plus } from "lucide-react";
 
-type Product = { _id: string; name: string; images?: string[]; regularPrice?: number; salePrice?: number; categoryIds?: string[] };
+type Product = { _id: string; name: string; images?: string[]; regularPrice?: number; salePrice?: number; categoryIds?: string[]; stockQty?: number; inventory?: number };
 type Category = { _id: string; label: string };
 type ApiResponse = { total: number; page: number; pageSize: number; totalPages: number; items: Product[] };
 
@@ -283,6 +283,21 @@ export default function AdminProductsPage() {
                   </button>
                 )}
                   </div>
+
+                  {/* Stock */}
+                  {(() => {
+                    const stock = typeof (p as any).stockQty === 'number' ? (p as any).stockQty : (typeof (p as any).inventory === 'number' ? (p as any).inventory : undefined);
+                    if (typeof stock === 'number') {
+                      return (
+                        <div className="lg:w-24 flex-shrink-0 flex items-center justify-center">
+                          <span className="inline-flex items-center rounded-md border border-gray-300 bg-gray-50 px-2.5 py-1 text-xs font-medium text-gray-700">
+                            Stock&nbsp;<span className="ml-1 font-semibold text-gray-900">{stock}</span>
+                          </span>
+                        </div>
+                      );
+                    }
+                    return null;
+                  })()}
 
                   {/* Actions */}
                   <div className="flex items-center gap-2 lg:flex-shrink-0">
