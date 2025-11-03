@@ -165,7 +165,11 @@ export default function ThemeHero({ children }: ThemeHeroProps) {
       className="relative w-full border-b overflow-hidden transition-all duration-500"
       style={{
         borderColor: 'var(--theme-border, #e5e7eb)',
-        background: currentTheme === 'default' ? 'var(--muted)' : undefined,
+        background: currentTheme === 'default' 
+          ? 'var(--muted)' 
+          : currentTheme === 'christmas'
+          ? '#1dc5a3'
+          : undefined,
       }}
     >
       {/* Background Image (if theme has one) */}
@@ -182,7 +186,7 @@ export default function ThemeHero({ children }: ThemeHeroProps) {
       )}
 
       {/* Gradient overlay */}
-      {currentTheme !== 'default' && (
+      {currentTheme !== 'default' && currentTheme !== 'christmas' && (
         <div 
           className="absolute inset-0 pointer-events-none z-[1]"
           style={{
@@ -192,7 +196,7 @@ export default function ThemeHero({ children }: ThemeHeroProps) {
       )}
 
       {/* Dark overlay for readability */}
-      {currentTheme !== 'default' && (
+      {currentTheme !== 'default' && currentTheme !== 'christmas' && (
         <div 
           className="absolute inset-0 pointer-events-none z-[2]"
           style={{

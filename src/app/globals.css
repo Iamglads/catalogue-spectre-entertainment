@@ -99,6 +99,14 @@ html[data-theme="halloween"] .text-display {
   font-weight: 400 !important;
 }
 
+/* Force Fredoka One pour Noël */
+html[data-theme="christmas"] h1,
+html[data-theme="christmas"] h2,
+html[data-theme="christmas"] .text-display {
+  font-family: 'Fredoka One', cursive !important;
+  font-weight: 700 !important;
+}
+
 h3, h4, h5, h6 { 
   font-family: var(--font-heading), var(--font-sans), system-ui, sans-serif;
   font-weight: 600;
@@ -141,6 +149,14 @@ html[data-theme="halloween"] a[class*="btn"]:not([href*="tel:"]) {
 html[data-theme="halloween"] a[href*="tel:"] {
   font-family: var(--font-geist-sans), system-ui, sans-serif !important;
   letter-spacing: normal !important;
+}
+
+/* Force Fredoka One pour boutons Noël */
+html[data-theme="christmas"] .btn,
+html[data-theme="christmas"] button:not([href*="tel:"]),
+html[data-theme="christmas"] a[class*="btn"]:not([href*="tel:"]) {
+  font-family: 'Fredoka One', cursive !important;
+  font-weight: 700 !important;
 }
 
 /* Halloween button - subtle glow (no pulse animation) */

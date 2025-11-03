@@ -120,31 +120,31 @@ export const themes: Record<ThemeName, Omit<Theme, 'active'>> = {
     name: 'christmas',
     label: 'Noël 🎄',
     colors: {
-      primary: '#C41E3A', // Rouge Noël
-      primaryHover: '#A01729',
-      secondary: '#165B33', // Vert sapin
-      accent: '#FFD700', // Or
+      primary: '#f81d3d', // Rouge marqué
+      primaryHover: '#d61433',
+      secondary: '#1dc5a3', // Vert/cyan marqué
+      accent: '#1dc5a3', // Accent vert
       background: '#ffffff',
-      backgroundGradient: 'linear-gradient(135deg, rgba(248, 249, 250, 0.9) 0%, rgba(232, 245, 233, 0.9) 50%, rgba(255, 248, 225, 0.9) 100%)',
+      backgroundGradient: 'linear-gradient(135deg, rgba(248, 249, 250, 0.9) 0%, rgba(29, 197, 163, 0.1) 50%, rgba(248, 29, 61, 0.1) 100%)',
       text: '#1a1a1a',
       textMuted: '#5f6368',
-      border: '#C41E3A',
+      border: '#f81d3d',
       cardBg: '#ffffff',
       heroOverlay: 'rgba(0, 0, 0, 0.2)',
       heroImage: '/theme-images/christmas.jpg', // Placeholder - à ajouter
     },
     fonts: {
-      heading: "'Mountains of Christmas', cursive",
+      heading: "'Fredoka One', cursive",
       headingWeight: '700',
       body: 'var(--font-geist-sans)',
       bodyWeight: '400',
     },
     effects: {
       glow: true,
-      glowColor: '#FFD700',
+      glowColor: '#1dc5a3',
       particles: 'snowflakes',
-      buttonShadow: '0 0 15px rgba(196, 30, 58, 0.3), 0 4px 6px rgba(0, 0, 0, 0.1)',
-      cardShadow: '0 4px 12px rgba(22, 91, 51, 0.15)',
+      buttonShadow: '0 0 15px rgba(248, 29, 61, 0.4), 0 4px 6px rgba(0, 0, 0, 0.1)',
+      cardShadow: '0 4px 12px rgba(29, 197, 163, 0.2)',
       hoverTransform: 'translateY(-3px)',
     },
   },
@@ -272,7 +272,7 @@ export function getThemeFontURLs(themeName: ThemeName): string[] {
       urls.push('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
       break;
     case 'christmas':
-      urls.push('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
+      urls.push('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
       break;
     case 'valentine':
       urls.push('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');

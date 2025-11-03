@@ -39,7 +39,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Preload ALL theme fonts */}
-        <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Mountains+of+Christmas:wght@400;700&family=Pacifico&family=Fredoka+One&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Pacifico&family=Fredoka+One&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: `
           @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
         ` }} />
