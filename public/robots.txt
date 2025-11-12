@@ -1,0 +1,44 @@
+# robots.txt pour Spectre Entertainment - Catalogue de Décors
+
+# Autoriser tous les robots à indexer le site
+User-agent: *
+Allow: /
+
+# Pages à ne pas indexer
+Disallow: /admin/
+Disallow: /api/
+Disallow: /liste
+
+# Fichiers statiques à ne pas indexer
+Disallow: /*.json$
+Disallow: /scripts/
+
+# Sitemap
+Sitemap: https://spectre-entertainment.com/sitemap.xml
+
+# Optimisations pour les principaux moteurs de recherche
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+Crawl-delay: 0
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
