@@ -15,6 +15,7 @@ import ListCTA from './_components/ListCTA';
 import ThemeHero from './_components/ThemeHero';
 import ThemedH1 from './_components/ThemedH1';
 import SafeHtml from './_components/SafeHtml';
+import HomePageSeo from './_components/HomePageSeo';
 
 type Product = {
   _id: string;
@@ -497,6 +498,7 @@ export default function Home() {
       <Suspense fallback={<div className="container-max section-padding py-8"><div className="text-center text-sm text-gray-500">Chargement…</div></div>}>
         <HomeContent />
       </Suspense>
+      <HomePageSeo />
     </>
   );
 }

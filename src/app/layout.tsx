@@ -133,6 +133,175 @@ export default function RootLayout({
         <style dangerouslySetInnerHTML={{ __html: `
           @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
         ` }} />
+        
+        {/* Schema.org JSON-LD pour SEO - Organization & LocalBusiness */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": ["Organization", "LocalBusiness", "Store"],
+              "@id": "https://spectre-entertainment.com/#organization",
+              "name": "Spectre Entertainment",
+              "legalName": "Spectre Entertainment",
+              "alternateName": "Spectre Décors Événementiels",
+              "url": "https://spectre-entertainment.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://spectre-entertainment.com/logo.png",
+                "width": "400",
+                "height": "400"
+              },
+              "image": "https://spectre-entertainment.com/logo.png",
+              "description": "Spécialiste de la location et vente de décors événementiels au Québec. Plus de 1000 décors pour mariages, galas, tournages, productions TV et cinéma.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "940 Jean‑Neveu",
+                "addressLocality": "Longueuil",
+                "addressRegion": "QC",
+                "postalCode": "J4G 2M1",
+                "addressCountry": "CA"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "45.5873",
+                "longitude": "-73.4709"
+              },
+              "telephone": "+1-450-332-0894",
+              "email": "info@spectre-entertainment.com",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-450-332-0894",
+                "contactType": "customer service",
+                "areaServed": "CA-QC",
+                "availableLanguage": ["French", "English"]
+              },
+              "sameAs": [
+                "https://www.facebook.com/spectre.entertainment"
+              ],
+              "areaServed": [
+                { "@type": "City", "name": "Montréal", "addressRegion": "QC", "addressCountry": "CA" },
+                { "@type": "City", "name": "Longueuil", "addressRegion": "QC", "addressCountry": "CA" },
+                { "@type": "City", "name": "Laval", "addressRegion": "QC", "addressCountry": "CA" },
+                { "@type": "City", "name": "Québec", "addressRegion": "QC", "addressCountry": "CA" },
+                { "@type": "City", "name": "Gatineau", "addressRegion": "QC", "addressCountry": "CA" },
+                { "@type": "City", "name": "Sherbrooke", "addressRegion": "QC", "addressCountry": "CA" },
+                { "@type": "City", "name": "Trois-Rivières", "addressRegion": "QC", "addressCountry": "CA" },
+                { "@type": "State", "name": "Québec", "addressCountry": "CA" }
+              ],
+              "priceRange": "$$",
+              "paymentAccepted": "Cash, Credit Card, Debit Card, Bank Transfer",
+              "currenciesAccepted": "CAD",
+              "openingHoursSpecification": [{
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "17:00"
+              }],
+              "slogan": "Plus de 1000 décors pour tous vos événements"
+            })
+          }}
+        />
+        
+        {/* Schema.org JSON-LD - Service */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "@id": "https://spectre-entertainment.com/#service",
+              "serviceType": "Location de décors événementiels",
+              "name": "Location et Vente de Décors Événementiels",
+              "description": "Location complète de décors, mobilier et accessoires pour tous types d'événements au Québec: mariages, galas, tournages, productions TV et cinéma.",
+              "provider": {
+                "@id": "https://spectre-entertainment.com/#organization"
+              },
+              "areaServed": {
+                "@type": "State",
+                "name": "Québec",
+                "addressCountry": "CA"
+              },
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Catalogue de Décors et Mobilier",
+                "itemListElement": [
+                  {
+                    "@type": "OfferCatalog",
+                    "name": "Décors de Mariage",
+                    "description": "Décors complets pour mariages: arches, centres de table, backdrop, mobilier"
+                  },
+                  {
+                    "@type": "OfferCatalog",
+                    "name": "Décors de Gala",
+                    "description": "Décors élégants pour galas et événements corporatifs"
+                  },
+                  {
+                    "@type": "OfferCatalog",
+                    "name": "Décors de Production",
+                    "description": "Décors professionnels pour tournages TV, cinéma et productions"
+                  },
+                  {
+                    "@type": "OfferCatalog",
+                    "name": "Décors Thématiques",
+                    "description": "Large sélection de décors thématiques: vintage, rustique, Halloween, Noël, tropical"
+                  },
+                  {
+                    "@type": "OfferCatalog",
+                    "name": "Mobilier Événementiel",
+                    "description": "Location de mobilier: tables, chaises, lounge, nappes, housses"
+                  }
+                ]
+              }
+            })
+          }}
+        />
+        
+        {/* Schema.org JSON-LD - WebSite avec SearchAction */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://spectre-entertainment.com/#website",
+              "url": "https://spectre-entertainment.com",
+              "name": "Spectre Entertainment - Catalogue de Décors",
+              "description": "Catalogue complet de location et vente de décors événementiels",
+              "publisher": {
+                "@id": "https://spectre-entertainment.com/#organization"
+              },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://spectre-entertainment.com/?q={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+              },
+              "inLanguage": "fr-CA"
+            })
+          }}
+        />
+        
+        {/* Schema.org JSON-LD - BreadcrumbList */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Accueil",
+                  "item": "https://spectre-entertainment.com"
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${heading.variable} antialiased flex flex-col min-h-screen`}>
         <Providers>
