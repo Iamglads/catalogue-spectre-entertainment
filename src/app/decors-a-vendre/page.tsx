@@ -1,12 +1,12 @@
 "use client";
-import { Eye, X, ChevronLeft, ChevronRight, Heart } from "lucide-react";
+import { Eye, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { slugify } from '@/lib/slug';
-import { addOrUpdateItem, removeItem, loadList } from '@/lib/listStorage';
 import ThemeHero from '../_components/ThemeHero';
 import ThemedH1 from '../_components/ThemedH1';
+import AddToListButton from '../_components/AddToListButton';
 
 type Product = {
   _id: string;
@@ -49,19 +49,8 @@ export default function DecorsAVendrePage() {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<ApiResponse | null>(null);
-  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [viewer, setViewer] = useState<Product | null>(null);
   const [viewerIndex, setViewerIndex] = useState(0);
-
-  // Initialize from localStorage
-  useEffect(() => {
-    try {
-      const list = loadList();
-      if (list.length) {
-        setSelectedIds(new Set(list.map((it) => it.id)));
-      }
-    } catch {}
-  }, []);
 
   useEffect(() => {
     let canceled = false;
@@ -85,22 +74,6 @@ export default function DecorsAVendrePage() {
   }, [page]);
 
   const items = data?.items ?? [];
-
-  function toggleSelectProduct(product: Product) {
-    setSelectedIds((prev) => {
-      const next = new Set(prev);
-      const id = product._id;
-      if (next.has(id)) {
-        next.delete(id);
-        try { removeItem(id); } catch {}
-      } else {
-        next.add(id);
-        const image = product.images?.[0];
-        try { addOrUpdateItem({ id, name: product.name, image, shortDescription: product.shortDescription }, 1); } catch {}
-      }
-      return next;
-    });
-  }
 
   return (
     <>
@@ -141,7 +114,6 @@ export default function DecorsAVendrePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
               {items.map((p) => {
                 const image = p.images?.[0];
-                const isSelected = selectedIds.has(p._id);
                 const price = p.salePriceForSale ?? p.salePrice ?? p.regularPrice;
                 
                 return (
@@ -164,14 +136,14 @@ export default function DecorsAVendrePage() {
                           alt={p.name}
                           fill
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 20vw"
-                          className="object-cover transition-transform group-hover:scale-105"
+                          className="object-contain transition-transform group-hover:scale-105"
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-sm text-gray-400 bg-gray-100">Aucune image</div>
                       )}
                     </div>
                     <div className="p-4 flex-1 flex flex-col">
-                      <Link href={`/produit/${p._id}/${slugify(p.name)}`} className="text-title text-gray-900 line-clamp-2 mb-2 hover:underline">
+                      <Link href={`/produit/${p._id}/${slugify(p.name)}`} className="text-lg font-semibold text-gray-900 line-clamp-2 mb-2 hover:underline">
                         {p.name}
                       </Link>
                       {price && (
@@ -183,18 +155,13 @@ export default function DecorsAVendrePage() {
                         <p className="text-caption text-gray-600 line-clamp-2 mb-3">{p.shortDescription}</p>
                       )}
                       <div className="mt-auto flex items-center justify-end">
-                        <button
-                          className="inline-flex items-center justify-center p-2 rounded-full hover:bg-gray-100 transition-colors interactive cursor-pointer"
-                          onClick={() => toggleSelectProduct(p)}
-                          aria-label={isSelected ? 'Retirer de la liste' : 'Ajouter à la liste'}
-                          title={isSelected ? 'Retirer de la liste' : 'Ajouter à la liste'}
-                        >
-                          <Heart 
-                            strokeWidth={1.5} 
-                            fill={isSelected ? 'currentColor' : 'none'} 
-                            className={`h-5 w-5 transition-colors ${isSelected ? 'text-red-500' : 'text-gray-400 hover:text-red-500'}`} 
-                          />
-                        </button>
+                        <AddToListButton
+                          productId={p._id}
+                          productName={p.name}
+                          productImage={p.images?.[0]}
+                          productDescription={p.shortDescription}
+                          variant="compact"
+                        />
                       </div>
                     </div>
                   </div>

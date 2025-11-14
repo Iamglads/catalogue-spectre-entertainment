@@ -1,10 +1,10 @@
 "use client";
-import { Eye, X, ChevronLeft, ChevronRight, Heart, Search } from "lucide-react";
+import { Eye, X, ChevronLeft, ChevronRight, Search } from "lucide-react";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { slugify } from '@/lib/slug';
-import { addOrUpdateItem, removeItem, loadList } from '@/lib/listStorage';
+import { loadList } from '@/lib/listStorage';
 import Breadcrumbs from './_components/Breadcrumbs';
 import QuickActions from './_components/QuickActions';
 import RealisationsSlider from './_components/RealisationsSlider';
@@ -16,6 +16,7 @@ import ThemeHero from './_components/ThemeHero';
 import ThemedH1 from './_components/ThemedH1';
 import SafeHtml from './_components/SafeHtml';
 import HomePageSeo from './_components/HomePageSeo';
+import AddToListButton from './_components/AddToListButton';
 
 type Product = {
   _id: string;
@@ -260,24 +261,6 @@ function HomeContent() {
     return () => window.removeEventListener('storage', onStorage);
   }, []);
 
-  function toggleSelectProduct(product: Product) {
-    setSelectedIds((prev) => {
-      const next = new Set(prev);
-      const id = product._id;
-      if (next.has(id)) {
-        next.delete(id);
-        try { removeItem(id); } catch {}
-      } else {
-        next.add(id);
-        const image = product.images?.[0];
-        try { addOrUpdateItem({ id, name: product.name, image, shortDescription: product.shortDescription }, 1); } catch {}
-        setCtaItemName(product.name);
-        setCtaOpen(true);
-      }
-      try { localStorage.setItem('catalogue:selected', JSON.stringify(Array.from(next))); } catch {}
-      return next;
-    });
-  }
 
   return (
     <div className="container-max section-padding py-8">
@@ -313,7 +296,7 @@ function HomeContent() {
           <div className="flex flex-wrap items-center gap-2">
             {q.trim() && (
               <button
-                className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-sm bg-white hover:bg-gray-50"
+                className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-sm bg-white hover:bg-gray-50 cursor-pointer"
                 onClick={() => { setSearchDraft(''); setQ(''); }}
                 aria-label="Supprimer le filtre de recherche"
               >
@@ -323,7 +306,7 @@ function HomeContent() {
             )}
             {selectedCategory && (
               <button
-                className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-sm bg-white hover:bg-gray-50"
+                className="inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-sm bg-white hover:bg-gray-50 cursor-pointer"
                 onClick={() => setCategoryId("")}
                 aria-label="Supprimer le filtre catégorie"
               >
@@ -333,7 +316,7 @@ function HomeContent() {
             )}
             {(q.trim() || selectedCategory) && (
               <button
-                className="ml-1 text-sm text-gray-600 hover:text-gray-900 underline"
+                className="ml-1 text-sm text-gray-600 hover:text-gray-900 underline cursor-pointer"
                 onClick={() => { 
                   setSearchDraft(''); 
                   setQ(''); 
@@ -372,7 +355,6 @@ function HomeContent() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
             {items.map((p) => {
               const image = p.images?.[0];
-              const isSelected = selectedIds.has(p._id);
               const tags = (p.allCategoryIds || [])
                 .map((id) => categoryById.get(id))
                 .filter(Boolean)
@@ -399,14 +381,14 @@ function HomeContent() {
                         alt={p.name}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 20vw"
-                        className="object-cover transition-transform group-hover:scale-105"
+                        className="object-contain transition-transform group-hover:scale-105"
                       />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-sm text-gray-400 bg-gray-100">Aucune image</div>
                     )}
                   </div>
                   <div className="p-4 flex-1 flex flex-col">
-                    <Link href={`/produit/${p._id}/${slugify(p.name)}`} className="text-title text-gray-900 line-clamp-2 mb-2 hover:underline">
+                    <Link href={`/produit/${p._id}/${slugify(p.name)}`} className="text-lg font-semibold text-gray-900 line-clamp-2 mb-2 hover:underline">
                       {p.name}
                     </Link>
                     {/* Dimensions retirées de la card */}
@@ -423,18 +405,17 @@ function HomeContent() {
                       </div>
                     )}
                     <div className="mt-auto flex items-center justify-end">
-                      <button
-                        className="inline-flex items-center justify-center p-2 rounded-full hover:bg-gray-100 transition-colors interactive cursor-pointer"
-                        onClick={() => toggleSelectProduct(p)}
-                        aria-label={isSelected ? 'Retirer de la liste' : 'Ajouter à la liste'}
-                        title={isSelected ? 'Retirer de la liste' : 'Ajouter à la liste'}
-                      >
-                        <Heart 
-                          strokeWidth={1.5} 
-                          fill={isSelected ? 'currentColor' : 'none'} 
-                          className={`h-5 w-5 transition-colors ${isSelected ? 'text-red-500' : 'text-gray-400 hover:text-red-500'}`} 
-                        />
-                      </button>
+                      <AddToListButton
+                        productId={p._id}
+                        productName={p.name}
+                        productImage={p.images?.[0]}
+                        productDescription={p.shortDescription}
+                        variant="compact"
+                        onAdd={() => {
+                          setCtaItemName(p.name);
+                          setCtaOpen(true);
+                        }}
+                      />
                     </div>
                   </div>
                 </div>
@@ -565,7 +546,16 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
           className="w-full max-w-6xl max-h-[90vh] rounded-2xl bg-white shadow-2xl overflow-hidden animate-fade-in flex flex-col"
         >
           <div className="flex items-center justify-between px-6 py-4 border-b bg-gray-50 sticky top-0">
-            <div className="text-title truncate pr-4 text-gray-900">{product.name}</div>
+            <div className="flex-1 flex items-center gap-4">
+              <div className="text-lg font-semibold truncate pr-4 text-gray-900">{product.name}</div>
+              <AddToListButton
+                productId={product._id}
+                productName={product.name}
+                productImage={product.images?.[0]}
+                productDescription={product.shortDescription}
+                variant="compact"
+              />
+            </div>
             <button
               aria-label="Fermer"
               className="rounded-full p-2 hover:bg-gray-200 transition-colors cursor-pointer"
@@ -617,7 +607,7 @@ function ViewerModal({ product, index, onClose, onPrev, onNext, onSelectIndex }:
                 {product.images!.map((src, idx) => (
                   <button
                     key={`${src}-${idx}`}
-                    className={`relative h-20 w-24 flex-shrink-0 rounded-lg border-2 ${idx === index ? 'border-blue-500 shadow-md' : 'border-gray-200 hover:border-gray-300'} overflow-hidden transition-all`}
+                    className={`relative h-20 w-24 flex-shrink-0 rounded-lg border-2 cursor-pointer ${idx === index ? 'border-blue-500 shadow-md' : 'border-gray-200 hover:border-gray-300'} overflow-hidden transition-all`}
                     onClick={() => onSelectIndex(idx)}
                     aria-label={`Image ${idx + 1}`}
                   >

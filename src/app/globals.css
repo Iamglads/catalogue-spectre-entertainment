@@ -120,7 +120,7 @@ h3 { font-size: 1.5rem; }
 
 /* Enhanced button styles - with theme support */
 .btn {
-  @apply inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+  @apply inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none cursor-pointer;
   font-family: var(--theme-heading-font, var(--font-sans)) !important;
 }
 

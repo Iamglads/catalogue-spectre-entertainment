@@ -5,6 +5,7 @@ import { ObjectId, type Document } from "mongodb";
 import { slugify } from "@/lib/slug";
 import ProductGallery from "./ProductGallery";
 import SafeHtml from "@/app/_components/SafeHtml";
+import AddToListSection from "./AddToListSection";
 // No client SEO here; we use server-side Metadata API and JSON-LD
 
 type PageParams = { id: string; slug: string };
@@ -170,7 +171,15 @@ export default async function ProductDetailPage({ params }: { params: PageParams
         }}
       />
       <header className="mb-6">
-        <h1 className="text-display text-gray-900">{name}</h1>
+        <div className="flex items-start justify-between gap-4">
+          <h1 className="text-2xl font-bold text-gray-900 flex-1">{name}</h1>
+          <AddToListSection
+            productId={id}
+            productName={name}
+            productImage={images[0]}
+            productDescription={shortText || longText}
+          />
+        </div>
         {tags.length > 0 && (
           <div className="mt-2 flex flex-wrap gap-2">
             {tags.map((c) => (
