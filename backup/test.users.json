@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "68adbb5a7e93fd6b779c8996"
+  },
+  "email": "logistique@spectre-entertainment.com",
+  "role": "admin",
+  "passwordHash": "$2b$10$mBGpa0rUkmJzUvguPlkq/eiUzXlGVgIxbSxKpoV5oIGIExUiSVpmS",
+  "createdAt": {
+    "$date": "2025-08-26T13:49:14.599Z"
+  },
+  "name": "Gladston"
+},
+{
+  "_id": {
+    "$oid": "68f276ae2368afe4c805ae46"
+  },
+  "email": "christine@spectre-entertainment.com",
+  "passwordHash": "$2b$10$cDrqtzWkqs1Y/FnD/N.PA.UhLyJEsh.ShWURuQO/t2KctyHtWa/iq",
+  "role": "admin",
+  "name": "Christine",
+  "createdAt": {
+    "$date": "2025-10-17T17:02:38.703Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-17T17:02:38.703Z"
+  }
+}]

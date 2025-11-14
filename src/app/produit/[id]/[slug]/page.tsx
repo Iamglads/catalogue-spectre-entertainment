@@ -44,8 +44,8 @@ function cleanText(text: string): string {
   return t;
 }
 
-export async function generateMetadata({ params }: { params: PageParams }): Promise<Metadata> {
-  const { id } = params;
+export async function generateMetadata({ params }: { params: Promise<PageParams> }): Promise<Metadata> {
+  const { id } = await params;
   if (!isValidObjectId(id)) return {};
   const client = await clientPromise;
   const db = client.db();
@@ -87,8 +87,8 @@ export async function generateMetadata({ params }: { params: PageParams }): Prom
   };
 }
 
-export default async function ProductDetailPage({ params }: { params: PageParams }) {
-  const { id, slug } = params;
+export default async function ProductDetailPage({ params }: { params: Promise<PageParams> }) {
+  const { id, slug } = await params;
   if (!isValidObjectId(id)) return notFound();
 
   const client = await clientPromise;

@@ -1,0 +1,1050 @@
+[{
+  "_id": {
+    "$oid": "68dc34ad7959d8c6d7653f2c"
+  },
+  "name": "Mobiliers",
+  "slug": "mobiliers",
+  "parentId": null,
+  "fullPath": "mobiliers",
+  "depth": 0,
+  "ancestors": [],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:09.169Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:09.169Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ad7959d8c6d7653f2d"
+  },
+  "name": "Chaises",
+  "slug": "chaises",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2c"
+  },
+  "fullPath": "mobiliers/chaises",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2c"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:09.218Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:09.218Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "name": "Thématique",
+  "slug": "thematique",
+  "parentId": null,
+  "fullPath": "thematique",
+  "depth": 0,
+  "ancestors": [],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:09.269Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:09.269Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ad7959d8c6d7653f2f"
+  },
+  "name": "Tour du monde",
+  "slug": "tour-du-monde",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/tour-du-monde",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:09.327Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:09.327Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ad7959d8c6d7653f30"
+  },
+  "name": "Hollywood",
+  "slug": "hollywood",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/hollywood",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:09.522Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:09.522Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ad7959d8c6d7653f31"
+  },
+  "name": "Décors",
+  "slug": "decors",
+  "parentId": null,
+  "fullPath": "decors",
+  "depth": 0,
+  "ancestors": [],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:09.685Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:09.685Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ad7959d8c6d7653f32"
+  },
+  "name": "Jungle",
+  "slug": "jungle",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/jungle",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:09.736Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:09.736Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ad7959d8c6d7653f33"
+  },
+  "name": "Personnages, Sculptures et Animaux",
+  "slug": "personnages-sculptures-et-animaux",
+  "parentId": null,
+  "fullPath": "personnages-sculptures-et-animaux",
+  "depth": 0,
+  "ancestors": [],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:09.800Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:09.800Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ad7959d8c6d7653f34"
+  },
+  "name": "Personnages, Sculptures et Animaux 3D",
+  "slug": "personnages-sculptures-et-animaux-3d",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f33"
+  },
+  "fullPath": "personnages-sculptures-et-animaux/personnages-sculptures-et-animaux-3d",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f33"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:09.853Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:09.853Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ad7959d8c6d7653f35"
+  },
+  "name": "Toiles",
+  "slug": "toiles",
+  "parentId": null,
+  "fullPath": "toiles",
+  "depth": 0,
+  "ancestors": [],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:09.960Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:09.960Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ae7959d8c6d7653f36"
+  },
+  "name": "Western",
+  "slug": "western",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/western",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:10.149Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:10.149Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ae7959d8c6d7653f37"
+  },
+  "name": "Rideaux et tissus décoratifs",
+  "slug": "rideaux-et-tissus-decoratifs",
+  "parentId": null,
+  "fullPath": "rideaux-et-tissus-decoratifs",
+  "depth": 0,
+  "ancestors": [],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:10.257Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:10.257Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ae7959d8c6d7653f38"
+  },
+  "name": "Scénique",
+  "slug": "scenique",
+  "parentId": null,
+  "fullPath": "scenique",
+  "depth": 0,
+  "ancestors": [],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:10.424Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:10.424Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ae7959d8c6d7653f39"
+  },
+  "name": "Lutrins",
+  "slug": "lutrins",
+  "parentId": {
+    "$oid": "68dc34ae7959d8c6d7653f38"
+  },
+  "fullPath": "scenique/lutrins",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ae7959d8c6d7653f38"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:10.485Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:10.485Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ae7959d8c6d7653f3a"
+  },
+  "name": "Rock & Roll / Retro",
+  "slug": "rock-et-roll-retro",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/rock-et-roll-retro",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:10.667Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:10.667Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34af7959d8c6d7653f3b"
+  },
+  "name": "Accessoires de décors",
+  "slug": "accessoires-de-decors",
+  "parentId": null,
+  "fullPath": "accessoires-de-decors",
+  "depth": 0,
+  "ancestors": [],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:11.187Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:11.187Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34af7959d8c6d7653f3c"
+  },
+  "name": "Pirate",
+  "slug": "pirate",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/pirate",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:11.243Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:11.243Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34af7959d8c6d7653f3d"
+  },
+  "name": "1001 nuits",
+  "slug": "1001-nuits",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/1001-nuits",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:11.587Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:11.587Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b17959d8c6d7653f3e"
+  },
+  "name": "Rideaux",
+  "slug": "rideaux",
+  "parentId": {
+    "$oid": "68dc34ae7959d8c6d7653f37"
+  },
+  "fullPath": "rideaux-et-tissus-decoratifs/rideaux",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ae7959d8c6d7653f37"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:13.592Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:13.592Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b17959d8c6d7653f3f"
+  },
+  "name": "Rideaux, jupes et pendrillons",
+  "slug": "rideaux-jupes-et-pendrillons",
+  "parentId": {
+    "$oid": "68dc34ae7959d8c6d7653f38"
+  },
+  "fullPath": "scenique/rideaux-jupes-et-pendrillons",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ae7959d8c6d7653f38"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:13.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:13.647Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b27959d8c6d7653f40"
+  },
+  "name": "Cirque",
+  "slug": "cirque",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/cirque",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:14.874Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:14.874Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b37959d8c6d7653f41"
+  },
+  "name": "Croisière",
+  "slug": "croisiere",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/croisiere",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:15.390Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:15.390Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b47959d8c6d7653f42"
+  },
+  "name": "Urbain",
+  "slug": "urbain",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/urbain",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:16.349Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:16.349Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b47959d8c6d7653f43"
+  },
+  "name": "Cabane à sucre / Chalet",
+  "slug": "cabane-a-sucre-chalet",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/cabane-a-sucre-chalet",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:16.589Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:16.589Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b47959d8c6d7653f44"
+  },
+  "name": "Affiches",
+  "slug": "affiches",
+  "parentId": {
+    "$oid": "68dc34af7959d8c6d7653f3b"
+  },
+  "fullPath": "accessoires-de-decors/affiches",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34af7959d8c6d7653f3b"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:16.983Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:16.983Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b57959d8c6d7653f45"
+  },
+  "name": "Arbres et vignes",
+  "slug": "arbres-et-vignes",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f31"
+  },
+  "fullPath": "decors/arbres-et-vignes",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f31"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:17.150Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-01T14:23:12.501Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b57959d8c6d7653f46"
+  },
+  "name": "Gatsby",
+  "slug": "gatsby",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/gatsby",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:17.550Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:17.550Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b57959d8c6d7653f47"
+  },
+  "name": "Podiums",
+  "slug": "podiums",
+  "parentId": {
+    "$oid": "68dc34ae7959d8c6d7653f38"
+  },
+  "fullPath": "scenique/podiums",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ae7959d8c6d7653f38"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:17.838Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:17.838Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b57959d8c6d7653f48"
+  },
+  "name": "Sports",
+  "slug": "sports",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/sports",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:17.891Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:17.891Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b67959d8c6d7653f49"
+  },
+  "name": "Décors à vendre",
+  "slug": "decors-a-vendre",
+  "parentId": null,
+  "fullPath": "decors-a-vendre",
+  "depth": 0,
+  "ancestors": [],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:18.184Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:18.184Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b77959d8c6d7653f4a"
+  },
+  "name": "Personnages, Sculptures et Animaux 2D",
+  "slug": "personnages-sculptures-et-animaux-2d",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f33"
+  },
+  "fullPath": "personnages-sculptures-et-animaux/personnages-sculptures-et-animaux-2d",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f33"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:19.322Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:19.322Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b87959d8c6d7653f4b"
+  },
+  "name": "Décors arbres et vignes",
+  "slug": "decors-arbres-et-vignes",
+  "parentId": {
+    "$oid": "68dc34af7959d8c6d7653f3b"
+  },
+  "fullPath": "accessoires-de-decors/decors-arbres-et-vignes",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34af7959d8c6d7653f3b"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:20.114Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:20.114Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b87959d8c6d7653f4c"
+  },
+  "name": "Halloween",
+  "slug": "halloween",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/halloween",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:20.289Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:20.289Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b87959d8c6d7653f4d"
+  },
+  "name": "Tables",
+  "slug": "tables",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2c"
+  },
+  "fullPath": "mobiliers/tables",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2c"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:20.515Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:20.515Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b97959d8c6d7653f4e"
+  },
+  "name": "Noël",
+  "slug": "noel",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/noel",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:21.107Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:21.107Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b97959d8c6d7653f4f"
+  },
+  "name": "Pâques",
+  "slug": "paques",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2e"
+  },
+  "fullPath": "thematique/paques",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2e"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:21.162Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:21.162Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b97959d8c6d7653f50"
+  },
+  "name": "Panneaux de décor",
+  "slug": "panneaux-de-decor",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f31"
+  },
+  "fullPath": "decors/panneaux-de-decor",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f31"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:21.620Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:21.620Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34b97959d8c6d7653f51"
+  },
+  "name": "Podiums",
+  "slug": "podiums",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2c"
+  },
+  "fullPath": "mobiliers/podiums",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2c"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:21.809Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:21.809Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ba7959d8c6d7653f52"
+  },
+  "name": "Fleurs",
+  "slug": "fleurs",
+  "parentId": {
+    "$oid": "68dc34af7959d8c6d7653f3b"
+  },
+  "fullPath": "accessoires-de-decors/fleurs",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34af7959d8c6d7653f3b"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:22.171Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:22.171Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34bc7959d8c6d7653f53"
+  },
+  "name": "Aliments",
+  "slug": "aliments",
+  "parentId": {
+    "$oid": "68dc34af7959d8c6d7653f3b"
+  },
+  "fullPath": "accessoires-de-decors/aliments",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34af7959d8c6d7653f3b"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:24.296Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:24.296Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34be7959d8c6d7653f54"
+  },
+  "name": "Fleurs",
+  "slug": "fleurs",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f31"
+  },
+  "fullPath": "decors/fleurs",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f31"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:26.533Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:26.533Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34ce7959d8c6d7653f55"
+  },
+  "name": "Comptoirs et bars",
+  "slug": "comptoirs-et-bars",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2c"
+  },
+  "fullPath": "mobiliers/comptoirs-et-bars",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2c"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:42.965Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-01T14:23:26.998Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34d77959d8c6d7653f56"
+  },
+  "name": "Praticables et escaliers",
+  "slug": "praticables-et-escaliers",
+  "parentId": {
+    "$oid": "68dc34ae7959d8c6d7653f38"
+  },
+  "fullPath": "scenique/praticables-et-escaliers",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ae7959d8c6d7653f38"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:51.077Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:51.077Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34d87959d8c6d7653f57"
+  },
+  "name": "Vases, pots et bouteilles",
+  "slug": "vases-pots-et-bouteilles",
+  "parentId": {
+    "$oid": "68dc34af7959d8c6d7653f3b"
+  },
+  "fullPath": "accessoires-de-decors/vases-pots-et-bouteilles",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34af7959d8c6d7653f3b"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:52.724Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:52.724Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34d97959d8c6d7653f58"
+  },
+  "name": "Lutrins",
+  "slug": "lutrins",
+  "parentId": {
+    "$oid": "68dc34ad7959d8c6d7653f2c"
+  },
+  "fullPath": "mobiliers/lutrins",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ad7959d8c6d7653f2c"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:53.737Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:53.737Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc34da7959d8c6d7653f59"
+  },
+  "name": "Tuyaux aluminium et acier",
+  "slug": "tuyaux-aluminium-et-acier",
+  "parentId": {
+    "$oid": "68dc34ae7959d8c6d7653f38"
+  },
+  "fullPath": "scenique/tuyaux-aluminium-et-acier",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34ae7959d8c6d7653f38"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:51:54.584Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:51:54.584Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc35107959d8c6d7653f5a"
+  },
+  "name": "Pots et bouteilles",
+  "slug": "pots-et-bouteilles",
+  "parentId": {
+    "$oid": "68dc34af7959d8c6d7653f3b"
+  },
+  "fullPath": "accessoires-de-decors/pots-et-bouteilles",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34af7959d8c6d7653f3b"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:52:48.022Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-01T14:23:01.073Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc35107959d8c6d7653f5b"
+  },
+  "name": "Vases",
+  "slug": "vases",
+  "parentId": {
+    "$oid": "68dc34af7959d8c6d7653f3b"
+  },
+  "fullPath": "accessoires-de-decors/vases",
+  "depth": 1,
+  "ancestors": [
+    {
+      "$oid": "68dc34af7959d8c6d7653f3b"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-09-30T19:52:48.080Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-30T19:52:48.080Z"
+  }
+}]

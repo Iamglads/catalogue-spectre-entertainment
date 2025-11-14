@@ -1,0 +1,8221 @@
+[{
+  "_id": {
+    "$oid": "68cb11d6b6eda049cc890ace"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd29e0a37930bf86c22b"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-17T19:53:58.222Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cb19f1ea96edb565330f99"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd29e0a37930bf86c22a"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-17T20:28:33.897Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cb1a0bea96edb565330f9a"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd34e0a37930bf86c384"
+  },
+  "metadata": {
+    "fields": [
+      "regularPrice"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-17T20:28:59.171Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cb1a36ea96edb565330f9c"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.create",
+  "resource": {
+    "type": "product",
+    "id": "68cb1a36ea96edb565330f9b"
+  },
+  "metadata": {
+    "name": "Decor test a supprimer "
+  },
+  "createdAt": {
+    "$date": "2025-09-17T20:29:42.573Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cd65c4ceb1c2946d8d2330"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.delete",
+  "resource": {
+    "type": "product",
+    "id": "68cb1a36ea96edb565330f9b"
+  },
+  "createdAt": {
+    "$date": "2025-09-19T14:16:36.442Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cd6601cee66c50824fcb41"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd14e0a37930bf86bfb3"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "stockQty"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-19T14:17:37.376Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cd660fcee66c50824fcb42"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd14e0a37930bf86bfb5"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "stockQty"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-19T14:17:51.801Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68cd6fcb1d2383e58d55da8b"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd28e0a37930bf86c218"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featuredAt"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-19T14:59:23.301Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d5516ef48a0fd54df7d374"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd29e0a37930bf86c22d"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:27:58.171Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55187f48a0fd54df7d375"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd28e0a37930bf86c224"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:28:23.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d551a1f48a0fd54df7d376"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd32e0a37930bf86c350"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:28:49.710Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d551a4f48a0fd54df7d377"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd32e0a37930bf86c350"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:28:52.710Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d551abf48a0fd54df7d378"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2fe0a37930bf86c2fb"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:28:59.916Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d551aff48a0fd54df7d379"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1ae0a37930bf86c057"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:29:03.028Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d5522bf48a0fd54df7d37a"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd28e0a37930bf86c218"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:31:07.711Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d553c4f48a0fd54df7d37b"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd32e0a37930bf86c350"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "imagePublicIds"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:37:56.248Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55411f48a0fd54df7d37c"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd32e0a37930bf86c350"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "imagePublicIds"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:39:13.489Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d5544bf48a0fd54df7d37d"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd32e0a37930bf86c350"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:40:11.044Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d5555cf48a0fd54df7d37e"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd28e0a37930bf86c218"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featuredAt",
+      "imagePublicIds",
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:44:44.919Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55574f48a0fd54df7d37f"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd28e0a37930bf86c218"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:45:08.471Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d555ecf48a0fd54df7d380"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd29e0a37930bf86c22d"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "imagePublicIds"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:47:08.374Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d5566df48a0fd54df7d381"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd28e0a37930bf86c224"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "imagePublicIds"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:49:17.660Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d5567cf48a0fd54df7d382"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd28e0a37930bf86c224"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:49:32.263Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55699f48a0fd54df7d383"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd29e0a37930bf86c22d"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:50:01.158Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d556e4f48a0fd54df7d384"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2fe0a37930bf86c2fb"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "imagePublicIds"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:51:16.934Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d556ebf48a0fd54df7d385"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2fe0a37930bf86c2fb"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:51:23.420Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55738f48a0fd54df7d386"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1ae0a37930bf86c057"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "imagePublicIds"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:52:40.969Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d5573ff48a0fd54df7d387"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1ae0a37930bf86c057"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:52:47.584Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d557f3f48a0fd54df7d388"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd34e0a37930bf86c384"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "imagePublicIds"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:55:47.506Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55823f48a0fd54df7d389"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1fe0a37930bf86c0f8"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:56:35.038Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55825f48a0fd54df7d38a"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd20e0a37930bf86c114"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:56:37.071Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d5582ff48a0fd54df7d38b"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd23e0a37930bf86c17b"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:56:47.131Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d5583af48a0fd54df7d38c"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd19e0a37930bf86c03c"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:56:58.757Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55842f48a0fd54df7d38d"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd18e0a37930bf86c032"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:57:06.975Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d5584af48a0fd54df7d38e"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd18e0a37930bf86c030"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:57:14.177Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55853f48a0fd54df7d38f"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd00e0a37930bf86bd6a"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:57:23.602Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55854f48a0fd54df7d390"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1be0a37930bf86c085"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:57:24.638Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d5585af48a0fd54df7d391"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd00e0a37930bf86bd69"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:57:30.963Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d5587df48a0fd54df7d392"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd00e0a37930bf86bd69"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "imagePublicIds"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:58:05.436Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d558bbf48a0fd54df7d393"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd11e0a37930bf86bf5f"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:59:07.995Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d558cdf48a0fd54df7d394"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd16e0a37930bf86bfec"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:59:25.961Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d558ddf48a0fd54df7d395"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0fe0a37930bf86bf1e"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:59:41.146Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d558e9f48a0fd54df7d396"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd00e0a37930bf86bd5c"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T14:59:53.932Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d558f6f48a0fd54df7d397"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd17e0a37930bf86c00b"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T15:00:06.606Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d558f9f48a0fd54df7d398"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd02e0a37930bf86bd94"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T15:00:09.167Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55904f48a0fd54df7d399"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd06e0a37930bf86bdfb"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T15:00:20.948Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55913f48a0fd54df7d39a"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd14e0a37930bf86bfb3"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T15:00:35.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d5592af48a0fd54df7d39b"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1ce0a37930bf86c095"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T15:00:58.309Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55930f48a0fd54df7d39c"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd18e0a37930bf86c029"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T15:01:04.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d5593cf48a0fd54df7d39d"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1fe0a37930bf86c0f6"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T15:01:16.631Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d559a4f48a0fd54df7d39e"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd34e0a37930bf86c391"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T15:03:00.773Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55a09f48a0fd54df7d39f"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd34e0a37930bf86c391"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T15:04:41.428Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55a2bf48a0fd54df7d3a0"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd34e0a37930bf86c391"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T15:05:15.186Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d55ad6f48a0fd54df7d3a1"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd34e0a37930bf86c391"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "imagePublicIds",
+      "stockQty"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T15:08:06.264Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68d560e582badceb1316d8c2"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd34e0a37930bf86c391"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-25T15:33:57.466Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbcfa99a33653adf9dc99d"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd29e0a37930bf86c22d"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:40:09.208Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbcfd69a33653adf9dc99e"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd00e0a37930bf86bd5c"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:40:54.812Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbcfe09a33653adf9dc99f"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd00e0a37930bf86bd6a"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:41:04.210Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbcfe79a33653adf9dc9a0"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd17e0a37930bf86c00b"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:41:11.747Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbcfe99a33653adf9dc9a1"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd17e0a37930bf86c00a"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:41:13.986Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbcff19a33653adf9dc9a2"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd02e0a37930bf86bd93"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:41:21.379Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbcff79a33653adf9dc9a3"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0fe0a37930bf86bf1e"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:41:27.258Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbcfff9a33653adf9dc9a4"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd11e0a37930bf86bf5f"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:41:35.981Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbd0029a33653adf9dc9a5"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd06e0a37930bf86bdfb"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:41:38.949Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbd0089a33653adf9dc9a6"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2fe0a37930bf86c2fb"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:41:44.843Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbd00b9a33653adf9dc9a7"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1ae0a37930bf86c057"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:41:47.259Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbd0169a33653adf9dc9a8"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd16e0a37930bf86bfec"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:41:58.687Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbd01b9a33653adf9dc9a9"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd18e0a37930bf86c032"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:42:03.977Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbd0229a33653adf9dc9aa"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd19e0a37930bf86c03c"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:42:10.259Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbd0299a33653adf9dc9ab"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd18e0a37930bf86c030"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:42:17.015Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbd0369a33653adf9dc9ac"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd28e0a37930bf86c218"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:42:30.701Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbd0379a33653adf9dc9ad"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd23e0a37930bf86c17b"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:42:31.666Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbd0419a33653adf9dc9ae"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd32e0a37930bf86c350"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:42:41.722Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbd0649a33653adf9dc9af"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1ce0a37930bf86c095"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T12:43:16.025Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbd9e9a0744d4b19f3b797"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd14e0a37930bf86bfb5"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "imagePublicIds",
+      "stockQty"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T13:23:53.873Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbd9ebafbb36430f6decb1"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd14e0a37930bf86bfb5"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "imagePublicIds",
+      "stockQty"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T13:23:55.680Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe21f62486ebf4f40e5a4"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2fe0a37930bf86c2fb"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "imagePublicIds",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T13:58:55.185Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe21f62486ebf4f40e5a5"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2fe0a37930bf86c2fb"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "imagePublicIds",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T13:58:55.624Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe57b29928f90eba495ce"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd18e0a37930bf86c01f"
+  },
+  "metadata": {
+    "fields": [
+      "regularPrice"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:13:15.843Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe6d129928f90eba495cf"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd10e0a37930bf86bf2d"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:18:57.447Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe83ec3cf30efad7e85cf"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1fe0a37930bf86c108"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:25:02.642Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe854c3cf30efad7e85d0"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd00e0a37930bf86bd65"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:25:24.681Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe869d961d9045c8d7f19"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd11e0a37930bf86bf53"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:25:45.486Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe91ed961d9045c8d7f1a"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1ee0a37930bf86c0e3"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:28:46.607Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe92c29928f90eba495d0"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd06e0a37930bf86bdf6"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:29:00.422Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe941c3cf30efad7e85d1"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd08e0a37930bf86be4b"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:29:21.027Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe95329928f90eba495d1"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd08e0a37930bf86be4c"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:29:39.670Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe965c3cf30efad7e85d2"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd02e0a37930bf86bd99"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:29:57.712Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe97b29928f90eba495d2"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd01e0a37930bf86bd85"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:30:19.618Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe990d961d9045c8d7f1b"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd02e0a37930bf86bd92"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:30:40.083Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe99dc3cf30efad7e85d3"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0de0a37930bf86beea"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:30:53.723Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe9b0d961d9045c8d7f1c"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0ee0a37930bf86bef1"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:31:12.735Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe9c3c3cf30efad7e85d4"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0fe0a37930bf86bf09"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:31:31.043Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe9e5d961d9045c8d7f1d"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0fe0a37930bf86bf10"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:32:05.046Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbe9fa29928f90eba495d3"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0fe0a37930bf86bf0d"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:32:26.247Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbea1dc3cf30efad7e85d5"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0fe0a37930bf86bf23"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:33:01.520Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbea3a29928f90eba495d4"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0fe0a37930bf86bf24"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:33:30.777Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbea48d961d9045c8d7f1e"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd11e0a37930bf86bf57"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:33:44.335Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbea5d29928f90eba495d5"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd15e0a37930bf86bfcc"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:34:05.502Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbea79d961d9045c8d7f1f"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd17e0a37930bf86bff9"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:34:33.712Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbea8929928f90eba495d6"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd18e0a37930bf86c029"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:34:49.035Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbeaa429928f90eba495d7"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1ae0a37930bf86c071"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:35:16.303Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbeab729928f90eba495d8"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd09e0a37930bf86be64"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:35:35.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbead1c3cf30efad7e85d6"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd10e0a37930bf86bf2d"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "imagePublicIds",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:36:01.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbeb3e29928f90eba495d9"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0ae0a37930bf86be76"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:37:50.413Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbeb6fd961d9045c8d7f20"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2ee0a37930bf86c2cb"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:38:39.642Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbeb8b29928f90eba495da"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2ee0a37930bf86c2d2"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:39:07.086Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbeb9d29928f90eba495db"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2ee0a37930bf86c2d5"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:39:25.208Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbebabd961d9045c8d7f21"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2ee0a37930bf86c2cc"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:39:39.805Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbebe229928f90eba495dc"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2ee0a37930bf86c2c4"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:40:34.462Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbebf5c3cf30efad7e85d7"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2fe0a37930bf86c2f8"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:40:53.213Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbec1a29928f90eba495dd"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd31e0a37930bf86c324"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:41:30.738Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbec2bd961d9045c8d7f22"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd31e0a37930bf86c323"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:41:47.507Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbec62c3cf30efad7e85d8"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd31e0a37930bf86c321"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:42:42.805Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbec7c29928f90eba495de"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd30e0a37930bf86c318"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:43:08.439Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbec8ac3cf30efad7e85d9"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd30e0a37930bf86c317"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:43:22.231Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbec9f29928f90eba495df"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd30e0a37930bf86c316"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:43:43.025Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbecb4c3cf30efad7e85da"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd30e0a37930bf86c319"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:44:04.002Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbeceb29928f90eba495e0"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd32e0a37930bf86c34d"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:44:59.594Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbed3cc3cf30efad7e85db"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd32e0a37930bf86c347"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:46:20.886Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbed4f29928f90eba495e1"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd32e0a37930bf86c348"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:46:39.455Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbed7d29928f90eba495e2"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd32e0a37930bf86c34c"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:47:25.543Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbee0d29928f90eba495e3"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd33e0a37930bf86c35a"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:49:49.504Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbee3cc3cf30efad7e85dc"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd33e0a37930bf86c364"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:50:36.695Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbee4bd961d9045c8d7f23"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd34e0a37930bf86c383"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:50:51.441Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbee6129928f90eba495e5"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd34e0a37930bf86c38b"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:51:13.031Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbee7dd961d9045c8d7f24"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2ae0a37930bf86c259"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:51:41.660Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbee8ec3cf30efad7e85dd"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2ae0a37930bf86c258"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:51:58.324Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbee9dd961d9045c8d7f25"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2ae0a37930bf86c257"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:52:13.982Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbeeb8c3cf30efad7e85de"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2ae0a37930bf86c256"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:52:40.469Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbef19c3cf30efad7e85df"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd32e0a37930bf86c34b"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:54:17.582Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbef33d961d9045c8d7f26"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd32e0a37930bf86c345"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:54:43.561Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbef49c3cf30efad7e85e0"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd32e0a37930bf86c346"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:55:05.618Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbef5a29928f90eba495e6"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd32e0a37930bf86c359"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:55:22.144Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbef6fd961d9045c8d7f27"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd32e0a37930bf86c354"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:55:43.482Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbef8b29928f90eba495e7"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2ae0a37930bf86c25b"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:56:11.981Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf01cd961d9045c8d7f28"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd26e0a37930bf86c1d7"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:58:36.683Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf03bc3cf30efad7e85e1"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1ee0a37930bf86c0d8"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T14:59:07.492Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf21c9d6e0823bc97de80"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1ee0a37930bf86c0d6"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:07:08.548Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf40e279de5da0a21c378"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1ee0a37930bf86c0d7"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:15:26.501Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf428279de5da0a21c379"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1de0a37930bf86c0cd"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:15:52.679Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf43b279de5da0a21c37a"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1de0a37930bf86c0cc"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:16:11.452Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf44bc86b8a564db046c2"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1ee0a37930bf86c0d9"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:16:27.190Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf45bc86b8a564db046c3"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1ce0a37930bf86c0ac"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:16:43.682Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf4703242295d3b9b1d48"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0ee0a37930bf86beec"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:17:04.935Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf4853242295d3b9b1d49"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0ee0a37930bf86beeb"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:17:25.780Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf4943242295d3b9b1d4a"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0de0a37930bf86bee6"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:17:40.039Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf4a873f36fc33bb8d918"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0de0a37930bf86bee9"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:18:00.671Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf4a973f36fc33bb8d919"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0de0a37930bf86bee9"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:18:01.839Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf4bc73f36fc33bb8d91a"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd15e0a37930bf86bfc3"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:18:20.297Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf4e573f36fc33bb8d91b"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0de0a37930bf86bee8"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:19:01.629Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf4f373f36fc33bb8d91c"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0de0a37930bf86bee7"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:19:15.268Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf5034f1dc47dd113b263"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0ee0a37930bf86beee"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:19:31.625Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf518494c09d822fd47e6"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd0ee0a37930bf86beef"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:19:52.248Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf5314f1dc47dd113b264"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd15e0a37930bf86bfc2"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:20:17.789Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf54573f36fc33bb8d91d"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd15e0a37930bf86bfc1"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:20:37.538Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf558494c09d822fd47e7"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd02e0a37930bf86bd91"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:20:56.330Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf56b4f1dc47dd113b265"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd30e0a37930bf86c308"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:21:15.908Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf57a4f1dc47dd113b266"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd30e0a37930bf86c307"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:21:30.673Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf590494c09d822fd47e8"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd30e0a37930bf86c306"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:21:52.075Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf5a173f36fc33bb8d91e"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd30e0a37930bf86c305"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:22:09.115Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf5ba494c09d822fd47e9"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd30e0a37930bf86c304"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:22:34.937Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf5df73f36fc33bb8d91f"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd30e0a37930bf86c303"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:23:11.583Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf5f1494c09d822fd47ea"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd30e0a37930bf86c302"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:23:29.483Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf604d5564736105b53ad"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd30e0a37930bf86c301"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:23:48.634Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf613b243c1f407ea99da"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd30e0a37930bf86c300"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:24:03.033Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf624c8793fb060ba2003"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2ce0a37930bf86c293"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:24:20.916Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf645d5564736105b53ae"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd01e0a37930bf86bd79"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:24:53.408Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf654b243c1f407ea99db"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1fe0a37930bf86c107"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:25:08.107Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf67fc8793fb060ba2004"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1fe0a37930bf86c0f8"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:25:51.278Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf6fe418aedd669a594e9"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1fe0a37930bf86c0f9"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:27:58.058Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf714418aedd669a594ea"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1fe0a37930bf86c0f7"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:28:20.426Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf729c8793fb060ba2005"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd1fe0a37930bf86c0f6"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:28:41.407Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf739c8793fb060ba2006"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd11e0a37930bf86bf4c"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:28:57.564Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf74e11760a2491b15f99"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd16e0a37930bf86bfd6"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:29:18.631Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf75e0b36434e6ca4372b"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd18e0a37930bf86c01f"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:29:34.248Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf7700b36434e6ca4372c"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd18e0a37930bf86c032"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:29:52.940Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf77ea1aad24016724605"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2fe0a37930bf86c2f1"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:30:06.897Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf786a1aad24016724606"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd2fe0a37930bf86c2fb"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "imagePublicIds",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:30:14.793Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf872a1aad24016724607"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd31e0a37930bf86c322"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:34:10.781Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dbf8e8a1aad24016724608"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68acbd31e0a37930bf86c322"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "brand",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "salePrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "imagePublicIds",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T15:36:08.240Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc419d084d5e3c0b7745a3"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34e2f1c1ef1c30af8323"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T20:46:21.457Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc41a3084d5e3c0b7745a4"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc350bf1c1ef1c30af85ee"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T20:46:27.722Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc41a5084d5e3c0b7745a5"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc350af1c1ef1c30af85dd"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T20:46:29.160Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc41af084d5e3c0b7745a6"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34fff1c1ef1c30af851b"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T20:46:39.065Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc41b6084d5e3c0b7745a7"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc3510f1c1ef1c30af8647"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T20:46:46.446Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc41be084d5e3c0b7745a8"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34e1f1c1ef1c30af8318"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T20:46:54.266Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc41c5084d5e3c0b7745a9"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34c5f1c1ef1c30af8132"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T20:47:01.391Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc41dc084d5e3c0b7745aa"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34b6f1c1ef1c30af8043"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T20:47:24.743Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc41e2084d5e3c0b7745ab"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34fff1c1ef1c30af8512"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T20:47:30.788Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dc41e4084d5e3c0b7745ac"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34cff1c1ef1c30af81ea"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-09-30T20:47:32.450Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd22acd4c7a8f317a54c80"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34b6f1c1ef1c30af8043"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:46:36.563Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd22fad4c7a8f317a54c81"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc350bf1c1ef1c30af85ee"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:47:54.808Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd22fdd4c7a8f317a54c82"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34e3f1c1ef1c30af833e"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:47:57.309Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd2302d4c7a8f317a54c83"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34fff1c1ef1c30af851b"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:48:02.500Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd230cd4c7a8f317a54c84"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34fff1c1ef1c30af8512"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:48:12.799Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd230ed4c7a8f317a54c85"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34cff1c1ef1c30af81ea"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:48:14.443Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd231ed4c7a8f317a54c86"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34d5f1c1ef1c30af8244"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:48:30.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd2323d4c7a8f317a54c87"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc3510f1c1ef1c30af8647"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:48:35.704Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd232cd4c7a8f317a54c88"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34e1f1c1ef1c30af8316"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:48:44.066Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd2428b35d9a1affdfd2e7"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34e2f1c1ef1c30af8323"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:52:56.219Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd242eb35d9a1affdfd2e8"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34e1f1c1ef1c30af8318"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:53:02.309Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd2433b35d9a1affdfd2e9"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34ddf1c1ef1c30af82d1"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:53:07.589Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd2447b35d9a1affdfd2ea"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34ddf1c1ef1c30af82d4"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:53:27.917Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd244db35d9a1affdfd2eb"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34d0f1c1ef1c30af81fe"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:53:33.043Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd2453b35d9a1affdfd2ec"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34dff1c1ef1c30af82ed"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:53:39.974Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd2456b35d9a1affdfd2ed"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34b9f1c1ef1c30af806e"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:53:42.776Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd2458b35d9a1affdfd2ee"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34b9f1c1ef1c30af806f"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T12:53:44.301Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd4c6a15ffb2f1f76f3e8c"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34d1f1c1ef1c30af8207"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T15:44:42.102Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dd4c7948e236409d078be4"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34d1f1c1ef1c30af8206"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-01T15:44:57.744Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68dee16c57dfc206d03774c5"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34ebf1c1ef1c30af83c2"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-02T20:32:44.801Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e3d100c6dbed4dbce16590"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34cff1c1ef1c30af81ea"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-06T14:24:00.346Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e3d7c915805cf66964159b"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.delete",
+  "resource": {
+    "type": "product",
+    "id": "68dc34edf1c1ef1c30af83e1"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T14:52:57.901Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e411cf7bf5f875fa1d19df"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34e5f1c1ef1c30af835f"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "categoryIds",
+      "createdAt",
+      "heightInches",
+      "images",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "stockQty"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-06T19:00:31.262Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e417dc974682051f6d28e0"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68e414e917bb6d9d7a6d9e42"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:26:20.691Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e417e1974682051f6d28e1"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68e4134551baed9e0fdf5130"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:26:25.227Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e417ef974682051f6d28e2"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68e2dfe5a3e0bf8b3c4c5afb"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:26:39.597Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e417f6974682051f6d28e3"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68dd63157503a4ae648d4e23"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:26:46.848Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41a0f974682051f6d28e4"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc3510f1c1ef1c30af8640"
+  },
+  "metadata": {
+    "fields": [
+      "regularPrice"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-06T19:35:43.743Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41b8b64ff66d42216054e"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.delete",
+  "resource": {
+    "type": "product",
+    "id": "68dc350cf1c1ef1c30af85f2"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T19:42:03.108Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41c9e64ff66d42216054f"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68dd2161dcff5add0f41cf74"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:46:38.173Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41ca364ff66d422160550"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68dc424c45889dfaa3e58474"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:46:43.176Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41caa64ff66d422160551"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68dbee1229928f90eba495e4"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:46:50.272Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41caf64ff66d422160552"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68dbda5ba0744d4b19f3b798"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:46:55.421Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41cb564ff66d422160553"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68dbd7fa11d9db970019158a"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:47:01.386Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41cba64ff66d422160554"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68dbd4c09a33653adf9dc9b0"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:47:06.331Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41cc064ff66d422160555"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68d5600f82badceb1316d8c1"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:47:12.784Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41cc564ff66d422160556"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68cb21109b11da2f1b531b61"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:47:17.789Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41cce64ff66d422160557"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68cb192eea96edb565330f98"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:47:26.868Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41cd564ff66d422160558"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68c9bd5e71af78106ae2bcba"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:47:33.223Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41cdb64ff66d422160559"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68c443a8611c91324ea32c8c"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:47:39.102Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41cdf64ff66d42216055a"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68b1f038d34153cfc8258d36"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:47:43.055Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41ce464ff66d42216055b"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68af3447ec597d565b9ca09c"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:47:48.297Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41ce864ff66d42216055c"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68adcbfb8d8f479275f870c3"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:47:52.858Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41e8864ff66d42216055f"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.create",
+  "resource": {
+    "type": "product",
+    "id": "68e41e8864ff66d42216055e"
+  },
+  "metadata": {
+    "name": "test"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T19:54:48.196Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41e8f64ff66d422160560"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.delete",
+  "resource": {
+    "type": "product",
+    "id": "68e41e8864ff66d42216055e"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T19:54:55.529Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41eda64ff66d422160561"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34cff1c1ef1c30af81ea"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-06T19:56:10.790Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e41f0064ff66d422160562"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68adc9218d8f479275f870c2"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T19:56:48.535Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e423cbb882c28aaeb85219"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "quote.delete",
+  "resource": {
+    "type": "quote",
+    "id": "68e41d2964ff66d42216055d"
+  },
+  "metadata": {},
+  "createdAt": {
+    "$date": "2025-10-06T20:17:15.387Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e7f1142174d53c95dd6215"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34b9f1c1ef1c30af806f"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-09T17:29:56.781Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e7f12c67afd848a0eea9da"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34b9f1c1ef1c30af806e"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-09T17:30:20.377Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e7f2a42174d53c95dd6216"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34f8f1c1ef1c30af84a3"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "imagePublicIds"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-09T17:36:36.751Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e7f2da2174d53c95dd6217"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc350ff1c1ef1c30af8639"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-09T17:37:30.979Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68f915b32761d2ebaf0f8f1a"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34daf1c1ef1c30af829c"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-22T17:34:43.960Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68f917442e214af97a727a3f"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc3510f1c1ef1c30af8647"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale",
+      "featureNow",
+      "featuredAt"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-22T17:41:24.139Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68f917f5c6a355326f90ac83"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc3514f1c1ef1c30af8683"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-22T17:44:21.006Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68f9188a2e214af97a727a40"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34eaf1c1ef1c30af83b6"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "shortDescription",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-22T17:46:50.970Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68f91983c6a355326f90ac84"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34dcf1c1ef1c30af82bb"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "inventory",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "salePriceForSale"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-22T17:50:59.280Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68f92f2b4758df773b929df6"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.delete",
+  "resource": {
+    "type": "product",
+    "id": "68dc3502f1c1ef1c30af8552"
+  },
+  "createdAt": {
+    "$date": "2025-10-22T19:23:23.336Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68fbd3ceb4b317ebf9c16afe"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34e1f1c1ef1c30af8316"
+  },
+  "metadata": {
+    "fields": [
+      "_id",
+      "externalId",
+      "allCategoryIds",
+      "categoryIds",
+      "createdAt",
+      "description",
+      "heightInches",
+      "images",
+      "isInStock",
+      "lengthInches",
+      "name",
+      "raw",
+      "regularPrice",
+      "sku",
+      "taxStatus",
+      "updatedAt",
+      "visibility",
+      "weightLbs",
+      "widthInches",
+      "featureNow",
+      "featuredAt",
+      "stockQty"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-10-24T19:30:22.703Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "690b9ff619ff36186b4ce9d0"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34edf1c1ef1c30af83de"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-11-05T19:05:26.688Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "690ba12019ff36186b4ce9d1"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34d2f1c1ef1c30af820e"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-11-05T19:10:24.690Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "690ba13119ff36186b4ce9d2"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34d0f1c1ef1c30af81fd"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-11-05T19:10:41.530Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "690ba13d19ff36186b4ce9d3"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34eef1c1ef1c30af83f7"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-11-05T19:10:53.363Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "690ba14719ff36186b4ce9d4"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc3503f1c1ef1c30af8558"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-11-05T19:11:03.629Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "690ba15d19ff36186b4ce9d5"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34edf1c1ef1c30af83e4"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-11-05T19:11:25.060Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "690ba16a19ff36186b4ce9d6"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34edf1c1ef1c30af83ea"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-11-05T19:11:38.452Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "690ba17619ff36186b4ce9d7"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc350ef1c1ef1c30af861f"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-11-05T19:11:50.088Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "690ba18519ff36186b4ce9d8"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc3514f1c1ef1c30af8688"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-11-05T19:12:05.730Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "690ba19119ff36186b4ce9d9"
+  },
+  "userId": "68adbb5a7e93fd6b779c8996",
+  "email": "logistique@spectre-entertainment.com",
+  "action": "product.update",
+  "resource": {
+    "type": "product",
+    "id": "68dc34fef1c1ef1c30af8506"
+  },
+  "metadata": {
+    "fields": [
+      "featureNow"
+    ]
+  },
+  "createdAt": {
+    "$date": "2025-11-05T19:12:17.010Z"
+  }
+}]

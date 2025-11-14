@@ -1,0 +1,130 @@
+[{
+  "_id": {
+    "$oid": "68dd295394686d9f1816df12"
+  },
+  "email": "spectredev00@gmail.com",
+  "name": "Glad",
+  "token": "55bbfe6b0c6d636e32208d52ace6b612",
+  "role": "user",
+  "status": "accepted",
+  "createdAt": {
+    "$date": "2025-10-01T13:14:59.192Z"
+  },
+  "expiresAt": {
+    "$date": "2025-10-08T13:14:59.192Z"
+  },
+  "acceptedAt": {
+    "$date": "2025-10-01T13:16:30.773Z"
+  },
+  "userId": {
+    "$oid": "68dd29ae94686d9f1816df13"
+  }
+},
+{
+  "_id": {
+    "$oid": "68e5335fcc6aeb7cb7a5ba8f"
+  },
+  "email": "spectredev00@gmail.com",
+  "name": "Gladston",
+  "token": "8660d39be1580d60505093c9d657a060",
+  "role": "user",
+  "status": "accepted",
+  "createdAt": {
+    "$date": "2025-10-07T15:35:59.994Z"
+  },
+  "expiresAt": {
+    "$date": "2025-10-14T15:35:59.994Z"
+  },
+  "acceptedAt": {
+    "$date": "2025-10-07T15:36:48.416Z"
+  },
+  "userId": {
+    "$oid": "68e53390cc6aeb7cb7a5ba90"
+  }
+},
+{
+  "_id": {
+    "$oid": "68f150ce749a982845520919"
+  },
+  "email": "christine@spectre-entertainment.com",
+  "name": "Christine",
+  "token": "ac7c7dc70c407d248e869ab8da047a23",
+  "role": "user",
+  "status": "accepted",
+  "createdAt": {
+    "$date": "2025-10-16T20:08:46.246Z"
+  },
+  "expiresAt": {
+    "$date": "2025-10-23T20:08:46.246Z"
+  },
+  "acceptedAt": {
+    "$date": "2025-10-17T17:02:38.738Z"
+  },
+  "userId": {
+    "$oid": "68f276ae2368afe4c805ae46"
+  }
+},
+{
+  "_id": {
+    "$oid": "68f151c292b3ab7b397c58d4"
+  },
+  "email": "stephane@spectre-entertainment.com",
+  "name": "",
+  "token": "98ec8799a4d627860c563e84e310ffc7",
+  "role": "user",
+  "status": "pending",
+  "createdAt": {
+    "$date": "2025-10-16T20:12:50.038Z"
+  },
+  "expiresAt": {
+    "$date": "2025-10-23T20:12:50.038Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68f25eeb05891626e534487e"
+  },
+  "email": "gladston.aristoverne@gmail.com",
+  "name": "",
+  "token": "6c946cafcad9a9c69ba52e060a6900bb",
+  "role": "user",
+  "status": "pending",
+  "createdAt": {
+    "$date": "2025-10-17T15:21:15.928Z"
+  },
+  "expiresAt": {
+    "$date": "2025-10-24T15:21:15.928Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68f25f8d05891626e534487f"
+  },
+  "email": "spectredev00@gmail.com",
+  "name": "",
+  "token": "cede154c11e205cf17eddfee8dea01f8",
+  "role": "user",
+  "status": "pending",
+  "createdAt": {
+    "$date": "2025-10-17T15:23:57.766Z"
+  },
+  "expiresAt": {
+    "$date": "2025-10-24T15:23:57.766Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68f7dc6af531f0d72bd8f32a"
+  },
+  "email": "mariejo@spectre-entertainment.com",
+  "name": "",
+  "token": "1f515f731af363f0f9c55457ab7da4ed",
+  "role": "user",
+  "status": "pending",
+  "createdAt": {
+    "$date": "2025-10-21T19:18:02.400Z"
+  },
+  "expiresAt": {
+    "$date": "2025-10-28T19:18:02.400Z"
+  }
+}]

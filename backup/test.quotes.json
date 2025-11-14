@@ -1,0 +1,826 @@
+[{
+  "_id": {
+    "$oid": "68e425f78745a6442568d813"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T20:26:31.856Z"
+  },
+  "status": "received",
+  "customer": {
+    "name": "k batis",
+    "email": "spectredev00@gmail.com",
+    "phone": "000215485",
+    "company": ""
+  },
+  "delivery": {
+    "method": "pickup",
+    "address": null
+  },
+  "message": "",
+  "items": [
+    {
+      "id": "68dc34b9f1c1ef1c30af806e",
+      "name": "Chaise de barbier verte",
+      "quantity": 1,
+      "unitPrice": null,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759262605/spectre/catalogue/68dc34b9f1c1ef1c30af806e-23e69d822c.jpg.jpg"
+    }
+  ],
+  "priced": false,
+  "totals": null
+},
+{
+  "_id": {
+    "$oid": "68e7c50954bcc1815d1b8f31"
+  },
+  "createdAt": {
+    "$date": "2025-10-09T14:22:01.691Z"
+  },
+  "status": "received",
+  "customer": {
+    "name": "Gladston",
+    "email": "spectredev00@gmail.com",
+    "phone": "4384883049",
+    "company": ""
+  },
+  "delivery": {
+    "method": "pickup",
+    "address": null
+  },
+  "message": "Message optionnel ",
+  "eventDate": "2025-10-24",
+  "items": [
+    {
+      "id": "68dc34b9f1c1ef1c30af806e",
+      "name": "Chaise de barbier verte",
+      "quantity": 1,
+      "unitPrice": null,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759262605/spectre/catalogue/68dc34b9f1c1ef1c30af806e-23e69d822c.jpg.jpg"
+    },
+    {
+      "id": "68dc34b9f1c1ef1c30af806f",
+      "name": "Chaise de barbier noire",
+      "quantity": 1,
+      "unitPrice": null,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759262605/spectre/catalogue/68dc34b9f1c1ef1c30af806f-72f67d53d4.jpg.jpg"
+    },
+    {
+      "id": "68dc34dff1c1ef1c30af82ed",
+      "name": "Chaises de réalisateur haute clair",
+      "quantity": 3,
+      "unitPrice": 50,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263237/spectre/catalogue/68dc34dff1c1ef1c30af82ed-7e24235224.jpg.jpg"
+    },
+    {
+      "id": "68dc3514f1c1ef1c30af8689",
+      "name": "Façade Diner",
+      "quantity": 1,
+      "unitPrice": 2500,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759264117/spectre/catalogue/68dc3514f1c1ef1c30af8689-052429b749.jpg.jpg"
+    }
+  ],
+  "priced": true,
+  "totals": {
+    "subtotal": 2650,
+    "tps": 132.5,
+    "tvq": 264.33750000000003,
+    "total": 3046.8375
+  }
+},
+{
+  "_id": {
+    "$oid": "68f14bd3f1289aeae816e25a"
+  },
+  "createdAt": {
+    "$date": "2025-10-16T19:47:31.742Z"
+  },
+  "status": "received",
+  "customer": {
+    "name": "Eliane Lavoie",
+    "email": "eliane.lavoie@dsf.ca",
+    "phone": "581 998-8997",
+    "company": "Desjardins Sécurité Financière"
+  },
+  "delivery": {
+    "method": "delivery",
+    "address": {
+      "line1": "1000 Boulevard René-Lévesque Est",
+      "line2": "Salles 2000AB",
+      "city": "Québec",
+      "province": "QC",
+      "postalCode": "G1R 5T8"
+    }
+  },
+  "message": "Bonjour, j'aimerais obtenir une soumission pour la location des éléments de décor \"croisière\". L'événement se tient au Centre des congrès de Québec - la livraison devra se faire au débarcadère. Le montage se fait le 28 janvier, j'aurais donc besoin de la location le 28 et le 29 janvier. Merci!",
+  "eventDate": "2026-01-29",
+  "items": [
+    {
+      "id": "68dc34cbf1c1ef1c30af81a7",
+      "name": "Vagues",
+      "quantity": 5,
+      "unitPrice": 150,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759262943/spectre/catalogue/68dc34cbf1c1ef1c30af81a7-994a93cbf7.jpg.jpg"
+    },
+    {
+      "id": "68dc34d5f1c1ef1c30af8248",
+      "name": "Gouvernail de bâteau bleu",
+      "quantity": 1,
+      "unitPrice": 150,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263095/spectre/catalogue/68dc34d5f1c1ef1c30af8248-69bad9f2af.jpg.jpg"
+    },
+    {
+      "id": "68dc34dbf1c1ef1c30af82a6",
+      "name": "Poteaux d'embarquement",
+      "quantity": 6,
+      "unitPrice": 65,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263173/spectre/catalogue/68dc34dbf1c1ef1c30af82a6-98f7950df1.jpg.jpg"
+    },
+    {
+      "id": "68dc34dbf1c1ef1c30af82b1",
+      "name": "Bateau  Croisière Bleu Blanc",
+      "quantity": 1,
+      "unitPrice": 600,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263183/spectre/catalogue/68dc34dbf1c1ef1c30af82b1-c36276fdde.jpg.jpg"
+    },
+    {
+      "id": "68dc34fcf1c1ef1c30af84ea",
+      "name": "Bouée de Sauvetage Bienvenue A Bord",
+      "quantity": 1,
+      "unitPrice": 20,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263762/spectre/catalogue/68dc34fcf1c1ef1c30af84ea-11f0c3294e.jpg.jpg"
+    }
+  ],
+  "priced": true,
+  "totals": {
+    "subtotal": 1910,
+    "tps": 95.5,
+    "tvq": 190.5225,
+    "total": 2196.0225
+  }
+},
+{
+  "_id": {
+    "$oid": "68f7cc1337398c5f30935cbd"
+  },
+  "createdAt": {
+    "$date": "2025-10-21T18:08:19.155Z"
+  },
+  "status": "received",
+  "customer": {
+    "name": "Alexia Noel",
+    "email": "alexia.noel@bnc.ca",
+    "phone": "5148309002",
+    "company": "Banque Nationale"
+  },
+  "delivery": {
+    "method": "pickup",
+    "address": null
+  },
+  "message": "Bonjour,\n\nJ'aimerais avoir une idée des prix et du fonctionnement pour la location pour évènement pour célébrer le temps des fêtes.\n\nMerci\nAlexia ",
+  "eventDate": "2025-12-11",
+  "items": [
+    {
+      "id": "68dc34dff1c1ef1c30af82ed",
+      "name": "Chaises de réalisateur haute clair",
+      "quantity": 1,
+      "unitPrice": 50,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263237/spectre/catalogue/68dc34dff1c1ef1c30af82ed-7e24235224.jpg.jpg"
+    },
+    {
+      "id": "68dc34e1f1c1ef1c30af8314",
+      "name": "Lettres HOLLYWOOD",
+      "quantity": 1,
+      "unitPrice": 150,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263268/spectre/catalogue/68dc34e1f1c1ef1c30af8314-8625b20214.jpg.jpg"
+    },
+    {
+      "id": "68dc350af1c1ef1c30af85df",
+      "name": "Étoile Noir Et Or",
+      "quantity": 1,
+      "unitPrice": 25,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263973/spectre/catalogue/68dc350af1c1ef1c30af85df-43eb567e4a.jpg.jpg"
+    },
+    {
+      "id": "68dc350bf1c1ef1c30af85e1",
+      "name": "Bande De Film",
+      "quantity": 1,
+      "unitPrice": null,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263974/spectre/catalogue/68dc350bf1c1ef1c30af85e1-cf8f57eda7.jpg.jpg"
+    },
+    {
+      "id": "68dc350bf1c1ef1c30af85e5",
+      "name": "Grande Bobine De Film Noir",
+      "quantity": 1,
+      "unitPrice": 125,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263979/spectre/catalogue/68dc350bf1c1ef1c30af85e5-dc8c3400e4.jpg.jpg"
+    },
+    {
+      "id": "68dc350bf1c1ef1c30af85e6",
+      "name": "Clapet De Cinéma Géant",
+      "quantity": 1,
+      "unitPrice": 50,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263980/spectre/catalogue/68dc350bf1c1ef1c30af85e6-844fb72d8e.jpg.jpg"
+    },
+    {
+      "id": "68dc350bf1c1ef1c30af85e7",
+      "name": "Grande Bande De Film Studio De Production",
+      "quantity": 1,
+      "unitPrice": null,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263980/spectre/catalogue/68dc350bf1c1ef1c30af85e7-a2c50f2718.jpg.jpg"
+    },
+    {
+      "id": "68dc350bf1c1ef1c30af85e8",
+      "name": "Petite Bande De Film Studio De Production",
+      "quantity": 1,
+      "unitPrice": null,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263981/spectre/catalogue/68dc350bf1c1ef1c30af85e8-7b3e171241.jpg.jpg"
+    },
+    {
+      "id": "68dc350bf1c1ef1c30af85eb",
+      "name": "Caméraman",
+      "quantity": 1,
+      "unitPrice": 125,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263984/spectre/catalogue/68dc350bf1c1ef1c30af85eb-6cf31ebff8.jpg.jpg"
+    },
+    {
+      "id": "68dc350bf1c1ef1c30af85ec",
+      "name": "Petit Projecteur",
+      "quantity": 1,
+      "unitPrice": 125,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263985/spectre/catalogue/68dc350bf1c1ef1c30af85ec-9a8b5ce615.jpg.jpg"
+    },
+    {
+      "id": "68dc350bf1c1ef1c30af85ed",
+      "name": "Moyen Clapet De Cinéma",
+      "quantity": 1,
+      "unitPrice": null,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263986/spectre/catalogue/68dc350bf1c1ef1c30af85ed-51ad5fa0a5.jpg.jpg"
+    },
+    {
+      "id": "68dc3514f1c1ef1c30af8682",
+      "name": "Hollywood",
+      "quantity": 1,
+      "unitPrice": 500,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759264109/spectre/catalogue/68dc3514f1c1ef1c30af8682-c594896d78.jpg.jpg"
+    }
+  ],
+  "priced": true,
+  "totals": {
+    "subtotal": 1150,
+    "tps": 57.5,
+    "tvq": 114.7125,
+    "total": 1322.2125
+  }
+},
+{
+  "_id": {
+    "$oid": "68f91b92a730d40b9f69b0bb"
+  },
+  "createdAt": {
+    "$date": "2025-10-22T17:59:46.840Z"
+  },
+  "status": "received",
+  "customer": {
+    "name": "Erika Dienesch-Manriquez",
+    "email": "erikadproduction@gmail.com",
+    "phone": "416.903.2780",
+    "company": ""
+  },
+  "delivery": {
+    "method": "delivery",
+    "address": {
+      "line1": "3237 Sources Blvd",
+      "city": "Dollard-Des Ormeaux",
+      "province": "QC",
+      "postalCode": "H9B 1Z6"
+    }
+  },
+  "message": "",
+  "eventDate": "2025-11-20",
+  "items": [
+    {
+      "id": "68dc350bf1c1ef1c30af85e6",
+      "name": "Clapet De Cinéma Géant",
+      "quantity": 2,
+      "unitPrice": 50,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263980/spectre/catalogue/68dc350bf1c1ef1c30af85e6-844fb72d8e.jpg.jpg"
+    }
+  ],
+  "priced": true,
+  "totals": {
+    "subtotal": 100,
+    "tps": 5,
+    "tvq": 9.975000000000001,
+    "total": 114.975
+  }
+},
+{
+  "_id": {
+    "$oid": "69036088bff3c6e6cabfb74b"
+  },
+  "createdAt": {
+    "$date": "2025-10-30T12:56:40.826Z"
+  },
+  "status": "sent",
+  "customer": {
+    "name": "Stéphane Morin",
+    "email": "stephane@spectre-entertainment.com",
+    "phone": "4508124400",
+    "company": ""
+  },
+  "delivery": {
+    "method": "pickup",
+    "address": null
+  },
+  "message": "",
+  "eventDate": "2025-11-24",
+  "items": [
+    {
+      "id": "68dc34d2f1c1ef1c30af820e",
+      "name": "Casse-Noisette",
+      "quantity": 1,
+      "unitPrice": 175,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263035/spectre/catalogue/68dc34d2f1c1ef1c30af820e-d3af6bdef3.jpg.jpg"
+    },
+    {
+      "id": "68dc34dbf1c1ef1c30af82b3",
+      "name": "Cabine Casse noisette",
+      "quantity": 1,
+      "unitPrice": 375,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263185/spectre/catalogue/68dc34dbf1c1ef1c30af82b3-b77dbaa44e.jpg.jpg"
+    },
+    {
+      "id": "68dc34ddf1c1ef1c30af82c8",
+      "name": "Bonbons géants",
+      "quantity": 1,
+      "unitPrice": 10,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263206/spectre/catalogue/68dc34ddf1c1ef1c30af82c8-bdd78d4c78.jpg.jpg"
+    },
+    {
+      "id": "68dc34ddf1c1ef1c30af82c9",
+      "name": "Sucettes",
+      "quantity": 1,
+      "unitPrice": 15,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263209/spectre/catalogue/68dc34ddf1c1ef1c30af82c9-5694273da6.jpg.jpg"
+    },
+    {
+      "id": "68dc34edf1c1ef1c30af83da",
+      "name": "Boucle Rouge de Noël Géante",
+      "quantity": 1,
+      "unitPrice": 125,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263499/spectre/catalogue/68dc34edf1c1ef1c30af83da-3a85ec5e4e.jpg.jpg"
+    },
+    {
+      "id": "68dc34edf1c1ef1c30af83db",
+      "name": "Boule Rouge de Noël Géante",
+      "quantity": 1,
+      "unitPrice": 125,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263500/spectre/catalogue/68dc34edf1c1ef1c30af83db-de2d606d24.jpg.jpg"
+    },
+    {
+      "id": "68dc34edf1c1ef1c30af83e2",
+      "name": "Trône du Père Noël en Flocon avec ornement",
+      "quantity": 1,
+      "unitPrice": 175,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263506/spectre/catalogue/68dc34edf1c1ef1c30af83e2-823301da35.jpg.jpg"
+    },
+    {
+      "id": "68dc34eef1c1ef1c30af83eb",
+      "name": "Sapin Suspendue Illuminé",
+      "quantity": 1,
+      "unitPrice": 150,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263515/spectre/catalogue/68dc34eef1c1ef1c30af83eb-65a50672a0.jpg.jpg"
+    },
+    {
+      "id": "68dc34eff1c1ef1c30af83fc",
+      "name": "Flocons Blanc avec Brillant Iridescent 24''",
+      "quantity": 1,
+      "unitPrice": 25,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263534/spectre/catalogue/68dc34eff1c1ef1c30af83fc-8a83201eb3.jpg.jpg"
+    },
+    {
+      "id": "68dc34eff1c1ef1c30af83fd",
+      "name": "Flocons Blanc avec Brillant Iridescent 36''",
+      "quantity": 1,
+      "unitPrice": 25,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263535/spectre/catalogue/68dc34eff1c1ef1c30af83fd-8a83201eb3.jpg.jpg"
+    },
+    {
+      "id": "68dc34eff1c1ef1c30af83fe",
+      "name": "Flocons Bleu et Blanc 44''",
+      "quantity": 1,
+      "unitPrice": 25,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263536/spectre/catalogue/68dc34eff1c1ef1c30af83fe-a204d49115.jpg.jpg"
+    },
+    {
+      "id": "68dc34eff1c1ef1c30af83ff",
+      "name": "Flocons Bleu et Blanc 34''",
+      "quantity": 1,
+      "unitPrice": 25,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263537/spectre/catalogue/68dc34eff1c1ef1c30af83ff-a204d49115.jpg.jpg"
+    },
+    {
+      "id": "68dc34eff1c1ef1c30af8400",
+      "name": "Flocons Bleu et Blanc 27''",
+      "quantity": 1,
+      "unitPrice": 25,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263538/spectre/catalogue/68dc34eff1c1ef1c30af8400-a204d49115.jpg.jpg"
+    },
+    {
+      "id": "68dc34eff1c1ef1c30af8401",
+      "name": "Flocons Bleu et Blanc 22''",
+      "quantity": 1,
+      "unitPrice": 25,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263539/spectre/catalogue/68dc34eff1c1ef1c30af8401-a204d49115.jpg.jpg"
+    },
+    {
+      "id": "68dc34eff1c1ef1c30af8402",
+      "name": "Flocons Blanc avec Paillette 48''",
+      "quantity": 1,
+      "unitPrice": 25,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263540/spectre/catalogue/68dc34eff1c1ef1c30af8402-e2eae0790f.jpg.jpg"
+    },
+    {
+      "id": "68dc34eff1c1ef1c30af8403",
+      "name": "Moyenne Boucle Rouge de Noël",
+      "quantity": 1,
+      "unitPrice": 125,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263540/spectre/catalogue/68dc34eff1c1ef1c30af8403-3a85ec5e4e.jpg.jpg"
+    },
+    {
+      "id": "68dc34f1f1c1ef1c30af8434",
+      "name": "Couronne de Sapin 3'",
+      "quantity": 1,
+      "unitPrice": 85,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263578/spectre/catalogue/68dc34f1f1c1ef1c30af8434-2210426efd.jpg.jpg"
+    },
+    {
+      "id": "68dc3505f1c1ef1c30af8588",
+      "name": "Canne de Noël Géante",
+      "quantity": 1,
+      "unitPrice": 225,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263899/spectre/catalogue/68dc3505f1c1ef1c30af8588-db53a2c142.jpg.jpg"
+    },
+    {
+      "id": "68dc3505f1c1ef1c30af8589",
+      "name": "Canne de Noël Rouge et Blanche",
+      "quantity": 1,
+      "unitPrice": 150,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263900/spectre/catalogue/68dc3505f1c1ef1c30af8589-bae4cdc71f.jpg.jpg"
+    },
+    {
+      "id": "68dc3505f1c1ef1c30af858a",
+      "name": "Canne de Noël Vert et Blanche",
+      "quantity": 1,
+      "unitPrice": 150,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263901/spectre/catalogue/68dc3505f1c1ef1c30af858a-d8767c9540.jpg.jpg"
+    }
+  ],
+  "priced": true,
+  "totals": {
+    "subtotal": 2060,
+    "tps": 103,
+    "tvq": 205.485,
+    "total": 2368.485
+  },
+  "sentAt": {
+    "$date": "2025-10-30T14:42:33.990Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6907bff7b7e724397474e772"
+  },
+  "createdAt": {
+    "$date": "2025-11-02T20:32:55.521Z"
+  },
+  "status": "received",
+  "customer": {
+    "name": "Stéphane Morin",
+    "email": "stephane@spectre-entertainment.com",
+    "phone": "5145736869",
+    "company": ""
+  },
+  "delivery": {
+    "method": "pickup",
+    "address": null
+  },
+  "message": "",
+  "eventDate": "2025-12-12",
+  "items": [
+    {
+      "id": "68dc34edf1c1ef1c30af83d9",
+      "name": "Duo de Lutins",
+      "quantity": 1,
+      "unitPrice": 150,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263499/spectre/catalogue/68dc34edf1c1ef1c30af83d9-cbbd36878a.jpg.jpg"
+    },
+    {
+      "id": "68dc34edf1c1ef1c30af83de",
+      "name": "Trône du Père Noël Rouge et Or",
+      "quantity": 1,
+      "unitPrice": 175,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263503/spectre/catalogue/68dc34edf1c1ef1c30af83de-691fbc4db9.jpg.jpg"
+    },
+    {
+      "id": "68dc34f1f1c1ef1c30af842b",
+      "name": "Petit Tambour de couleur",
+      "quantity": 1,
+      "unitPrice": 5,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263571/spectre/catalogue/68dc34f1f1c1ef1c30af842b-a97a3ebeb4.jpg.jpg"
+    },
+    {
+      "id": "68dc34f1f1c1ef1c30af842c",
+      "name": "Tambour avec Paillette",
+      "quantity": 1,
+      "unitPrice": 10,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263572/spectre/catalogue/68dc34f1f1c1ef1c30af842c-b9c60e501a.jpg.jpg"
+    },
+    {
+      "id": "68dc34f2f1c1ef1c30af8439",
+      "name": "Tambour en plastique",
+      "quantity": 1,
+      "unitPrice": 25,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263584/spectre/catalogue/68dc34f2f1c1ef1c30af8439-e18fe71b63.jpg.jpg"
+    },
+    {
+      "id": "68dc350ff1c1ef1c30af862a",
+      "name": "Sapin Scintillant Pop-up Fushia 3'",
+      "quantity": 1,
+      "unitPrice": 50,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759264038/spectre/catalogue/68dc350ff1c1ef1c30af862a-7d6769f0c7.jpg.jpg"
+    },
+    {
+      "id": "68dc350ff1c1ef1c30af862c",
+      "name": "Sapin Scintillant Pop-up Fushia 6'",
+      "quantity": 1,
+      "unitPrice": 60,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759264039/spectre/catalogue/68dc350ff1c1ef1c30af862c-7d6769f0c7.jpg.jpg"
+    },
+    {
+      "id": "68dc350ff1c1ef1c30af8633",
+      "name": "Sapin Scintillant Pop-up Argent Avec Feuilles",
+      "quantity": 1,
+      "unitPrice": 60,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759264044/spectre/catalogue/68dc350ff1c1ef1c30af8633-306980e796.jpg.jpg"
+    },
+    {
+      "id": "68dc350ff1c1ef1c30af8634",
+      "name": "Sapin Scintillant Pop-up Or Avec Feuilles",
+      "quantity": 1,
+      "unitPrice": 60,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759264045/spectre/catalogue/68dc350ff1c1ef1c30af8634-c4592ad2cf.jpg.jpg"
+    }
+  ],
+  "priced": true,
+  "totals": {
+    "subtotal": 595,
+    "tps": 29.75,
+    "tvq": 59.35125,
+    "total": 684.10125
+  }
+},
+{
+  "_id": {
+    "$oid": "6913d747aed15f150b610c11"
+  },
+  "createdAt": {
+    "$date": "2025-11-12T00:39:35.647Z"
+  },
+  "status": "received",
+  "customer": {
+    "name": "Tammy",
+    "email": "tammy@lesproductionsvip.com",
+    "phone": "514-971-8364",
+    "company": ""
+  },
+  "delivery": {
+    "method": "pickup",
+    "address": null
+  },
+  "message": "",
+  "eventDate": "2025-11-22",
+  "items": [
+    {
+      "id": "68dc34ddf1c1ef1c30af82c8",
+      "name": "Bonbons géants",
+      "quantity": 1,
+      "unitPrice": 10,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263206/spectre/catalogue/68dc34ddf1c1ef1c30af82c8-bdd78d4c78.jpg.jpg"
+    },
+    {
+      "id": "68dc34ddf1c1ef1c30af82c9",
+      "name": "Sucettes",
+      "quantity": 1,
+      "unitPrice": 15,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263209/spectre/catalogue/68dc34ddf1c1ef1c30af82c9-5694273da6.jpg.jpg"
+    },
+    {
+      "id": "68dc34ddf1c1ef1c30af82cd",
+      "name": "Maison Verte",
+      "quantity": 1,
+      "unitPrice": 450,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263213/spectre/catalogue/68dc34ddf1c1ef1c30af82cd-f248ac4048.jpg.jpg"
+    },
+    {
+      "id": "68dc34ecf1c1ef1c30af83d8",
+      "name": "Famille de bonhomme de neige",
+      "quantity": 1,
+      "unitPrice": 175,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263498/spectre/catalogue/68dc34ecf1c1ef1c30af83d8-836cd1e691.jpg.jpg"
+    },
+    {
+      "id": "68dc34edf1c1ef1c30af83d9",
+      "name": "Duo de Lutins",
+      "quantity": 1,
+      "unitPrice": 150,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263499/spectre/catalogue/68dc34edf1c1ef1c30af83d9-cbbd36878a.jpg.jpg"
+    },
+    {
+      "id": "68dc34edf1c1ef1c30af83de",
+      "name": "Trône du Père Noël Rouge et Or",
+      "quantity": 1,
+      "unitPrice": 175,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263503/spectre/catalogue/68dc34edf1c1ef1c30af83de-691fbc4db9.jpg.jpg"
+    },
+    {
+      "id": "68dc34edf1c1ef1c30af83e4",
+      "name": "Bonhomme de Neige Olaf (Frozen)",
+      "quantity": 1,
+      "unitPrice": 200,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263508/spectre/catalogue/68dc34edf1c1ef1c30af83e4-fe6cf2f83d.jpg.jpg"
+    },
+    {
+      "id": "68dc34edf1c1ef1c30af83ea",
+      "name": "Sven le Renne (Frozen)",
+      "quantity": 1,
+      "unitPrice": 200,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263514/spectre/catalogue/68dc34edf1c1ef1c30af83ea-d315aa571b.jpg.jpg"
+    },
+    {
+      "id": "68dc34f1f1c1ef1c30af842b",
+      "name": "Petit Tambour de couleur",
+      "quantity": 1,
+      "unitPrice": 5,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263571/spectre/catalogue/68dc34f1f1c1ef1c30af842b-a97a3ebeb4.jpg.jpg"
+    },
+    {
+      "id": "68dc34f1f1c1ef1c30af842c",
+      "name": "Tambour avec Paillette",
+      "quantity": 1,
+      "unitPrice": 10,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263572/spectre/catalogue/68dc34f1f1c1ef1c30af842c-b9c60e501a.jpg.jpg"
+    },
+    {
+      "id": "68dc34f1f1c1ef1c30af842d",
+      "name": "Tambour de couleur grandeur divers",
+      "quantity": 1,
+      "unitPrice": 35,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263573/spectre/catalogue/68dc34f1f1c1ef1c30af842d-8015b3893b.jpg.jpg"
+    },
+    {
+      "id": "68dc34f2f1c1ef1c30af8436",
+      "name": "Gros Cadeaux",
+      "quantity": 1,
+      "unitPrice": 50,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263581/spectre/catalogue/68dc34f2f1c1ef1c30af8436-ec3c7e8f58.jpg.jpg"
+    },
+    {
+      "id": "68dc34f4f1c1ef1c30af8469",
+      "name": "Cadeaux de Noël",
+      "quantity": 1,
+      "unitPrice": 15,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263626/spectre/catalogue/68dc34f4f1c1ef1c30af8469-d938f457a5.jpg.jpg"
+    },
+    {
+      "id": "68dc3505f1c1ef1c30af8589",
+      "name": "Canne de Noël Rouge et Blanche",
+      "quantity": 1,
+      "unitPrice": 150,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263900/spectre/catalogue/68dc3505f1c1ef1c30af8589-bae4cdc71f.jpg.jpg"
+    },
+    {
+      "id": "68dc350ef1c1ef1c30af8624",
+      "name": "Sapin Scintillant Pop-up Or 8'",
+      "quantity": 1,
+      "unitPrice": 60,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759264032/spectre/catalogue/68dc350ef1c1ef1c30af8624-e171fea9c0.jpg.jpg"
+    },
+    {
+      "id": "68dc350ff1c1ef1c30af8627",
+      "name": "Sapin Scintillant Pop-up Vert 5'",
+      "quantity": 1,
+      "unitPrice": 50,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759264035/spectre/catalogue/68dc350ff1c1ef1c30af8627-fa008716ca.jpg.jpg"
+    },
+    {
+      "id": "68dc350ff1c1ef1c30af862a",
+      "name": "Sapin Scintillant Pop-up Fushia 3'",
+      "quantity": 1,
+      "unitPrice": 50,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759264038/spectre/catalogue/68dc350ff1c1ef1c30af862a-7d6769f0c7.jpg.jpg"
+    },
+    {
+      "id": "68dc350ff1c1ef1c30af8632",
+      "name": "Sapin Scintillant Pop-up Argent 9'",
+      "quantity": 1,
+      "unitPrice": 75,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759264043/spectre/catalogue/68dc350ff1c1ef1c30af8632-b44bb2610d.jpg.jpg"
+    }
+  ],
+  "priced": true,
+  "totals": {
+    "subtotal": 1875,
+    "tps": 93.75,
+    "tvq": 187.03125,
+    "total": 2155.78125
+  }
+},
+{
+  "_id": {
+    "$oid": "6916886bfb8688735f25c574"
+  },
+  "createdAt": {
+    "$date": "2025-11-14T01:39:55.754Z"
+  },
+  "status": "received",
+  "customer": {
+    "name": "Stéphane Morin",
+    "email": "stephane@spectre-entertainment.com",
+    "phone": "5145736869",
+    "company": ""
+  },
+  "delivery": {
+    "method": "pickup",
+    "address": null
+  },
+  "message": "",
+  "eventDate": "2025-12-13",
+  "items": [
+    {
+      "id": "68dc34d6f1c1ef1c30af8254",
+      "name": "Poteaux pour pont croisière 1",
+      "quantity": 1,
+      "unitPrice": 65,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263103/spectre/catalogue/68dc34d6f1c1ef1c30af8254-af1ae63b4f.jpg.jpg"
+    }
+  ],
+  "priced": true,
+  "totals": {
+    "subtotal": 65,
+    "tps": 3.25,
+    "tvq": 6.483750000000001,
+    "total": 74.73375
+  }
+},
+{
+  "_id": {
+    "$oid": "691688bdfb8688735f25c575"
+  },
+  "createdAt": {
+    "$date": "2025-11-14T01:41:17.522Z"
+  },
+  "status": "received",
+  "customer": {
+    "name": "Stéphane Morin",
+    "email": "stephane@spectre-entertainment.com",
+    "phone": "5145736869",
+    "company": ""
+  },
+  "delivery": {
+    "method": "pickup",
+    "address": null
+  },
+  "message": "",
+  "eventDate": "2025-12-13",
+  "items": [
+    {
+      "id": "68dc34d6f1c1ef1c30af8254",
+      "name": "Poteaux pour pont croisière 1",
+      "quantity": 1,
+      "unitPrice": 65,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263103/spectre/catalogue/68dc34d6f1c1ef1c30af8254-af1ae63b4f.jpg.jpg"
+    },
+    {
+      "id": "68dc34d6f1c1ef1c30af8255",
+      "name": "Poteaux pour pont croisière 2",
+      "quantity": 1,
+      "unitPrice": 65,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263104/spectre/catalogue/68dc34d6f1c1ef1c30af8255-ed9a0b67f5.jpg.jpg"
+    },
+    {
+      "id": "68dc34d6f1c1ef1c30af8256",
+      "name": "Base de pont croisière",
+      "quantity": 1,
+      "unitPrice": 150,
+      "image": "https://res.cloudinary.com/dwisor9hx/image/upload/v1759263104/spectre/catalogue/68dc34d6f1c1ef1c30af8256-15f537c3ad.jpg.jpg"
+    }
+  ],
+  "priced": true,
+  "totals": {
+    "subtotal": 280,
+    "tps": 14,
+    "tvq": 27.93,
+    "total": 321.93
+  }
+}]
